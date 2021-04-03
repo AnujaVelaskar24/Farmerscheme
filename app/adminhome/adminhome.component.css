@@ -46,6 +46,33 @@
     margin-inline:50px ;
 }
 
+
+#news-container{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#card{
+    padding:20px;
+}
+#button{
+    background-color:green;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 30%;
+
+}
+#fact-icons{
+    height:80px;
+    width: 80px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+}
+#fact-number{
+    font-size: 20px;
+    font-weight: bold;
+}
 #footericon-style{
     margin-right: 20px;
     color: white;
@@ -60,21 +87,6 @@
 }
 #footer-contactus{
     letter-spacing: 3px;
-    font-size: 20px;
-    font-weight: bold;
-}
-#news-container{
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-#fact-icons{
-    height:80px;
-    width: 80px;
-    border-radius: 40px;
-    margin-bottom: 20px;
-}
-#fact-number{
     font-size: 20px;
     font-weight: bold;
 }
