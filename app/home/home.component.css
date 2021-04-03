@@ -89,14 +89,17 @@
     font-size: 20px;
 }
 
+#footericon-style{
+    margin-right: 20px;
+    color: white;
+    margin-top:5px;
+}
 #footer{
     background-color: rgb(1, 43, 1);
     color: white;
     padding-top: 30px;
-    /* background-color: coral; */
-    /* height: 200px;
-    padding-left: 40px;
-    padding-top: 10px; */
+    width: 100%;
+    padding-left: 50px;
 }
 #footer-contactus{
     letter-spacing: 3px;

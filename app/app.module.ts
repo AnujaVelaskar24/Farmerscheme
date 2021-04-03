@@ -9,6 +9,8 @@ import { ApplyInsuranceComponent } from './apply-insurance/apply-insurance.compo
 import { ApplyBidComponent } from './apply-bid/apply-bid.component';
 import { FarmerhomeComponent } from './farmerhome/farmerhome.component';
 import { BidderhomeComponent } from './bidderhome/bidderhome.component';
+import { AdminhomeComponent } from './adminhome/adminhome.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { BidderhomeComponent } from './bidderhome/bidderhome.component';
     ApplyInsuranceComponent,
     ApplyBidComponent,
     FarmerhomeComponent,
-    BidderhomeComponent
+    BidderhomeComponent,
+    AdminhomeComponent
   ],
   imports: [
     BrowserModule,
