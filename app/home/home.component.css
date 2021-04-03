@@ -1,0 +1,114 @@
+.main-container{
+    background-color: white;
+    height: "100%";
+    padding: 30px;
+    
+}
+.nav-bar{
+    background-color: green;
+    display: flex;
+    justify-content:center; 
+    padding: 10px;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 20px;
+}
+#small_images{
+    position: absolute;
+    left: 60px;
+}
+#project-name{
+    color: white;
+    margin-right: 50px;
+    margin-left: 20px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    position: absolute;
+    left: 120px;
+}
+.nav-button{
+    height:35px;
+    background-color: white;
+    border-radius: 5px;
+    border-color: white;
+    border-width: 1px;
+    width: 80px;
+    position: absolute;
+    right: 170px;
+    
+}
+#header_nav{
+    color: rgb(219, 219, 219);
+    margin-inline:50px ;
+}
+#welcome{
+    font-weight: bold;
+    /* font-size: 40px; */
+    letter-spacing: 1px;
+    margin-bottom: 1px;
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+#welcome-2{
+    /* font-size: 50px; */
+    letter-spacing: 1px;
+}
+.news-container{
+    display:"flex";
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#welcome-paragraph{
+    display: flex;
+    justify-content: space-between;
+    
+}
+#small-text{
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+#big-text{
+    
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+.paragraph-text{
+    margin-top: 20px;
+    background-color: rgb(231, 245, 231);
+    border-radius: 10px;
+    padding-left: 20px;
+    width: 100%;
+    /* padding-left: 30px; */
+}
+#fact-icons, #fact-number, #fact-text{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#footer{
+    background-color: rgb(1, 43, 1);
+    color: white;
+    padding-top: 30px;
+    /* background-color: coral; */
+    /* height: 200px;
+    padding-left: 40px;
+    padding-top: 10px; */
+}
+#footer-contactus{
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.welcome-box{
+    margin-left: 40px;
+}
+.welcome-image{
+    height: 300px;
+    width:500px;
+    border-radius: 20px;
+
+}
