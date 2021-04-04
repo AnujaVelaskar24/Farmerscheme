@@ -1,0 +1,86 @@
+.main-container{
+    background-color: white;
+    height: "100%";
+    padding: 30px;
+    background-color: rgb(231, 245, 231);
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    
+}
+
+
+.nav-bar{
+    background-color: green;
+    display: flex;
+    justify-content:center; 
+    padding: 10px;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.nav-button{
+    height:35px;
+    background-color: white;
+    border-radius: 5px;
+    border-color: white;
+    border-width: 1px;
+    width: 80px;
+    position: absolute;
+    right: 170px;
+    
+}
+#header_nav{
+    color: rgb(219, 219, 219);
+    margin-inline:50px ;
+}
+
+#footer{
+    background-color: rgb(1, 43, 1);
+    color: white;
+    padding-top: 30px;
+    width: 100%;
+    padding-left: 50px;
+    position: relative;
+    bottom: 0px;
+
+}
+#footer-contactus{
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#small_images{
+    position: absolute;
+    left: 60px;
+}
+#project-name{
+    color: white;
+    margin-right: 50px;
+    margin-left: 20px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    position: absolute;
+    left: 120px;
+}
+
+
+#big-text{
+    
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding:45%;
+}
+
+.paragraph-text{
+    margin-top: 20px;
+    
+    border-radius: 10px;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 30px;
+}
+
