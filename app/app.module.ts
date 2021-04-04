@@ -16,6 +16,10 @@ import { AdminCropApprovalComponent } from './admin-crop-approval/admin-crop-app
 import { FarmerTransactionHistoryComponent } from './farmer-transaction-history/farmer-transaction-history.component';
 import { BidderTransactionHistoryComponent } from './bidder-transaction-history/bidder-transaction-history.component';
 import { BidRequestComponent } from './bid-request/bid-request.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
 
 
 @NgModule({
@@ -33,7 +37,11 @@ import { BidRequestComponent } from './bid-request/bid-request.component';
     AdminCropApprovalComponent,
     FarmerTransactionHistoryComponent,
     BidderTransactionHistoryComponent,
-    BidRequestComponent
+    BidRequestComponent,
+    LoginComponent,
+    RegisterComponent,
+    AdminLoginComponent,
+    AdminApprovalComponent
   ],
   imports: [
     BrowserModule,
