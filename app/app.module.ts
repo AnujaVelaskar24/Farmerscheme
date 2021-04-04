@@ -10,6 +10,12 @@ import { ApplyBidComponent } from './apply-bid/apply-bid.component';
 import { FarmerhomeComponent } from './farmerhome/farmerhome.component';
 import { BidderhomeComponent } from './bidderhome/bidderhome.component';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
+import { MarketplaceComponent } from './marketplace/marketplace.component';
+import { AdminAccountApprovalComponent } from './admin-account-approval/admin-account-approval.component';
+import { AdminCropApprovalComponent } from './admin-crop-approval/admin-crop-approval.component';
+import { FarmerTransactionHistoryComponent } from './farmer-transaction-history/farmer-transaction-history.component';
+import { BidderTransactionHistoryComponent } from './bidder-transaction-history/bidder-transaction-history.component';
+import { BidRequestComponent } from './bid-request/bid-request.component';
 
 
 @NgModule({
@@ -21,7 +27,13 @@ import { AdminhomeComponent } from './adminhome/adminhome.component';
     ApplyBidComponent,
     FarmerhomeComponent,
     BidderhomeComponent,
-    AdminhomeComponent
+    AdminhomeComponent,
+    MarketplaceComponent,
+    AdminAccountApprovalComponent,
+    AdminCropApprovalComponent,
+    FarmerTransactionHistoryComponent,
+    BidderTransactionHistoryComponent,
+    BidRequestComponent
   ],
   imports: [
     BrowserModule,
