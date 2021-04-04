@@ -72,3 +72,11 @@
     font-size: 20px;
     font-weight: bold;
 }
+#welcome-paragraph{
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    
+}
