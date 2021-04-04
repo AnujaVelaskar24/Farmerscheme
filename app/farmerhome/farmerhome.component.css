@@ -57,6 +57,19 @@
     width: 100%;
     padding-left: 50px;
 }
+#button{
+    background-color:green;
+    /* display: flex;
+    justify-content: center;
+    align-self: center; */
+    width: 30%;
+    margin-top: 20px;
+}
+/* .link
+{
+background-image:none !important;
+background-color:#ff00ff !important;
+} */
 #footer-contactus{
     letter-spacing: 3px;
     font-size: 20px;
