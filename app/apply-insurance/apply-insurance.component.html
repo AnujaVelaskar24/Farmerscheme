@@ -1,0 +1,70 @@
+
+<div class="row">
+    <div class="main">
+        <div class="card">       
+        <form>
+            <div class="container">
+                <h2 align="center">Insurance Premium Calculator</h2>
+                <label for="season"><b>Season</b></label>
+                <input type="text" placeholder="Enter season" name="season">
+
+                <label for="year"><b>Year</b></label>
+                <input type="text" placeholder="Enter year" name="year">
+
+                <label for="cropname"><b>Crop Name</b></label>
+                <input type="text" placeholder="Enter crop name" name="cropname">
+
+                <label for="suminsured"><b>Sum Insured</b></label>
+                <input type="text" placeholder="Enter sum insured" name="suminsured">
+
+                <label for="area"><b>Area (In Hectare)</b></label>
+                <input type="text" placeholder="Enter season" name="area">
+
+              
+                <input type="reset" value="RESET" data-inline="true">
+               
+                <!-- <button type="submit" data-inline="true" onclick="ShowHideDiv(this)" value="yes">CALCULATE</button> -->
+                
+                
+                <button (click)=displaytext()>CALCULATE</button>
+                <div *ngIf="isShow">
+
+                   
+                    <table class="table">
+                        <tr>
+                            <th>Insurance Company</th>
+                            <th>Sum Insured(per hectare)</th>
+                            <th>Share Premium</th>
+                            <th>Premium Amount</th>
+                            <th>Crop Name</th>
+                            <th>Area</th>
+                           
+                        </tr>
+                        <tr>
+                            <td>XYZ</td>
+                            <td>123</td>
+                            <td>123</td>
+                            <td>123</td>
+                            <td>ABC</td>
+                            <td>10</td>
+                        </tr>
+                    </table>
+    
+                    <button type="submit" >APPLY</button>
+
+                </div>
+
+              
+
+           
+
+
+
+
+            </div>
+        </form>
+          
+        
+        </div>
+    </div>
+</div>
