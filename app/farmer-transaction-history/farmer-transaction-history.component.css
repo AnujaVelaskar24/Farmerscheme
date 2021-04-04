@@ -1,0 +1,29 @@
+.table
+{
+    margin-top: 2%;
+    text-align: center;
+    border:1px solid #28a745;
+}
+#j
+    {
+        background-color:#f5fcf6;
+    }
+#i
+{
+    background-color:#d0ead6;
+}
+.btn
+{
+    color: white;
+    background-color: #28a745;
+    border-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.main
+{
+    width:80%;
+    margin: auto;
+}
