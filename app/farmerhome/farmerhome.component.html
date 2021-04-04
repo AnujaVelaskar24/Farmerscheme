@@ -10,7 +10,7 @@
   <label id="project-name">Welcome Anuja</label>
   <a id="header_nav">Home</a>
 
-  <a id="header_nav">Apply for insurance</a>
+  <a id="header_nav" routerLink="ApplyInsuranceComponent">Apply for insurance</a>
   <input class="nav-button"
     style="background-color: rgb(209, 255, 209); border-color: green; position: absolute;margin-left: 0px;right: 60px;"
     type="button" value="Logout" />
@@ -27,7 +27,7 @@
       </h5>
       <p class="card-text" id="fact-number">Sell Request</p>
       <p> Add your crops here to sell them to the bidders.</p>
-      <a href="#" class="btn btn-primary" style="background-color: green;">Go</a>
+      <a href="#" class="btn btn-primary" routerLink="ApplyBidComponent" id="button">Go</a>
     </div>
   </div>
   <div class="col-sm-3">
@@ -37,7 +37,7 @@
       </h5>
       <p class="card-text" id="fact-number">Marketplace</p>
       <p> View all the crops that are on sale in the market.</p>
-      <a href="#" class="btn btn-primary" style="background-color: green;">Go</a>
+      <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a>
     </div>
   </div>
   <div class="col-sm-3">
@@ -47,7 +47,7 @@
       </h5>
       <p class="card-text" id="fact-number">History</p>
       <p>View all the previous transactions of your crops.</p>
-      <a href="#" class="btn btn-primary" style="background-color: green;">Go</a>
+      <a routerLink="FarmerTransactionHistoryComponent" class="btn btn-primary" id="button">Go</a>
     </div>
   </div>
   
@@ -58,7 +58,7 @@
       </h5>
       <p class="card-text" id="fact-number">Claim Insurance</p>
       <p>You can claim the insurance for your crop loss.</p>
-      <a href="#" class="btn btn-primary" style="background-color: green;">Go</a>
+      <a routerLink="ClaimInsurance" class="btn btn-primary" id="button">Go</a>
     </div>
   </div>
 </div>

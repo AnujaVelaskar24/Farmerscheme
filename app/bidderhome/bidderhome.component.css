@@ -57,6 +57,8 @@
     padding-top: 30px;
     width: 100%;
     padding-left: 50px;
+    position: relative;
+    bottom: 0px;
 }
 #footer-contactus{
     letter-spacing: 3px;
