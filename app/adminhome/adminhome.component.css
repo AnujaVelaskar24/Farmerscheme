@@ -1,0 +1,92 @@
+#small_images{
+    /* position: absolute;
+    left: 10px; */
+    color: white;
+    
+}
+#project-name{
+    color: white;
+    margin-right: 50px;
+    margin-left: 20px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    font-size: 22px;
+    /* position: absolute;
+    left: 40px; */
+}
+.nav-button{
+    height:35px;
+    background-color: white;
+    border-radius: 5px;
+    border-color: white;
+    border-width: 1px;
+    width: 80px;
+    position: absolute;
+    right: 170px;
+    
+}
+.main-container{
+    background-color: white;
+    height: "100%";
+    padding: 30px;
+    
+}
+.nav-bar{
+    background-color: green;
+    /* display: flex;
+    justify-content:center;  */
+    padding: 10px;
+    align-items: center;
+    height: 80px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+#header_nav{
+    color: rgb(219, 219, 219);
+    margin-inline:50px ;
+}
+
+
+#news-container{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#card{
+    padding:20px;
+}
+#button{
+    background-color:green;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 30%;
+
+}
+#fact-icons{
+    height:80px;
+    width: 80px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+}
+#fact-number{
+    font-size: 20px;
+    font-weight: bold;
+}
+#footericon-style{
+    margin-right: 20px;
+    color: white;
+    margin-top:5px;
+}
+#footer{
+    background-color: rgb(1, 43, 1);
+    color: white;
+    padding-top: 30px;
+    width: 100%;
+    padding-left: 50px;
+}
+#footer-contactus{
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: bold;
+}
