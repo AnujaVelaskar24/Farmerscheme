@@ -86,3 +86,11 @@
     justify-content: space-between;
     
 }
+.paragraph-text{
+    margin-top: 20px;
+    background-color: rgb(231, 245, 231);
+    border-radius: 10px;
+  padding: 2%;
+    width: 100%;
+    /* padding-left: 30px; */
+}
