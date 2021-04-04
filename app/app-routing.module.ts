@@ -17,10 +17,10 @@ import {AdminCropApprovalComponent} from './admin-crop-approval/admin-crop-appro
 import {AdminApprovalComponent} from './admin-approval/admin-approval.component';
 import {AdminAccountApprovalComponent} from './admin-account-approval/admin-account-approval.component';
 import {ApplyBidComponent} from './apply-bid/apply-bid.component';
-
+import {AboutUsComponent} from './about-us/about-us.component';
 
 const routes: Routes = [
-  {path: '', component: AdminhomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'ClaimInsurance', component: ClaimInsuranceComponent},
@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'AdminCropApprovalComponent', component: AdminCropApprovalComponent},
   {path: 'AdminApprovalComponent', component: AdminApprovalComponent},
   {path: 'AdminAccountApprovalComponent', component: AdminAccountApprovalComponent},
-
+  {path: 'AboutUsComponent', component:AboutUsComponent},
   // {path: '**', component: ErrorComponent},
 ];
 

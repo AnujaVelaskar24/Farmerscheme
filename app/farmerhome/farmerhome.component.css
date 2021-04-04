@@ -90,3 +90,20 @@ background-color:#ff00ff !important;
     font-size: 20px;
     font-weight: bold;
 }
+
+#welcome-paragraph{
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.paragraph-text{
+    margin-top: 20px;
+    background-color: rgb(231, 245, 231);
+    border-radius: 10px;
+  padding: 2%;
+    width: 100%;
+    /* padding-left: 30px; */
+}
