@@ -1,4 +1,4 @@
-  
+ 
         .navbar
         {
             background-color:  #279035;
@@ -8,6 +8,7 @@
         {
             color: white;
             margin-left: 50px;
+            font-size:16px;
         }
         #i1
         {
@@ -32,11 +33,11 @@
      /* height: 75%; */
   /*width: 50%; */
 }
-#btn11
+#btn1
 {
   margin-left:20px;
 }
-#btn12
+#btn2
 {
   margin-left:20px;
   background-color:#d0ead6 ;
@@ -49,7 +50,7 @@
     margin-top:5px;
 }
 #footer{
-    background-color: rgb(1, 43, 1);
+    background-color: #a7a7a7;
     color: white;
     padding-top: 30px;
     width: 100%;
