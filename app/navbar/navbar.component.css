@@ -1,0 +1,64 @@
+  
+        .navbar
+        {
+            background-color:  #279035;
+            padding: 10px;
+        }
+        #i
+        {
+            color: white;
+            margin-left: 50px;
+        }
+        #i1
+        {
+            color: white;
+            margin-left: 10px;
+            font-size: 20px;
+            /* letter-spacing: 0.5px; */
+        }
+        .btn-outline-success 
+        {
+            color: #28a745;
+            background-color: white;
+            border-color: white;
+        }
+        #i:hover 
+        { 
+           color:#124319;
+        }
+        #small_images{
+    /* left: 60px; */
+    margin-left: 40px;
+     /* height: 75%; */
+  /*width: 50%; */
+}
+#btn11
+{
+  margin-left:20px;
+}
+#btn12
+{
+  margin-left:20px;
+  background-color:#d0ead6 ;
+}
+
+
+/* #footericon-style{
+    margin-right: 20px;
+    color: white;
+    margin-top:5px;
+} */
+#footer{
+    background-color: rgb(1, 43, 1);
+    color: white;
+    padding-top: 30px;
+    width: 100%;
+    padding-left: 50px;
+    position: absolute;
+    bottom: 0;
+}
+/* #footer-contactus{
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: bold;
+} */

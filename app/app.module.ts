@@ -22,6 +22,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     AdminLoginComponent,
     AdminApprovalComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
