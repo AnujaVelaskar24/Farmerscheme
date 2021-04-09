@@ -23,6 +23,7 @@ import { AdminApprovalComponent } from './admin-approval/admin-approval.componen
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AdminApprovalComponent,
     AboutUsComponent,
     ContactUsComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

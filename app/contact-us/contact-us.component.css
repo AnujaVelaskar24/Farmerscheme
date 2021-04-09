@@ -37,6 +37,7 @@
     width: 50%;
     margin-top: 6px;
     padding: 20px;
+
   }
   
   /* Clear floats after the columns */
@@ -53,3 +54,16 @@
       margin-top: 0;
     }
   }
+  
+#footericon-style{
+    margin-right: 20px;
+    color: white;
+    margin-top:5px;
+}
+#footer{
+    background-color: rgb(1, 43, 1);
+    color: white;
+    padding-top: 30px;
+    width: 100%;
+    padding-left: 50px;
+}
