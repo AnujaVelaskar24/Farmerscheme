@@ -21,7 +21,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
 
 const routes: Routes = [
-  {path: '', component: BidRequestComponent},
+  {path: '', component: FarmerhomeComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'ClaimInsurance', component: ClaimInsuranceComponent},
