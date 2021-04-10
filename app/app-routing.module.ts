@@ -14,14 +14,15 @@ import {ApplyInsuranceComponent} from './apply-insurance/apply-insurance.compone
 import {AdminhomeComponent} from './adminhome/adminhome.component';
 import {AdminLoginComponent} from './admin-login/admin-login.component';
 import {AdminCropApprovalComponent} from './admin-crop-approval/admin-crop-approval.component';
-import {AdminApprovalComponent} from './admin-approval/admin-approval.component';
 import {AdminAccountApprovalComponent} from './admin-account-approval/admin-account-approval.component';
 import {ApplyBidComponent} from './apply-bid/apply-bid.component';
 import {AboutUsComponent} from './about-us/about-us.component';
-import {ContactUsComponent} from './contact-us/contact-us.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {FooterComponent} from './footer/footer.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
-  {path: '', component: AboutUsComponent},
+  {path: '', component: HomeComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'ClaimInsurance', component: ClaimInsuranceComponent},
@@ -37,7 +38,6 @@ const routes: Routes = [
   {path: 'AdminhomeComponent', component: AdminhomeComponent},
   {path: 'AdminLoginComponent', component: AdminLoginComponent},
   {path: 'AdminCropApprovalComponent', component: AdminCropApprovalComponent},
-  {path: 'AdminApprovalComponent', component: AdminApprovalComponent},
   {path: 'AdminAccountApprovalComponent', component: AdminAccountApprovalComponent},
   {path: 'AboutUsComponent', component:AboutUsComponent},
   {path:'ContactUsComponent', component:ContactUsComponent}
