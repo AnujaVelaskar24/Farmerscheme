@@ -20,7 +20,7 @@ import {ApplyBidComponent} from './apply-bid/apply-bid.component';
 import {AboutUsComponent} from './about-us/about-us.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: BidderhomeComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'ClaimInsurance', component: ClaimInsuranceComponent},
