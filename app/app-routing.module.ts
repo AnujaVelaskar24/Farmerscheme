@@ -19,9 +19,10 @@ import {ApplyBidComponent} from './apply-bid/apply-bid.component';
 import {AboutUsComponent} from './about-us/about-us.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
-  {path: '', component: BidRequestComponent},
+  {path: '', component: HomeComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'ClaimInsurance', component: ClaimInsuranceComponent},
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path: 'AdminCropApprovalComponent', component: AdminCropApprovalComponent},
   {path: 'AdminAccountApprovalComponent', component: AdminAccountApprovalComponent},
   {path: 'AboutUsComponent', component:AboutUsComponent},
+  {path:'ContactUsComponent', component:ContactUsComponent}
   // {path: '**', component: ErrorComponent},
 ];
 

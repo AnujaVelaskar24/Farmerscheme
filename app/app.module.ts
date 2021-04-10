@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -44,6 +45,7 @@ import { FooterComponent } from './footer/footer.component';
     RegisterComponent,
     AdminLoginComponent,
     AboutUsComponent,
+    ContactUsComponent,
     NavbarComponent,
     FooterComponent
   ],

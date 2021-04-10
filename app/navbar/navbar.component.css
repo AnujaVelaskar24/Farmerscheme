@@ -51,11 +51,11 @@ html{
 }
 
 
-#footericon-style{
+/* #footericon-style{
     margin-right: 20px;
     color: white;
     margin-top:5px;
-}
+} */
 #footer{
     background-color: #a7a7a7;
     color: white;
@@ -64,8 +64,8 @@ html{
     padding-left: 50px;
     position: absolute;
 }
-#footer-contactus{
+/* #footer-contactus{
     letter-spacing: 3px;
     font-size: 20px;
     font-weight: bold;
-}
+}*/
