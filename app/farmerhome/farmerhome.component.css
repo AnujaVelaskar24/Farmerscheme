@@ -1,3 +1,11 @@
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
 #small_images{
     /* position: absolute;
     left: 10px; */
@@ -57,6 +65,19 @@
     width: 100%;
     padding-left: 50px;
 }
+#button{
+    background-color:green;
+    /* display: flex;
+    justify-content: center;
+    align-self: center; */
+    width: 30%;
+    margin-top: 20px;
+}
+/* .link
+{
+background-image:none !important;
+background-color:#ff00ff !important;
+} */
 #footer-contactus{
     letter-spacing: 3px;
     font-size: 20px;
@@ -76,4 +97,21 @@
 #fact-number{
     font-size: 20px;
     font-weight: bold;
+}
+
+#welcome-paragraph{
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.paragraph-text{
+    margin-top: 20px;
+    background-color: rgb(231, 245, 231);
+    border-radius: 10px;
+  padding: 2%;
+    width: 100%;
+    /* padding-left: 30px; */
 }

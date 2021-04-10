@@ -1,0 +1,159 @@
+ .main-container{
+    background-color: white;
+    height: "100%";
+    padding: 30px;
+    background-color: rgb(231, 245, 231);
+    /* margin-top: 2%; */
+    /* margin-left: 10%;
+    margin-right: 10%; */
+    margin-bottom: 2%;
+     
+}
+
+
+/* .nav-bar{
+    background-color: green;
+    display: flex;
+    justify-content:center; 
+    padding: 10px;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.nav-button{
+    height:35px;
+    background-color: white;
+    border-radius: 5px;
+    border-color: white;
+    border-width: 1px;
+    width: 80px;
+    position: absolute;
+    right: 170px;
+    
+}
+#header_nav{
+    color: rgb(219, 219, 219);
+    margin-inline:50px ;
+}
+
+#footer{
+    background-color: rgb(1, 43, 1);
+    color: white;
+    padding-top: 30px;
+    width: 100%;
+    padding-left: 50px;
+    position: relative;
+    bottom: 0px;
+
+}
+#footer-contactus{
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#small_images{
+    position: absolute;
+    left: 60px;
+}
+#project-name{
+    color: white;
+    margin-right: 50px;
+    margin-left: 20px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    position: absolute;
+    left: 120px;
+}
+
+
+#big-text{
+    
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding:45%;
+    
+   
+}
+
+.paragraph-text{
+    margin-top: 20px;
+    
+    border-radius: 10px;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 30px;
+}
+ */ 
+ body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing:border-box
+  }
+  
+  .column {
+    float: left;
+    width: 23%;
+    margin-bottom: 16px;
+    margin-left: 2%;
+   
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin:8px;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    /* background-color: #474e5d; */
+    /* color: white; */
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color:  #279035;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  

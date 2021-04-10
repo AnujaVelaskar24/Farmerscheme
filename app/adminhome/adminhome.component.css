@@ -77,16 +77,17 @@
     margin-right: 20px;
     color: white;
     margin-top:5px;
-}
-#footer{
-    background-color: rgb(1, 43, 1);
+  }
+  #footer{
+    background-color: #b8b6b6;
     color: white;
-    padding-top: 30px;
+    margin-top: 8%;
+    padding-top: 2%;
     width: 100%;
-    padding-left: 50px;
-}
-#footer-contactus{
-    letter-spacing: 3px;
-    font-size: 20px;
-    font-weight: bold;
-}
+    text-align: center;
+    padding-bottom: 1%;
+    position: absolute;
+    bottom: 0px;
+    
+    
+  } 

@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplyInsuranceComponent implements OnInit {
 
-  isShow=false;
+  isShow:boolean
   displaytext(){
     this.isShow=!this.isShow;
   }
   constructor() { 
+    this.isShow=false;
    
   }
 

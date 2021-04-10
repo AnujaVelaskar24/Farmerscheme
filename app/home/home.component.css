@@ -1,7 +1,15 @@
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
 .main-container{
     background-color: white;
     height: "100%";
     padding: 30px;
+    
     
 }
 .nav-bar{
@@ -62,6 +70,7 @@
     display: flex;
     justify-content: space-between;
     
+    
 }
 #small-text{
     text-align: center;
@@ -78,7 +87,10 @@
     margin-top: 20px;
     background-color: rgb(231, 245, 231);
     border-radius: 10px;
-    padding-left: 20px;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
     width: 100%;
     /* padding-left: 30px; */
 }
@@ -113,5 +125,6 @@
     height: 300px;
     width:500px;
     border-radius: 20px;
+    margin-top: 8%;
 
 }
