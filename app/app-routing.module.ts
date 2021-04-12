@@ -22,7 +22,7 @@ import {FooterComponent} from './footer/footer.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: FarmerhomeComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'ClaimInsurance', component: ClaimInsuranceComponent},
