@@ -14,7 +14,7 @@
                   <input type="text" placeholder="Enter Username" id=uname name="uname" formControlName="uname">
                   <div *ngIf="!uname?.valid && (uname?.dirty ||uname?.touched)">
                     <div  style="color: crimson;" [hidden]="!uname.errors.required" >
-                        user Name is required
+                        Name is required
                     </div>
                     <div [hidden]="!uname.errors.minlength" style="color: crimson;">
                         Min Length is 10
