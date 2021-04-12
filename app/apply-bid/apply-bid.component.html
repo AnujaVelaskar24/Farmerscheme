@@ -4,21 +4,57 @@
 <div class="row">
     <div class="main">
         <div class="card" >       
-        <form>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
             <div class="container">
                 <h2 align="center">Request for Bid</h2>
                 <label for="croptype"><b>Crop Type</b></label>
-                <input type="text" placeholder="Enter crop type" name="croptype">
+                <input type="text" placeholder="Enter crop type" name="croptype" formControlName="croptype">
+                <div *ngIf="!croptype?.valid && (croptype?.dirty ||croptype?.touched)">
+                    <div [hidden]="!croptype.errors.pattern" style="color: crimson;">
+                        Only characters are allowed
+                      </div>
+                    <div   [hidden]="!croptype.errors.required" style="color: crimson;" >
+                        croptype is required
+                    </div>
+                    
+                </div>
 
 
                 <label for="cropname"><b>Crop Name</b></label>
-                <input type="text" placeholder="Enter crop name" name="cropname">
+                <input type="text" placeholder="Enter crop name" name="cropname" formControlName="cropname">
+                <div *ngIf="!cropname?.valid && (cropname?.dirty ||cropname?.touched)">
+                    <div [hidden]="!cropname.errors.pattern" style="color: crimson;">
+                        Only characters are allowed
+                      </div>
+                    <div   [hidden]="!cropname.errors.required" style="color: crimson;" >
+                        cropname is required
+                    </div>
+                    
+                </div>
 
                 <label for="fertilzertype"><b>Fertilzer Type</b></label>
-                <input type="text" placeholder="Enter fertilzer type" name="fertilzertype">
+                <input type="text" placeholder="Enter fertilzer type" name="fertilzertype" formControlName="fertilzertype">
+                <div *ngIf="!fertilzertype?.valid && (fertilzertype?.dirty ||fertilzertype?.touched)">
+                    <div [hidden]="!fertilzertype.errors.pattern" style="color: crimson;">
+                        Only characters are allowed
+                      </div>
+                    <div   [hidden]="!fertilzertype.errors.required" style="color: crimson;" >
+                        fertilzertype is required
+                    </div>
+                    
+                </div>
             
                 <label for="quantity"><b>Quantity</b></label>
-                <input type="text" placeholder="Enter quantity" name="quantity">
+                <input type="text" placeholder="Enter quantity" name="quantity" formControlName="quantity">
+                <div *ngIf="!quantity?.valid && (quantity?.dirty ||quantity?.touched)">
+                    <div [hidden]="!quantity.errors.pattern" style="color: crimson;">
+                        Only numbers are allowed
+                      </div>
+                    <div   [hidden]="!quantity.errors.required" style="color: crimson;" >
+                        quantity is required
+                    </div>
+                    
+                </div>
 
                 <!-- <label for="soilphcertificate"><b>Soil PH Certificate</b></label>
                 <input type="text" placeholder="Enter soil ph certificate" name="soilphcertificate"> -->
