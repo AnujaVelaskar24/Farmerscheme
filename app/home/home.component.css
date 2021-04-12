@@ -1,3 +1,8 @@
+
+.carousel{
+    padding: 0px;
+}
+
 #page-container {
     position: relative;
     min-height: 100vh;
@@ -9,8 +14,6 @@
     background-color: white;
     height: "100%";
     padding: 30px;
-    
-    
 }
 .nav-bar{
     background-color: green;
@@ -87,10 +90,10 @@
     margin-top: 20px;
     background-color: rgb(231, 245, 231);
     border-radius: 10px;
-    padding-left: 5%;
-    padding-top: 5%;
+    padding: 5%;
+    /* padding-top: 5%;
     padding-right: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 5%; */
     width: 100%;
     /* padding-left: 30px; */
 }
@@ -119,12 +122,9 @@
     font-weight: bold;
 }
 .welcome-box{
-    margin-left: 40px;
+    /* margin-left: 40px; */
 }
 .welcome-image{
-    height: 300px;
-    width:500px;
-    border-radius: 20px;
-    margin-top: 8%;
-
+    height: 500px;
+    width:100%;
 }

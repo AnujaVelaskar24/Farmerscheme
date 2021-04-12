@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import { FarmerhomeComponent} from './farmerhome/farmerhome.component';
-import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
+
 import { BidderhomeComponent } from './bidderhome/bidderhome.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -20,12 +20,12 @@ import {AboutUsComponent} from './about-us/about-us.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 
 const routes: Routes = [
   {path: '', component: FarmerhomeComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
-  {path: 'ClaimInsurance', component: ClaimInsuranceComponent},
   {path: 'BidderHome', component: BidderhomeComponent},
   {path: 'LoginComponent', component: LoginComponent},
   {path: 'RegisterComponent', component: RegisterComponent},
