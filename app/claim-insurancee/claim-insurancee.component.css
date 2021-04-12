@@ -1,0 +1,96 @@
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  #content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+  .row{
+      /* position: fixed; */
+      height: 100%;
+      width: 100%;
+      top:0px;
+      left: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  .main {  
+      width: 25%;
+      margin-top: 80px;
+      margin: auto;
+      padding-top: 30px;
+  
+    }
+  
+     /* Add a card effect for articles */
+     .card {
+      background-color: white;
+      padding: 7%;
+      border-radius: 25px;
+      width: max-content;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     
+    }
+   
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+ 
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+   
+    .container {
+      padding: 16px;
+      width: 350px;
+      margin: auto;
+    }
+    input[type=text], input[type=password], input[type=email], input[type=tel] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    input[type=date]{
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+     
+    
+      font-size: 15px;
+  
+    }
+  
+    /* Set a style for all buttons */
+    button {
+      background-color: rgb(17, 139, 1);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      font-size: 15px;
+    }
+  
+    button:hover {
+      opacity: 0.8;
+    }
+   
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+  
+    }
+    
