@@ -21,6 +21,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import {FormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms'
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 
 
@@ -51,7 +53,9 @@ import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

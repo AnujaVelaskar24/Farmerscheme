@@ -23,7 +23,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 
 const routes: Routes = [
-  {path: '', component: ApplyInsuranceComponent},
+  {path: '', component: FarmerhomeComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'BidderHome', component: BidderhomeComponent},
@@ -37,6 +37,7 @@ const routes: Routes = [
   {path: 'ApplyBidComponent', component: ApplyBidComponent},
   {path: 'AdminhomeComponent', component: AdminhomeComponent},
   {path: 'AdminLoginComponent', component: AdminLoginComponent},
+  {path: ' ClaimInsuranceeComponent ', component:  ClaimInsuranceeComponent },
   {path: 'AdminCropApprovalComponent', component: AdminCropApprovalComponent},
   {path: 'AdminAccountApprovalComponent', component: AdminAccountApprovalComponent},
   {path: 'AboutUsComponent', component:AboutUsComponent},
