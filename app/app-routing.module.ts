@@ -19,6 +19,7 @@ import {ApplyBidComponent} from './apply-bid/apply-bid.component';
 import {AboutUsComponent} from './about-us/about-us.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
   {path: '', component: FarmerhomeComponent},
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path: 'AdminCropApprovalComponent', component: AdminCropApprovalComponent},
   {path: 'AdminAccountApprovalComponent', component: AdminAccountApprovalComponent},
   {path: 'AboutUsComponent', component:AboutUsComponent},
+  {path:'ContactUsComponent', component:ContactUsComponent}
   // {path: '**', component: ErrorComponent},
 ];
 
