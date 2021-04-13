@@ -1,23 +1,40 @@
 #page-container {
+    background-image: url("/assets/images/plantbg.jpg");
+    background-attachment: fixed;
     position: relative;
     min-height: 100vh;
+    /* padding-top: 200px; */
   }
 #content-wrap {
+    
     padding-bottom: 2.5rem;    /* Footer height */
+  }
+  h1{
+      color: white;
+      letter-spacing: 30px;
+      text-align: center;
+      font-size: 60px;
+      text-shadow: 2px 2px 8px rgb(28, 44, 30);
   }
 .table
 {
-    margin-top: 2%;
     text-align: center;
     border:1px solid #28a745;
 }
+tr
+{
+    height: 30px;
+    background-color: lightcoral;
+}
 #j
     {
-        background-color:#f5fcf6;
+        background-color: white;
+        /* background-color:#f5fcf6; */
     }
 #i
 {
-    background-color:#d0ead6;
+    background-color: white;
+    /* background-color:#d0ead6; */
 }
 #btn1
 {
@@ -37,6 +54,7 @@
 }
 .main
 {
+    
     width:80%;
     margin: auto;
 }
