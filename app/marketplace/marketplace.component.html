@@ -2,9 +2,10 @@
   <div id="page-container">
     <div id="content-wrap">
     <div class="main">
+      <h1>MARKETPLACE</h1>
       <table class="table">
           <thead>
-            <tr>
+            <tr style="background-color: rgb(48, 100, 24); color:white; height:60px; text-align: center; margin-top: 20px;">
               <th scope="col">Sr No.</th>
               <th scope="col">Name</th>
               <th scope="col">Quantity</th>
@@ -14,6 +15,7 @@
             </tr>
           </thead>
           <tbody>
+
             <tr id="i">
               <th scope="row">1</th>
               <td>Wheat</td>
@@ -37,6 +39,16 @@
               <td>2200</td>
               <td>2500</td>
               <td><input type="button" class="btn btn-outline-success" id="btn1" value="Bid" routerLink="BidRequestComponent"></td>
+            </tr>
+            <tr id="i" *ngFor="let i of numbers">
+
+                <th scope="row">3</th>
+                <td>Maize</td>
+                <td>1</td>
+                <td>2200</td>
+                <td>2500</td>
+                <td><input type="button" class="btn btn-outline-success" id="btn1" value="Bid" routerLink="BidRequestComponent"></td>
+
             </tr>
           </tbody>
         </table>
