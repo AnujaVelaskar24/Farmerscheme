@@ -6,7 +6,7 @@
         <div class="card" >       
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
             <div class="container">
-                <h2 align="center">Request for Bid</h2>
+                <h2 align="center">Request for Bid</h2><br>
                 <label for="croptype"><b>Crop Type</b></label>
                 <input type="text" placeholder="Enter crop type" name="croptype" formControlName="croptype">
                 <div *ngIf="!croptype?.valid && (croptype?.dirty ||croptype?.touched)">
@@ -18,11 +18,6 @@
                     </div>
                     
                 </div>
-
-                <label for="croptype"><b>Crop Type</b></label>
-                <input type="text" placeholder="Enter crop type" id="croptype" name="croptype" formControlName="croptype">
-            
-               
 
                 <label for="cropname"><b>Crop Name</b></label>
                 <input type="text" placeholder="Enter crop name" name="cropname" formControlName="cropname">
