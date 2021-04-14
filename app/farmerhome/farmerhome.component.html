@@ -106,7 +106,12 @@
           </h5>
           <p class="card-text" id="fact-number">Marketplace</p>
           <p> View all the crops that are on sale in the market.</p>
-          <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a>
+          <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
+
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
+          routerLink="MarketplaceComponent">
+            Go
+          </button>
         </div>
       </div>
       <div class="col-sm-3">
@@ -117,7 +122,11 @@
           </h5>
           <p class="card-text" id="fact-number">History</p>
           <p>View all the previous transactions of your crops.</p>
-          <a routerLink="FarmerTransactionHistoryComponent" class="btn btn-primary" id="button">Go</a>
+          <!-- <a routerLink="FarmerTransactionHistoryComponent" class="btn btn-primary" id="button">Go</a> -->
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
+          routerLink="FarmerTransactionHistoryComponent">
+            Go
+          </button>
         </div>
       </div>
 
@@ -128,7 +137,7 @@
           </h5>
           <p class="card-text" id="fact-number">Claim Insurance</p>
           <p>You can claim the insurance for your crop loss.</p>
-          <a routerLink="ClaimInsuranceeComponent" class="btn btn-primary" id="button" >Go</a>
+          <!-- <a routerLink="ClaimInsuranceeComponent" class="btn btn-primary" id="button" >Go</a> -->
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#claiminsurance">
             Go
           </button>
