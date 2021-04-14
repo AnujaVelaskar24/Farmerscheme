@@ -1,54 +1,117 @@
 <div id="page-container">
-    <div id="content-wrap">
+<div id="content-wrap">
 <div class="row">
     <div class="main">
         <div class="card">       
         <form>
             <div class="container">
                 <h2 align="center">Insurance Premium Calculator</h2>
-                <label for="season"><b>Season</b></label>
-                <input type="text" placeholder="Enter season" name="season">
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 45%">              
+  <div class="form-group">
+    <label for="season"><b>Season</b></label>
+    <select class="form-control"  name="season" id="season">
+        <option value="kharif">Kharif</option>
+        <option value="rabi">Rabi</option>
+        <option value="commercial">Commercial</option>  
+    </select> 
+  </div>
+  </td>
+  <td style="position: relative; padding-left: 45px;">
 
-                <label for="year"><b>Year</b></label>
-                <input type="text" placeholder="Enter year" name="year">
+  <div class="form-group">
+    <label for="year"><b>Year</b></label>
+    <select class="form-control"  name="year" id="year">
+        <option value="2020">2020</option>
+      </select> 
+  </div>
+</td></tr></table>
+<table style="width: 100%">
+    <tr>
+        <td style="width: 45%"> 
+  <div class="form-group">
+    <label for="cropname"><b>Crop Name</b></label>
+    <select class="form-control"  name="cropname" id="cropname">
+        <option value="paddy">Paddy</option>
+        <option value="jowar">jowar</option>
+        <option value="bajra">Bajra</option>
 
-                <label for="cropname"><b>Crop Name</b></label>
-                <input type="text" placeholder="Enter crop name" name="cropname">
+        <option value="maize">Maize</option>
+        <option value="ragi">Ragi</option>
+        <option value="tur">Tur</option>
+        <option value="moong">Moong</option>
+        <option value="urad">Urad</option>
+        <option value="cotton">Cotton</option>
+        <option value="groundnut">Groundnut</option>
+        <option value="sunflower seed">Sunflower seed</option>
+        <option value="soyabean">Soyabean</option>
+        <option value="sesamum">Sesamum</option>
+        <option value="nigerseed">nigerseed</option>
+        <option value="wheat">wheat</option>
+        <option value="barley">barley</option>
+        <option value="gram">gram</option>
+        <option value="masur">masur</option>
+        <option value="mustard">mustard</option>
+        <option value="safflower">safflower</option>
+        <option value="copra">copra</option>
+        <option value="sugarcane">sugarcane</option>
+        <option value="jute">jute</option>
 
-                <label for="suminsured"><b>Sum Insured</b></label>
-                <input type="text" placeholder="Enter sum insured" name="suminsured">
+      </select> 
+  </div> </td>
+  <td style="position: relative; padding-left: 45px;">
 
                 <label for="area"><b>Area (In Hectare)</b></label>
-                <input type="text" placeholder="Enter season" name="area">
+                <input type="text" placeholder="Enter area in hectare" name="area">
 
-              
+
+                
+                </td>
+                </tr>
+                </table>
+
+
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 45%">
                 <input type="reset" value="RESET" data-inline="true">
                
                 <!-- <button type="submit" data-inline="true" onclick="ShowHideDiv(this)" value="yes">CALCULATE</button> -->
-                
+            </td>
+            <td style="position: relative; padding-left: 30px;">
                 
                 <button (click)=displaytext()>CALCULATE</button>
+                </td></tr></table>
                 <div *ngIf="isShow">
 
                    
-                    <table class="table">
+                    <table class="table" style="margin-top: 5%;" >
+                        <tr></tr>
                         <tr>
-                            <th>Insurance Company</th>
-                            <th>Sum Insured(per hectare)</th>
-                            <th>Share Premium</th>
-                            <th>Premium Amount</th>
+                            <th>Insurance Company</th>        
                             <th>Crop Name</th>
                             <th>Area</th>
                            
                         </tr>
                         <tr>
-                            <td>XYZ</td>
-                            <td>123</td>
-                            <td>123</td>
-                            <td>123</td>
+                            <td>XYZ</td> 
                             <td>ABC</td>
                             <td>10</td>
                         </tr>
+                        <tr>
+                            <th>Sum Insured(per hectare)</th>
+                            <th>Share Premium</th>
+                            <th>Premium Amount</th>
+                        </tr>
+                        <tr>
+                            <td>123</td>
+                            <td>123</td>
+                            <td>123</td>
+
+                        </tr>
+                        
+                        
                     </table>
     
                     <button type="submit" >APPLY</button>
