@@ -191,6 +191,7 @@ background-color:#ff00ff !important;
       width: 100%;
       padding: 12px 20px;
       margin: 8px 0;
+      margin-bottom: 0px;
       display: inline-block;
       border: 1px solid #ccc;
       box-sizing: border-box;
