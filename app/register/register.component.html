@@ -101,7 +101,8 @@
                             </table>
 
                             <label for="city"><b>Home Address</b></label>
-                            <input type="text" placeholder="Enter City" id="city" name="city" formControlName="city">
+                            <textarea placeholder="Enter City" id="city" name="city" formControlName="city">
+                                </textarea>
                             <div *ngIf="!city?.valid && (city?.dirty ||city?.touched)">
                                 <div [hidden]="!city.errors.pattern" style="color: crimson;">
                                     Only characters are allowed

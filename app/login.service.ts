@@ -9,7 +9,7 @@ import { Login } from './login';
   providedIn: 'root'
 })
 export class LoginService {
-  private apiServer = "http://localhost:52018/api";
+  private apiServer = "http://localhost:59012/api";
   httpOptions = {
     headers:new HttpHeaders({
       'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient) { }
  
-login(login): Observable<Login> {
-  return this.httpClient.post<Login>(this.apiServer + '/login/', JSON.stringify(login), this.httpOptions)
+login(login): Observable<any> {
+  return this.httpClient.post<any>(this.apiServer + '/login/', JSON.stringify(login), this.httpOptions)
 }
 }

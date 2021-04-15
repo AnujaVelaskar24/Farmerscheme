@@ -30,15 +30,28 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.LoginForm.value);
     this.loginService.login(this.LoginForm.value).subscribe(res => {
-      //console.log(res);
-      if(res.message === "Successful")
+      console.log(res.user_type);
+      if(res === "Unsuccessful")
       {
-        console.log("valid");
-        //this.router.navigateByUrl('');
+        console.log("invalid");
+        // sessionStorage.setItem("username",this.LoginForm.value.username)
+        // this.router.navigateByUrl('Farmerhome');
       }
       else
       {
-        //console.log("invalid");
+        console.log("valid");
+        //sessionStorage.setItem("username",this.LoginForm.value.username)
+        sessionStorage.setItem("userid",res.userid)
+        if(res.user_type===false)
+        {
+          this.router.navigateByUrl('Farmerhome');
+        }
+        else
+        {
+          this.router.navigateByUrl('BidderHome');
+        }
+       
+        
       }
       //console.log('User Logged In!')
      //this.router.navigateByUrl('/home/')

@@ -7,6 +7,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./farmerhome.component.css']
 })
 export class FarmerhomeComponent implements OnInit {
+
+  
   contactForm = new FormGroup({
     croptype: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
     cropname : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
@@ -25,11 +27,14 @@ export class FarmerhomeComponent implements OnInit {
     
   })
 
-  constructor() { }
+  constructor() { 
+  let  userid = sessionStorage.getItem("userid");
+  console.log(userid);
+
+  }
 
   ngOnInit(): void {
   }
-
   get croptype() {
     return this.contactForm.get('croptype');
   } 
