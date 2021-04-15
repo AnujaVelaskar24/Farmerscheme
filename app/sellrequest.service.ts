@@ -7,7 +7,11 @@ import { Sellrequest } from './sellrequest';
 })
 export class SellrequestService {
 
+<<<<<<< HEAD
   private apiServer = "http://localhost:4200/api";
+=======
+  private apiServer = "http://localhost:59012/api";
+>>>>>>> e799751727a03016a3ad3e6a0feca34512e19d73
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -19,4 +23,3 @@ export class SellrequestService {
     return this.httpClient.post<Sellrequest>(this.apiServer + '/sellrequest/', JSON.stringify(sellrequest), this.httpOptions)
   }
 }
-

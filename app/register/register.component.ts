@@ -27,6 +27,8 @@ export class RegisterComponent implements OnInit {
   
   public isfarmer:string="false";
   public certificate_label:string="Certificate Number";
+  public radioData:string = "farmer";
+
 
   label_decision(){
     if(this.isfarmer=="true")
@@ -74,6 +76,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.contactForm.value);
+    // console.log(this.contactForm.value);
+    console.log(this.radioData);
   } 
 }
