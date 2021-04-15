@@ -26,11 +26,14 @@ export class FarmerhomeComponent implements OnInit {
     
   })
 
-  constructor() { }
+  constructor() { 
+  let  userid = sessionStorage.getItem("userid");
+  console.log(userid);
+
+  }
 
   ngOnInit(): void {
   }
-
   get croptype() {
     return this.SellRequestForm.get('croptype');
   } 
