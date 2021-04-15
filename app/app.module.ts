@@ -24,12 +24,12 @@ import { FooterComponent } from './footer/footer.component';
 import {FormsModule} from '@angular/forms'
 import {ReactiveFormsModule} from '@angular/forms'
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    
     ApplyInsuranceComponent,
     ApplyBidComponent,
     FarmerhomeComponent,
@@ -54,7 +54,8 @@ import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
