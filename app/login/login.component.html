@@ -5,37 +5,37 @@
     <div class="main">
         <div class="card">
             
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-     
-        <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" formControlName="uname">
-          <div *ngIf="!uname?.valid && (uname?.dirty ||uname?.touched)">
-            <div  style="color: crimson;" [hidden]="!uname.errors.required" >
-                user Name is required
-            </div>
-            
-        </div> 
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" formControlName="uname">
+              <div *ngIf="!uname?.valid && (uname?.dirty ||uname?.touched)">
+                <div  style="color: crimson;" [hidden]="!uname.errors.required" >
+                    user Name is required
+                </div>
+                
+              </div> 
 
-     
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" formControlName="psw">
-          <div *ngIf="!psw?.valid && (psw?.dirty ||psw?.touched)">
-            <div   [hidden]="!psw.errors.required" style="color: crimson;" >
-                password is required
+        
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" formControlName="psw">
+              <div *ngIf="!psw?.valid && (psw?.dirty ||psw?.touched)">
+                <div   [hidden]="!psw.errors.required" style="color: crimson;" >
+                    password is required
+                </div>
+                
+              </div>
+        
+              <button type="submit">Login</button>
+              <a href="#">Internal login</a>
             </div>
-            
-        </div>
-     
-          <button type="submit">Login</button>
-          <a href="#">Internal login</a>
-        </div>
-     
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-      </form>
+        
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
         
         </div>
     </div>
