@@ -15,6 +15,14 @@
                     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
                         <div class="container">
                             <h3 style="margin-bottom: 30px; text-align: center;">Register Here</h3>
+                            <input type="radio" id="male" name="gender" value="male" (click)='label_decision()'>
+                            <label for="male">Farmer</label><br>
+                            <input type="radio" id="female" name="gender" value="female" (click)='label_decision()'>
+                            <label for="female">Bidder</label><br>
+
+                            <input type="radio" ng-model="user.checked" ng-value="true" />Yes
+                            <input type="radio" ng-model="user.checked" ng-value="false" />No
+
                             <table style="width: 100%">
                                 <tr>
                                     <td style="width: 30%">
@@ -60,6 +68,62 @@
                                     </td>
                                 </tr>
                             </table>
+
+                            <label for="city"><b>Home Address</b></label>
+                            <input type="text" placeholder="Enter City" id="city" name="city" formControlName="city">
+                            <div *ngIf="!city?.valid && (city?.dirty ||city?.touched)">
+                                <div [hidden]="!city.errors.pattern" style="color: crimson;">
+                                    Only characters are allowed
+                                </div>
+                                <div [hidden]="!city.errors.required" style="color: crimson;">
+                                    city is required
+                                </div>
+                                <div [hidden]="!city.errors.minlength" style="color: crimson;">
+                                    Min Length is 3
+                                </div>
+                            </div>
+
+                            <table style="width: 100%" [hidden]="isfarmer">
+                                <tr>
+                                    <td style="width: 60%">
+                                        <label for="email"><b>Land Address</b></label>
+                                        <input type="email" placeholder="Enter Email Address" id="email" name="email"
+                                            formControlName="email">
+                                        <div *ngIf="!email?.valid && (email?.dirty ||email?.touched)">
+                                            <div [hidden]="!email.errors.pattern" style="color: crimson;">
+                                                enter correct format of email
+                                            </div>
+                                            <div [hidden]="!email.errors.required" style="color: crimson;">
+                                                email is required
+                                            </div>
+                                            <div [hidden]="!email.errors.minlength" style="color: crimson;">
+                                                Min Length is 9
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="position: relative; padding-left: 30px;">
+                                        <label for="mobile"><b>Land Area</b></label>
+                                        <input type="tel" placeholder="Enter Mobile Number" id="mobile" name="mobile"
+                                            formControlName="mobile">
+                                        <div *ngIf="!mobile?.valid && (mobile?.dirty ||mobile?.touched)">
+                                            <div [hidden]="!mobile.errors.pattern" style="color: crimson;">
+                                                Only number are allowed
+                                            </div>
+                                            <div [hidden]="!mobile.errors.required" style="color: crimson;">
+                                                Phone number is required
+                                            </div>
+                                            <div [hidden]="!mobile.errors.minlength" style="color: crimson;">
+                                                Min Length is 10
+                                            </div>
+                                            <div [hidden]="!mobile.errors.maxlength" style="color: crimson;">
+                                                Max Length is 10
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+
                             <table style="width: 100%">
                                 <tr>
                                     <td style="width: 45%">
@@ -93,61 +157,6 @@
                                                 Min Length is 10
                                             </div>
                                             <div [hidden]="!mobile.errors.maxlength" style="color: crimson;">
-                                                Max Length is 10
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <label for="city"><b>Home Address</b></label>
-                            <input type="text" placeholder="Enter City" id="city" name="city" formControlName="city">
-                            <div *ngIf="!city?.valid && (city?.dirty ||city?.touched)">
-                                <div [hidden]="!city.errors.pattern" style="color: crimson;">
-                                    Only characters are allowed
-                                </div>
-                                <div [hidden]="!city.errors.required" style="color: crimson;">
-                                    city is required
-                                </div>
-                                <div [hidden]="!city.errors.minlength" style="color: crimson;">
-                                    Min Length is 3
-                                </div>
-                            </div>
-
-                            <table style="width: 100%">
-                                <tr>
-                                    <td style="width: 45%">
-                                        <label for="pan"><b>PAN card No.</b></label>
-                                        <input type="text" placeholder="Enter PAN Number" id="pan"
-                                            formControlName="pan">
-                                        <div *ngIf="!pan?.valid && (pan?.dirty ||pan?.touched)">
-
-                                            <div [hidden]="!pan.errors.required" style="color: crimson;">
-                                                PAN number is required
-                                            </div>
-                                            <div [hidden]="!pan.errors.minlength" style="color: crimson;">
-                                                Min Length is 10
-                                            </div>
-                                            <div [hidden]="!pan.errors.maxlength" style="color: crimson;">
-                                                Max Length is 10
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td style="position: relative; padding-left: 30px;">
-                                        <label for="Aadhar"><b>Aadhar No.</b></label>
-                                        <input type="text" placeholder="Enter Aadhar Number" id="Aadhar"
-                                            formControlName="Aadhar">
-                                        <div *ngIf="!Aadhar?.valid && (Aadhar?.dirty ||Aadhar?.touched)">
-                                            <div [hidden]="!Aadhar.errors.pattern" style="color: crimson;">
-                                                Only number are allowed
-                                            </div>
-                                            <div [hidden]="!Aadhar.errors.required" style="color: crimson;">
-                                                Aadhar number is required
-                                            </div>
-                                            <div [hidden]="!Aadhar.errors.minlength" style="color: crimson;">
-                                                Min Length is 10
-                                            </div>
-                                            <div [hidden]="!Aadhar.errors.maxlength" style="color: crimson;">
                                                 Max Length is 10
                                             </div>
                                         </div>
@@ -196,6 +205,68 @@
                                     </td>
                                 </tr>
                             </table>
+
+                            <table style="width: 100%">
+                                <tr>
+                                    <td style="width: 30%">
+                                        <label for="pan"><b>PAN card No.</b></label>
+                                        <input type="text" placeholder="Enter PAN Number" id="pan"
+                                            formControlName="pan">
+                                        <div *ngIf="!pan?.valid && (pan?.dirty ||pan?.touched)">
+
+                                            <div [hidden]="!pan.errors.required" style="color: crimson;">
+                                                PAN number is required
+                                            </div>
+                                            <div [hidden]="!pan.errors.minlength" style="color: crimson;">
+                                                Min Length is 10
+                                            </div>
+                                            <div [hidden]="!pan.errors.maxlength" style="color: crimson;">
+                                                Max Length is 10
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="width: 30%;padding-left: 20px;">
+                                        <label for="Aadhar"><b>Aadhar No.</b></label>
+                                        <input type="text" placeholder="Enter Aadhar Number" id="Aadhar"
+                                            formControlName="Aadhar">
+                                        <div *ngIf="!Aadhar?.valid && (Aadhar?.dirty ||Aadhar?.touched)">
+                                            <div [hidden]="!Aadhar.errors.pattern" style="color: crimson;">
+                                                Only number are allowed
+                                            </div>
+                                            <div [hidden]="!Aadhar.errors.required" style="color: crimson;">
+                                                Aadhar number is required
+                                            </div>
+                                            <div [hidden]="!Aadhar.errors.minlength" style="color: crimson;">
+                                                Min Length is 10
+                                            </div>
+                                            <div [hidden]="!Aadhar.errors.maxlength" style="color: crimson;">
+                                                Max Length is 10
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="width: 30%;padding-left: 20px;">
+                                        <label for="Aadhar" ><b>{{certificate_label}}</b></label>
+                                        <input type="text" placeholder="Enter Aadhar Number" id="Aadhar"
+                                            formControlName="Aadhar">
+                                        <div *ngIf="!Aadhar?.valid && (Aadhar?.dirty ||Aadhar?.touched)">
+                                            <div [hidden]="!Aadhar.errors.pattern" style="color: crimson;">
+                                                Only number are allowed
+                                            </div>
+                                            <div [hidden]="!Aadhar.errors.required" style="color: crimson;">
+                                                Aadhar number is required
+                                            </div>
+                                            <div [hidden]="!Aadhar.errors.minlength" style="color: crimson;">
+                                                Min Length is 10
+                                            </div>
+                                            <div [hidden]="!Aadhar.errors.maxlength" style="color: crimson;">
+                                                Max Length is 10
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            
                             <div id="buttoncontainer">
                                 <button type="submit" style="margin-top: 50px;">Register</button>
                             </div>
