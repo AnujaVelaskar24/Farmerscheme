@@ -25,7 +25,6 @@ import {FormsModule} from '@angular/forms'
 import {ReactiveFormsModule} from '@angular/forms'
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

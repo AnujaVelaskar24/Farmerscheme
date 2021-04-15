@@ -7,7 +7,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./farmerhome.component.css']
 })
 export class FarmerhomeComponent implements OnInit {
-  contactForm = new FormGroup({
+  
+  SellRequestForm = new FormGroup({
     croptype: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
     cropname : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
     fertilzertype : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
@@ -31,20 +32,20 @@ export class FarmerhomeComponent implements OnInit {
   }
 
   get croptype() {
-    return this.contactForm.get('croptype');
+    return this.SellRequestForm.get('croptype');
   } 
   get cropname() {
-    return this.contactForm.get('cropname');
+    return this.SellRequestForm.get('cropname');
   }
   get fertilzertype() {
-    return this.contactForm.get('fertilzertype');
+    return this.SellRequestForm.get('fertilzertype');
   }
   get quantity() {
-    return this.contactForm.get('quantity');
+    return this.SellRequestForm.get('quantity');
   }
 
   onSubmit() {
-    console.log(this.contactForm.value);
+    console.log(this.SellRequestForm.value);
   } 
 
   get policyno() {
