@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SellrequestService } from '../sellrequest.service';
+import { CroptypefetchService } from '../croptypefetch.service';
 
 @Component({
   selector: 'app-farmerhome',
@@ -10,10 +13,11 @@ export class FarmerhomeComponent implements OnInit {
   
   SellRequestForm = new FormGroup({
     croptype: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    cropname : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    fertilzertype : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    crop_id : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    fertilizer_type : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
     quantity : new FormControl('',[Validators.required, Validators.pattern("^[0-9]+$")]), 
-    
+    base_price : new FormControl('',[Validators.required]),
+    userid: new FormControl(sessionStorage.getItem("userid")),
   })
   contactForm1 = new FormGroup({
     policyno: new FormControl('',[Validators.required, Validators.pattern("^[0-9]+$")]),
@@ -26,29 +30,60 @@ export class FarmerhomeComponent implements OnInit {
     
   })
 
-  constructor() { 
-  let  userid = sessionStorage.getItem("userid");
-  console.log(userid);
-
-  }
+  constructor(public fb: FormBuilder,
+    private router: Router,
+    public sellrequestService: SellrequestService,
+    public croptypefetchService: CroptypefetchService
+    ) { }
 
   ngOnInit(): void {
   }
   get croptype() {
     return this.SellRequestForm.get('croptype');
   } 
-  get cropname() {
-    return this.SellRequestForm.get('cropname');
+  get crop_id() {
+    return this.SellRequestForm.get('crop_id');
   }
-  get fertilzertype() {
-    return this.SellRequestForm.get('fertilzertype');
+  get fertilizer_type() {
+    return this.SellRequestForm.get('fertilizer_type');
   }
   get quantity() {
     return this.SellRequestForm.get('quantity');
   }
+  get base_price() {
+    return this.SellRequestForm.get('base_price');
+  }
+  get userid()
+  {
+    return this.userid;
+  }
 
+  public selectedtype:string;
+  public crops = [];
+  ontypeSelect(selectedtype){
+    console.log(selectedtype);
+
+    this.croptypefetchService.croptypefetch(this.selectedtype).subscribe(res => {
+      console.log(res, "ontype console data");
+      this.crops=res;
+    });
+  }
+
+  
   onSubmit() {
-    console.log(this.SellRequestForm.value);
+    console.log(this.SellRequestForm.value, "Input data");
+    
+    this.sellrequestService.sellrequest(this.SellRequestForm.value).subscribe(res => {
+      console.log(res, "sell request console");
+      // if(res === "Unsuccessful")
+      // {
+      //   console.log("invalid");
+      // }
+      // else
+      // {
+      //   console.log("valid");
+      // }
+    });
   } 
 
   get policyno() {
