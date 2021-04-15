@@ -23,7 +23,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 
 const routes: Routes = [
-  {path: '', component: ApplyInsuranceComponent},
+  {path: '', component: ClaimInsuranceeComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'BidderHome', component: BidderhomeComponent},
