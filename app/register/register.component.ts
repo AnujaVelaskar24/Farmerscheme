@@ -7,6 +7,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
   contactForm = new FormGroup({
     uname: new FormControl('',[Validators.required,Validators.minLength(10)]),
     psw: new FormControl('',[Validators.required,Validators.minLength(10)]),
@@ -23,6 +24,21 @@ export class RegisterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {}
+
+  public isfarmer:string="false";
+  public certificate_label:string="Certificate Number";
+
+  label_decision(){
+    if(this.isfarmer=="true")
+  {
+    
+    this.certificate_label="Soil pH Certificate"; 
+  }else{
+    this.certificate_label="Trader License"; 
+
+  }
+  }
+  
 
   get uname() {
     return this.contactForm.get('uname');
