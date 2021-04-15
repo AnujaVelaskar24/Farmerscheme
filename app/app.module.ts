@@ -26,7 +26,6 @@ import {ReactiveFormsModule} from '@angular/forms'
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
