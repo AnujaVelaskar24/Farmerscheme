@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {}
-
+  
   public isfarmer:string="false";
   public certificate_label:string="Certificate Number";
 
@@ -39,7 +39,9 @@ export class RegisterComponent implements OnInit {
   }
   }
   
-
+  get usertype(){
+    return this.contactForm.get('usertype');
+  }
   get uname() {
     return this.contactForm.get('uname');
   } 

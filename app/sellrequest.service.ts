@@ -7,7 +7,7 @@ import { Sellrequest } from './sellrequest';
 })
 export class SellrequestService {
 
-  private apiServer = "http://localhost:58894/api";
+  private apiServer = "http://localhost:4200/api";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
