@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BidderhomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() 
+  {
+    let  userid = sessionStorage.getItem("userid");
+    console.log(userid);
+  }
 
   ngOnInit(): void {
   }
