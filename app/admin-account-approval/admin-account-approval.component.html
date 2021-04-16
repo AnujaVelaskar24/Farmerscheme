@@ -3,7 +3,7 @@
   
   <div id="page-container">
     <div id="content-wrap">
-    <div class="main">
+    <!-- <div class="main">
     <table class="table">
         <thead>
           <tr>
@@ -59,5 +59,56 @@
       </table>
     </div>
     </div>
-    </div>
+    </div> -->
+
+
+    <div class="main">
+      <table class="table" cellpadding="0" cellspacing="0" border="1">
+        <thead>
+          <tr style="font-size: smaller;width: 100%;">
+            <th scope="col">User ID</th>
+            <th scope="col">User Type</th>
+            <th scope="col">Username</th>
+            <th scope="col">Phone No.</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Password</th>
+            <th scope="col">Home Address</th>
+            <th scope="col">Account No.</th>
+            <th scope="col">IFSC Code</th>
+            <th scope="col">PAN</th>
+            <th scope="col">Aadhar</th>
+            <th scope="col">Certificate</th>
+            <th scope="col" colspan="2">Action</th>
+          </tr>
+        </thead>
+      
+    
+    
+      
+        <tbody style="font-size: smaller;width: 100%;">
+          <tr *ngFor="let item of users ">
+            <td> {{item.userid}}</td>
+            <td>{{item.user_type}}</td>
+            <td> {{item.username}}</td>
+            <td> {{item.phone_no}}</td>
+            <td> {{item.email_id}}</td>
+            <td> {{item.password}}</td>
+            <td> {{item.home_address}}</td>
+            <td> {{item.account_no}}</td>
+            <td> {{item.ifsc_code}}</td>
+            <td> {{item.pan}}</td>
+            <td> {{item.aadhar}}</td>
+            <td> {{item.certificate}}</td>
+            
+            <td><button class="btn btn-outline-success" id="btn1" value="Approve" onclick="onapprove()">Approve</button></td>
+            <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" onclick="disapprove()">Disapprove</button></td>
+        </tr>
+          
+        </tbody>
+    
+      </table>
+
+        </div>
+        </div>
+        </div>
 </body>
