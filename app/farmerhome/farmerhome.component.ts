@@ -12,11 +12,11 @@ import { CroptypefetchService } from '../croptypefetch.service';
 export class FarmerhomeComponent implements OnInit {
   
   SellRequestForm = new FormGroup({
-    croptype: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    crop_id : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    fertilizer_type : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    croptype: new FormControl('',[Validators.required]),
+    crop_id : new FormControl('',[Validators.required]),
+    fertilizer_type : new FormControl('',[Validators.required]),  //, Validators.pattern("^[a-zA-Z]+$")]),
     quantity : new FormControl('',[Validators.required, Validators.pattern("^[0-9]+$")]), 
-    base_price : new FormControl('',[Validators.required]),
+    base_price : new FormControl('',[Validators.required, Validators.pattern("^[0-9]+$")]),
     userid: new FormControl(sessionStorage.getItem("userid")),
   })
   contactForm1 = new FormGroup({
@@ -69,6 +69,10 @@ export class FarmerhomeComponent implements OnInit {
     });
   }
 
+  public selectedfertilizertype:string;
+  onfertilizertypeSelect(selectedfertilizertype){
+    console.log(selectedfertilizertype);
+  }
   
   onSubmit() {
     console.log(this.SellRequestForm.value, "Input data");
