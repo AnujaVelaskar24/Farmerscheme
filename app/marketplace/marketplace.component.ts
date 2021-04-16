@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Getmarketclass } from '../getmarketclass';
+import {GetmarketplaceService} from '../getmarketplace.service';
 
 @Component({
   selector: 'app-marketplace',
@@ -8,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class MarketplaceComponent implements OnInit {
 
   numbers = [1,2,3,4,5,6,7,8,9,10,11];
-  constructor() { }
+  constructor(public getmarket:GetmarketplaceService) {}
+  getmarkets : Getmarketclass[]=[];
 
   ngOnInit(): void {
+    this.getmarket.getmarketplace().subscribe((data:Getmarketclass[])=>{
+      this.getmarkets=data;
+    })
   }
 
 }

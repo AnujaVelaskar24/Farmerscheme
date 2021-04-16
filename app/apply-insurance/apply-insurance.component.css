@@ -54,7 +54,7 @@
 
   }
   input[type=text], input[type=password], input[type=email], input[type=tel] {
-    width: 100%;
+    width:max-content;
   
     padding: 12px 20px;
     margin: 8px 0;
@@ -75,12 +75,13 @@
   }
 
   input[type=select]{
-    width: 100%;
+    width:max-content;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+
    
   
     font-size: 15px;
@@ -95,11 +96,11 @@
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 40%;
+    width: 50%;
     font-size: 15px;
     margin-left: 30%;
   }
-
+ 
   button:hover {
     opacity: 0.8;
   }

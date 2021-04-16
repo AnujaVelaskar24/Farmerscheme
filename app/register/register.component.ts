@@ -25,10 +25,12 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public isfarmer:string="false";
+  public isfarmer:string="true";
   public certificate_label:string="Certificate Number";
+  public radioData:string = "farmer";
 
-  label_decision(){
+ 
+ label_decision(){
     if(this.isfarmer=="true")
   {
     
@@ -72,6 +74,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.contactForm.value);
+    // console.log(this.contactForm.value);
+    console.log(this.radioData);
   } 
 }
