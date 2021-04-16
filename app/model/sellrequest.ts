@@ -7,4 +7,5 @@ export class Sellrequest {
     base_price: number;
     crop_approval_status: boolean;
     bid_approval_status: boolean;
+
 }
