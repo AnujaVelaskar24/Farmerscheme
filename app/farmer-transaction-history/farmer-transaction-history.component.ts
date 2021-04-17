@@ -13,9 +13,18 @@ export class FarmerTransactionHistoryComponent implements OnInit {
   constructor(public FarmerhistoryService: FarmerhistoryService) { }
 
   ngOnInit(): void {
-    this.FarmerhistoryService.getAll().subscribe((data: Farmerhistory[])=>{
-      this.Farmerhistory = data;
-  })  
+    var  uid:number = Number(sessionStorage.getItem("userid"));
+  //   this.FarmerhistoryService.getAll(uid).subscribe((data: Farmerhistory[])=>{
+  //     this.Farmerhistory = data;
+  // })  
+console.log(uid,"userid");
+
+  this.FarmerhistoryService.getAll(uid).subscribe(res => {
+    
+    console.log(res, "ontype console data");
+    this.Farmerhistory=res;
+    console.log(Farmerhistory,"farmerhistory");
+  });
   }
 
 }

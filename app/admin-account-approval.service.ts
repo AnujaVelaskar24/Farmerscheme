@@ -20,7 +20,7 @@ export class AdminAccountApprovalService {
 Getuser_information(): Observable<any> {
   return this.httpClient.get<any>(this.apiServer + '/adminaccountapproval/')
 }
-onapprove(userid,user): Observable<any> {
-  return this.httpClient.put<any>(this.apiServer + '/adminaccountapproval/', JSON.stringify(user), this.httpOptions)
+update(userid:number): Observable<any> {
+  return this.httpClient.get<any>(this.apiServer + '/adminaccountapproval?userid='+userid )
 }
 }

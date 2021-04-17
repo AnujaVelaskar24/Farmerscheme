@@ -21,6 +21,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
+import {LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
 
 const routes: Routes = [
   {path: '', component: MarketplaceComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'BidderHome', component: BidderhomeComponent},
   {path: 'LoginComponent', component: LoginComponent},
   {path: 'RegisterComponent', component: RegisterComponent},
+  {path: 'LandDetailsRegisterComponent', component: LandDetailsRegisterComponent},
   {path: 'MarketplaceComponent', component: MarketplaceComponent},
   {path: 'BidderTransactionHistoryComponent', component: BidderTransactionHistoryComponent},
   {path: 'FarmerTransactionHistoryComponent', component: FarmerTransactionHistoryComponent},

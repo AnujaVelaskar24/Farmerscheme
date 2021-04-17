@@ -25,6 +25,7 @@ import {FormsModule} from '@angular/forms'
 import {ReactiveFormsModule} from '@angular/forms'
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { HttpClientModule } from '@angular/common/http';
     ContactUsComponent,
     NavbarComponent,
     FooterComponent,
-    ClaimInsuranceeComponent
+    ClaimInsuranceeComponent,
+    LandDetailsRegisterComponent
   ],
   imports: [
     BrowserModule,
