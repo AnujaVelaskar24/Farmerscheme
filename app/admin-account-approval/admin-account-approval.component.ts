@@ -33,8 +33,14 @@ ApproveForm = new FormGroup({
       this.users=res;
   });
 }
+//ngOnInit(){}
+  ngOnInit() 
+  {
+    this.adminaccountapprovalservice.Getuser_information().subscribe(res => {
+      this.users=res;
+      console.log("hi");
+    });
 
-  ngOnInit(): void {
   }
   get userid() {
     return this.ApproveForm.get('userid');
@@ -72,8 +78,11 @@ ApproveForm = new FormGroup({
   get certificate() {
     return this.ApproveForm.get('certificate');
   }
-onapprove()
+onapprove(userid)
 {
-
+  this.adminaccountapprovalservice.update(userid).subscribe(res => {
+    console.log(res, "ontype console data");
+    this.ngOnInit();
+  });
 }
 }
