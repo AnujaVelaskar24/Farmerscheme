@@ -24,7 +24,7 @@ import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.co
 import {LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
 
 const routes: Routes = [
-  {path: '', component: AdminhomeComponent},
+  {path: '', component: BidderhomeComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'BidderHome', component: BidderhomeComponent},
