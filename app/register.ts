@@ -1,4 +1,5 @@
 export class Register {
+    userid:number;
     user_type:boolean;
     username:string;
     phone_no:number;
@@ -16,5 +17,6 @@ export class Register {
 export class land{
     land_address:string;
     area:number;
+    userid:number;
 }
 

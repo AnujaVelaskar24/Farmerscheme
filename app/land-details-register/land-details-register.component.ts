@@ -9,14 +9,25 @@ import {LandDetailsRegisterService} from '../land-details-register.service';
 export class LandDetailsRegisterComponent implements OnInit {
   LandDetailsRegisterForm = new FormGroup({
     land_address:new FormControl('',[Validators.required,Validators.minLength(3), Validators.pattern("^[a-zA-Z]+$")]),
-    area:new FormControl('')
+    area:new FormControl(''),
+    userid: new FormControl(sessionStorage.getItem("userid")),
     
   });
-
-  constructor( public landdetailsregister: LandDetailsRegisterService) { }
   
+  //console.log(uid);
+  
+  constructor( public LandDetailsRegisterService: LandDetailsRegisterService) { 
+    var uid:String = sessionStorage.getItem("userid");
+    console.log(uid);
+  }
+  
+  
+  ngOnInit(): void {
 
-  ngOnInit(): void {}
+  
+    
+    
+  }
   
   get land_address(){
     return this.LandDetailsRegisterForm.get('land_address');
@@ -24,13 +35,29 @@ export class LandDetailsRegisterComponent implements OnInit {
   get area(){
     return this.LandDetailsRegisterForm.get('area');
   }
+  get userid(){
+    return this.LandDetailsRegisterForm.get('userid');
+  }
 
   onSubmit() {
-    console.log(this.land_address.value);
-    this.landdetailsregister.landdetailsregister(this.LandDetailsRegisterForm.value).subscribe(res => {
+    console.log(this.userid);
+    let landobj = new land();
+    landobj.land_address=this.land_address.value.land_address;
+    landobj.area=this.land_address.value.area;
+    landobj.userid= Number(sessionStorage.getItem("userid"));
+    console.log(landobj,"land detail")
+    this.LandDetailsRegisterService.landdetailsregister(this.LandDetailsRegisterForm.value).subscribe(res => {
       console.log(res)
+     
       // this.router.navigateByUrl('/home/')
     });
+
+    
     
   } 
+}
+export class land{
+  land_address:string;
+  area:number;
+  userid:number;
 }

@@ -30,7 +30,7 @@ get password() {
 onSubmitLoginForm() {
   console.log(this.LoginForm.value);
   this.loginService.login(this.LoginForm.value).subscribe(res => {
-    console.log(res.user_type);
+    console.log(res,"res value");
     if(res === "Unsuccessful")
     {
       console.log("invalid");
