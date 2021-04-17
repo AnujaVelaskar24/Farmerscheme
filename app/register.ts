@@ -1,12 +1,12 @@
 export class Register {
-    user_type:string;
+    user_type:boolean;
     username:string;
     phone_no:number;
-    semail_id:string;
+    email_id:string;
     password:string;
     home_address:string;
     account_no:number;
-    ifsc_code:string;
+    ifsc_code:number;
     pan:number;
     aadhar:number;
     certificate:boolean;
