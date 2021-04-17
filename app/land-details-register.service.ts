@@ -17,6 +17,6 @@ export class LandDetailsRegisterService {
   constructor(private httpClient: HttpClient) { }
 
 landdetailsregister(landdetailregister): Observable<any> {
-  return this.httpClient.post<any>(this.apiServer + '/landdetailsregister/', JSON.stringify(landdetailregister), this.httpOptions)
+  return this.httpClient.post<any>(this.apiServer + '/land/', JSON.stringify(landdetailregister), this.httpOptions)
 }
 }

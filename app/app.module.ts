@@ -26,6 +26,8 @@ import {ReactiveFormsModule} from '@angular/forms'
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { LandDetailsRegisterComponent } from './land-details-register/land-detai
     NavbarComponent,
     FooterComponent,
     ClaimInsuranceeComponent,
-    LandDetailsRegisterComponent
+    LandDetailsRegisterComponent,
+    ForgotpasswordComponent,
+ 
   ],
   imports: [
     BrowserModule,
