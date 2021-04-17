@@ -26,8 +26,9 @@ import {ReactiveFormsModule} from '@angular/forms'
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
-
+import { AdminBidApprovalComponent } from './admin-bid-approval/admin-bid-approval.component';
+import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admin-insurance-approval.component';
+import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +54,14 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     FooterComponent,
     ClaimInsuranceeComponent,
     LandDetailsRegisterComponent,
+<<<<<<< HEAD
+    AdminBidApprovalComponent,
+    AdminInsuranceApprovalComponent,
+    AdminInsuranceClaimApprovalComponent
+=======
     ForgotpasswordComponent,
  
+>>>>>>> ee9ed47e5f84a3d0f8b9b3c52d9a03343fb19ed1
   ],
   imports: [
     BrowserModule,

@@ -23,9 +23,12 @@ import {ForgotpasswordComponent} from './forgotpassword/forgotpassword.component
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 import {LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
+import {AdminBidApprovalComponent} from './admin-bid-approval/admin-bid-approval.component';
+import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admin-insurance-approval.component';
+import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 
 const routes: Routes = [
-  {path: '', component: AdminLoginComponent},
+  {path: '', component: AdminInsuranceClaimApprovalComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'BidderHome', component: BidderhomeComponent},
@@ -44,6 +47,10 @@ const routes: Routes = [
   {path: ' ClaimInsuranceeComponent ', component:  ClaimInsuranceeComponent },
   {path: 'AdminCropApprovalComponent', component: AdminCropApprovalComponent},
   {path: 'AdminAccountApprovalComponent', component: AdminAccountApprovalComponent},
+  {path: 'AdminInsuranceApprovalComponent', component: AdminInsuranceApprovalComponent},
+  {path: 'AdminBidApprovalComponent', component: AdminBidApprovalComponent},
+  {path: 'AdminInsuranceClaimApprovalComponent', component: AdminInsuranceClaimApprovalComponent},
+
   {path: 'AboutUsComponent', component:AboutUsComponent},
   {path:'ContactUsComponent', component:ContactUsComponent}
   // {path: '**', component: ErrorComponent},
@@ -54,3 +61,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+AdminInsuranceClaimApprovalComponent
