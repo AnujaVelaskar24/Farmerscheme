@@ -82,9 +82,6 @@
           </tr>
         </thead>
       
-    
-    
-      
         <tbody style="font-size: smaller;width: 100%;">
           <tr *ngFor="let item of users ">
             <td> {{item.userid}}</td>
@@ -100,8 +97,8 @@
             <td> {{item.aadhar}}</td>
             <td> {{item.certificate}}</td>
             
-            <td><button class="btn btn-outline-success" id="btn1" value="Approve" onclick="onapprove()">Approve</button></td>
-            <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" onclick="disapprove()">Disapprove</button></td>
+            <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.userid)">Approve</button></td>
+            <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
         </tr>
           
         </tbody>

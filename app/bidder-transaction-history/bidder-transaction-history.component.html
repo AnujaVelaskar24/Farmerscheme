@@ -17,39 +17,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr id="i">
+          <tr id="i" *ngFor="let Bidderhistory of Bidderhistory">
             <th scope="row">1</th>
-            <td>1011</td>
-            <td>Wheat</td>
-            <td>5</td>
-            <td>Prills</td>
-            <td>1925</td>
-            <td>12000</td>
-            <td>14000</td>
-            <td>2-4-2021</td>
+            <td>{{Bidderhistory.transaction_id}}</td>
+            <td>{{Bidderhistory.crop_name}}</td>
+            <td>{{Bidderhistory.quantity}}</td>
+            <td>{{Bidderhistory.fertilizer_type}}</td>
+            <td>{{Bidderhistory.msp}}</td>
+            <td>{{Bidderhistory.base_price}}</td>
+            <td>{{Bidderhistory.amount}}</td>
+            <td>{{Bidderhistory.bidding_time}}</td>
           </tr>
-          <tr id="j">
-            <th scope="row">2</th>
-            <td>1047</td>
-            <td>Groundnut</td>
-            <td>2</td>
-            <td>Powder</td>
-            <td>2000</td>
-            <td>11000</td>
-            <td>12000</td>
-            <td>3-4-2021</td>
-          </tr>
-          <tr id="i">
-            <th scope="row">3</th>
-            <td>1075</td>
-            <td>Maize</td>
-            <td>1</td>
-            <td>Nitrogenous</td>
-            <td>1200</td>
-            <td>2200</td>
-            <td>2500</td>
-            <td>4-4-2021</td>
-          </tr>
+         
         </tbody>
       </table>
     </div>
