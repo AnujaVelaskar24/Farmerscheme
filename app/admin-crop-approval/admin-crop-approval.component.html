@@ -16,40 +16,18 @@
             <th scope="col" colspan="2">Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let item of crop_approval_data; index as i">
           <tr id="i">
-            <th scope="row">1</th>
-            <td>101</td>
-            <td>Wheat</td>
-            <td>5</td>
-            <td>Prills</td>
-            <td>1925</td>
-            <td>2000</td>
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.userid}}</td>
+            <td>{{item.crop_name}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.fertilizer_type}}</td>
+            <td>{{item.msp}}</td>
+            <td>{{item.base_price}}</td>
             <td><input type="button" class="btn btn-outline-success" id="btn1" value="Approve"></td>
             <td><input type="button" class="btn btn-outline-danger" id="btn2" value="Disapprove"></td>
-          </tr>
-          <tr id="j">
-            <th scope="row">2</th>
-            <td>194</td>
-            <td>Sugarcane</td>
-            <td>2</td>
-            <td>Powder</td>
-            <td>1200</td>
-            <td>1400</td>
-            <td><input type="button" class="btn btn-outline-success" id="btn1" value="Approve"></td>
-            <td><input type="button" class="btn btn-outline-danger" id="btn2" value="Disapprove"></td>
-          </tr>
-          <tr id="i">
-            <th scope="row">3</th>
-            <td>128</td>
-            <td>Barley</td>
-            <td>4</td>
-            <td>Prills</td>
-            <td>2000</td>
-            <td>2250</td>
-            <td><input type="button" class="btn btn-outline-success" id="btn1" value="Approve"></td>
-            <td><input type="button" class="btn btn-outline-danger" id="btn2" value="Disapprove"></td>
-          </tr>
+          </tr> 
         </tbody>
       </table>
     </div>

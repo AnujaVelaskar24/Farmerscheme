@@ -53,50 +53,52 @@
                         <label id="labels" for="croptype"><b>Crop Type</b></label>
                         <select class="form-control"  name="season" id="season" 
                         [(ngModel)]="selectedtype" (change)="ontypeSelect(selectedtype)" formControlName="croptype">
-                          <option value="kharif">Kharif</option>
+                          <option value="kharif" selected>Kharif</option>
                           <option value="rabi">Rabi</option>
                           <option value="commercial">Commercial</option>  
                         </select> 
                         <!-- <input type="text" placeholder="Enter crop type" name="croptype" formControlName="croptype"> -->
-                        <!-- <div *ngIf="!croptype?.valid && (croptype?.dirty ||croptype?.touched)">
-                          <div [hidden]="!croptype.errors.pattern" style="color: crimson; font-size:12px;">
-                            Only characters are allowed
-                          </div>
+                        <div *ngIf="!croptype?.valid && (croptype?.dirty ||croptype?.touched)">
                           <div [hidden]="!croptype.errors.required" style="color: crimson; font-size:12px;">
                             Crop Type is required
                           </div>
 
-                        </div> -->
+                        </div>
 
                         <label id="labels" for="crop_id"><b>Crop Name</b></label>
-                        <!-- <select class="form-control"  name="cropname" id="cropname" formControlName="cropname">
-                          <option value="paddy">Paddy</option>
-                          
-                  
-                        </select> -->
-                        <select name="my-select" formControlName="crop_id" >
+                        
+                        <select class="form-control" name="my-select" formControlName="crop_id" >
                           <option [value]="item.crop_id" *ngFor="let item of crops">
                               {{item.crop_name}}    
                           </option>
                         </select>
-                        <!-- <input type="text" placeholder="Enter crop name" name="cropname" formControlName="cropname"> -->
-                        <!-- <div *ngIf="!cropname?.valid && (cropname?.dirty ||cropname?.touched)">
-                          <div [hidden]="!cropname.errors.pattern" style="color: crimson; font-size:12px;">
-                            Only characters are allowed
-                          </div>
-                          <div [hidden]="!cropname.errors.required" style="color: crimson;font-size:12px;">
+                        <div *ngIf="!crop_id?.valid && (crop_id?.dirty ||crop_id?.touched)">
+                          <div [hidden]="!crop_id.errors.required" style="color: crimson;font-size:12px;">
                             Crop Name is required
                           </div>
  
-                        </div> -->
+                        </div>
 
                         <label id="labels" for="fertilizer_type"><b>Fertilizer Type</b></label>
-                        <input type="text" placeholder="Enter fertilzer type" name="fertilizer_type"
-                          formControlName="fertilizer_type">
+                        <select class="form-control"  name="fertilizer_type" id="fertilizer_type" 
+                        [(ngModel)]="selectedfertilizertype" (change)="onfertilizertypeSelect(selectedfertilizertype)" formControlName="fertilizer_type">
+                          <option value="Powder" selected>Powder</option>
+                          <option value="Crystals">Crystals</option>
+                          <option value="Prills">Prills</option>
+                          <option value="Granules">Granules</option>
+                          <option value="Supergranules">Supergranules</option>
+                          <option value="Briquettes">Briquettes</option>  
+                          <option value="Ammonium Sulphate">Ammonium Sulphate</option>
+                          <option value="Ammonium chloride">Ammonium chloride</option>
+                          <option value="Nitrate">Nitrate</option>
+                          <option value="Ammoniacal">Ammoniacal</option>
+                          <option value="Amide">Amide</option>
+                        </select> 
+
+                        <!-- <input type="text" placeholder="Enter fertilzer type" name="fertilizer_type"
+                          formControlName="fertilizer_type"> -->
                         <div *ngIf="!fertilizer_type?.valid && (fertilizer_type?.dirty ||fertilizer_type?.touched)">
-                          <div [hidden]="!fertilizer_type.errors.pattern" style="color: crimson; font-size:12px;">
-                            Only characters are allowed
-                          </div>
+                          
                           <div [hidden]="!fertilizer_type.errors.required" style="color: crimson;font-size:12px;">
                             Fertilizer Type is required
                           </div>
@@ -116,16 +118,16 @@
 
                         <label id="labels" for="base_price"><b>Base Price</b></label>
                         <input type="text" placeholder="Enter crop type" name="base_price" formControlName="base_price">
-                        <!-- <div *ngIf="!base_price?.valid && (base_price?.dirty ||base_price?.touched)">
+                        <div *ngIf="!base_price?.valid && (base_price?.dirty ||base_price?.touched)">
                           <div [hidden]="!base_price.errors.pattern" style="color: crimson; font-size:12px;">
-                            Only characters are allowed
+                            Only numbers are allowed
                           </div>
                           <div [hidden]="!base_price.errors.required" style="color: crimson; font-size:12px;">
-                            Crop Type is required
+                            Base price is required
                           </div>
 
-                        </div> -->
-                        <button type="submit">Place Request</button>
+                        </div>
+                        <button [disabled]="!SellRequestForm.valid" type="submit">Place Request</button>
                       </div>
                     </div>
                   </form>

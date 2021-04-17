@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http
 
 import {  Observable, throwError } from 'rxjs';
 import { Getmarketclass } from './getmarketclass';
+import { Getbidclass } from './getbidclass';
 
 @Injectable({
   providedIn: 'root'
@@ -19,4 +20,9 @@ export class GetmarketplaceService {
   getmarketplace(): Observable<Getmarketclass[]> {
     return this.httpClient.get<Getmarketclass[]>(this.apiServer + '/marketplace/')
   }
+
+  // getcrop(id):Observable<Getbidclass>{
+  //   return this.httpClient.get<Getbidclass>(this.apiServer + '/bidrequest?cropid'= + id)
+
+  // }
 }

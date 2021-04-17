@@ -7,6 +7,7 @@
           <thead>
             <tr style="background-color: rgb(48, 100, 24); color:white; height:60px; text-align: center; margin-top: 20px;">
                <th scope="col">Sr No.</th>
+               <th scope="col">request ID</th>
               <th scope="col">Name</th>
               <th scope="col">Quantity</th>
               <th scope="col">Base Price</th>
@@ -42,13 +43,14 @@
             </tr> -->
             <tr *ngFor="let getmarket of getmarkets;index as i">
               <th>{{i+1}}</th>
+              <td>{{getmarket.request_id}}</td>
 
                 <td>{{getmarket.crop_name}}</td>
                 <td>{{getmarket.quantity}}</td>
                 <td>{{getmarket.base_price}}</td>
                 <td>{{getmarket.amount}}</td>
                 <!-- <td>2500</td> -->
-                <td><input type="button" class="btn btn-outline-success" id="btn1" value="Bid" routerLink="BidRequestComponent"></td>
+                <td><input type="button" class="btn btn-outline-success" id="btn1" value="Bid" routerLink="BidRequestComponent" (click)="applybid(getmarket.crop_id)"></td>
 
             </tr>
           </tbody>
