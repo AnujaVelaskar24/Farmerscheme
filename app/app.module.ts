@@ -54,9 +54,14 @@ import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-ap
     FooterComponent,
     ClaimInsuranceeComponent,
     LandDetailsRegisterComponent,
+<<<<<<< HEAD
     AdminBidApprovalComponent,
     AdminInsuranceApprovalComponent,
     AdminInsuranceClaimApprovalComponent
+=======
+    ForgotpasswordComponent,
+ 
+>>>>>>> ee9ed47e5f84a3d0f8b9b3c52d9a03343fb19ed1
   ],
   imports: [
     BrowserModule,

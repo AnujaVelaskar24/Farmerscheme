@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Bidderhistory } from '../bidderhistory';
+import { BidderhistoryService } from '../bidderhistory.service';
 
 @Component({
   selector: 'app-bidder-transaction-history',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BidderTransactionHistoryComponent implements OnInit {
 
-  constructor() { }
+  Bidderhistory: Bidderhistory[] = [];
+  constructor(public BidderhistoryService: BidderhistoryService) { }
 
   ngOnInit(): void {
+    var  uid:number = Number(sessionStorage.getItem("userid"));
+  //   this.FarmerhistoryService.getAll(uid).subscribe((data: Farmerhistory[])=>{
+  //     this.Farmerhistory = data;
+  // })  
+console.log(uid,"userid");
+
+  this.BidderhistoryService.getAll(uid).subscribe(res => {
+    
+    console.log(res, "ontype console data");
+    this.Bidderhistory=res;
+    console.log(Bidderhistory,"bidderhistory");
+  });
   }
 
 }

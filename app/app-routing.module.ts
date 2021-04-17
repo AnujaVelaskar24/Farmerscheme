@@ -19,6 +19,7 @@ import {ApplyBidComponent} from './apply-bid/apply-bid.component';
 import {AboutUsComponent} from './about-us/about-us.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
+import {ForgotpasswordComponent} from './forgotpassword/forgotpassword.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 import {LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'BidderHome', component: BidderhomeComponent},
   {path: 'LoginComponent', component: LoginComponent},
+  {path: 'ForgotpasswordComponent', component: ForgotpasswordComponent},
   {path: 'RegisterComponent', component: RegisterComponent},
   {path: 'LandDetailsRegisterComponent', component: LandDetailsRegisterComponent},
   {path: 'MarketplaceComponent', component: MarketplaceComponent},
