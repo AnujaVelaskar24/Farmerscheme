@@ -30,7 +30,7 @@ export class FarmerhomeComponent implements OnInit {
     public insuranceclaimService: InsuranceclaimService,
     ) { 
       this.insuranceService.insurance(this.uid).subscribe(res => {
-        console.log(res, "get insurance console");
+        // console.log(res, "get insurance console");
         this.insurancedata=res;
       });
     }
@@ -60,7 +60,7 @@ export class FarmerhomeComponent implements OnInit {
   public selectedtype:string;
   public crops = [];
   ontypeSelect(selectedtype){
-    console.log(selectedtype);
+    // console.log(selectedtype);
 
     this.croptypefetchService.croptypefetch(this.selectedtype).subscribe(res => {
       this.crops=res;
@@ -69,14 +69,14 @@ export class FarmerhomeComponent implements OnInit {
 
   public selectedfertilizertype:string;
   onfertilizertypeSelect(selectedfertilizertype){
-    console.log(selectedfertilizertype);
+    //console.log(selectedfertilizertype);
   }
 
   onSubmit() {
-    console.log(this.SellRequestForm.value, "Input data");
+    //console.log(this.SellRequestForm.value, "Input data");
     
     this.sellrequestService.sellrequest(this.SellRequestForm.value).subscribe(res => {
-      console.log(res, "sell request console");
+      //console.log(res, "sell request console");
       // if(res === "Unsuccessful")
       // {
       //   console.log("invalid");
@@ -100,7 +100,7 @@ export class FarmerhomeComponent implements OnInit {
   })
 
   get policyno(){
-    console.log("Inside policy no");
+    
     return this.contactForm1.get('policyno');
   }
   get insurancecompany() {
@@ -128,11 +128,11 @@ export class FarmerhomeComponent implements OnInit {
    uid:number = Number(sessionStorage.getItem("userid"));
    
   onGetInsurance() {
-    console.log("Inside function")
+    //console.log("Inside function")
     this.insuranceService.insurance(this.uid).subscribe(res => {
-      console.log(res, "get insurance console");
+      //console.log(res, "get insurance console");
       this.insurancedata=res;
-      console.log(this.insurancedata[0].season, "data console")
+      //console.log(this.insurancedata[0].season, "data console")
     });
   } 
 
@@ -143,9 +143,8 @@ export class FarmerhomeComponent implements OnInit {
     insuranceclaim_obj.cause_of_loss=this.contactForm1.value.cause_of_loss;
     insuranceclaim_obj.date_of_loss=this.contactForm1.value.date_of_loss;
     insuranceclaim_obj.claim_date = new Date();
-    console.log(insuranceclaim_obj);
     this.insuranceclaimService.insuranceclaim(insuranceclaim_obj).subscribe(res => {
-      console.log(res, "InsuRANCE CLAIM SERVER RESPONSE")
+
     });
   } 
 }
