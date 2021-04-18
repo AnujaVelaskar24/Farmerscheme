@@ -41,38 +41,29 @@
                                 <label for="land_address"><b>Land Address</b></label>
                                 <input type="text" placeholder="Enter email_id Address" id="land_address"
                                     name="land_address" formControlName="land_address">
-                                <!-- <div *ngIf="!land_address?.valid && (land_address?.dirty ||land_address?.touched)">
+                                <div *ngIf="!land_address?.valid && (land_address?.dirty ||land_address?.touched)">
                                     <div [hidden]="!land_address.errors.pattern" style="color: crimson;">
-                                        enter correct format of email_id
+                                        enter characters only
                                     </div>
                                     <div [hidden]="!land_address.errors.required" style="color: crimson;">
-                                        email_id is required
+                                        Land address is required
                                     </div>
-                                    <div [hidden]="!land_address.errors.minlength" style="color: crimson;">
-                                        Min Length is 9
-                                    </div>
-                                </div> -->
+                                    
+                                </div>
                             </td>
                             <td style="position: relative; padding-left: 30px;">
                                 <label for="area"><b>Land Area</b></label>
-                                <input type="number" placeholder="Enter phone Number" id="area"
+                                <input type="text" placeholder="Enter phone Number" id="area"
                                     name="area" formControlName="area" >
-                                <!-- <div *ngIf="!area?.valid && (area?.dirty ||area?.touched)">
+                                <div *ngIf="!area?.valid && (area?.dirty ||area?.touched)">
                                     <div [hidden]="!area.errors.pattern" style="color: crimson;">
                                         Only number are allowed
                                     </div>
                                     <div [hidden]="!area.errors.required" style="color: crimson;">
-                                        Phone number is required
+                                       Area is required
                                     </div>
-                                    <div [hidden]="!area.errors.minlength"
-                                        style="color: crimson;">
-                                        Min Length is 10
-                                    </div>
-                                    <div [hidden]="!area.errors.maxlength"
-                                        style="color: crimson;">
-                                        Max Length is 10
-                                    </div>
-                                </div> -->
+                                    
+                                </div>
                                 
                         </tr>
                     </table>
@@ -81,7 +72,7 @@
                     
 
                     <div id="buttoncontainer">
-                        <button type="submit" style="margin-top: 50px;">Register</button>
+                        <button type="submit" style="margin-top: 50px;"  [disabled]="!LandDetailsRegisterForm.valid">Register</button>
                     </div>
                 </div>
             </form>

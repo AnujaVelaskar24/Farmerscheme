@@ -29,7 +29,7 @@ import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admi
 import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 
 const routes: Routes = [
-  {path: '', component: RegisterComponent},
+  {path: '', component: BidRequestComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'BidderHome', component: BidderhomeComponent},

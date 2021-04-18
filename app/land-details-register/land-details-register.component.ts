@@ -9,8 +9,8 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class LandDetailsRegisterComponent implements OnInit {
   LandDetailsRegisterForm = new FormGroup({
-    land_address:new FormControl('',[Validators.required,Validators.minLength(3), Validators.pattern("^[a-zA-Z]+$")]),
-    area:new FormControl(''),
+    land_address:new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    area:new FormControl('',[Validators.required, Validators.pattern("^[0-9]+$")]),
     userid:new FormControl(sessionStorage.getItem("userid")),
     
   });

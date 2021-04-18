@@ -15,16 +15,16 @@ export class RegisterComponent implements OnInit {
     user_type:new FormControl(''),
     land_address:new FormControl(''),
     area:new FormControl(''),
-    username: new FormControl('',[Validators.required,Validators.minLength(10)]),
-    password: new FormControl('',[Validators.required,Validators.minLength(10)]),
-    password1: new FormControl('',[Validators.required,Validators.minLength(10)]),
+    username: new FormControl('',[Validators.required,Validators.minLength(3)]),
+    password: new FormControl('',[Validators.required,Validators.minLength(3)]),
+    password1: new FormControl('',[Validators.required,Validators.minLength(3)]),
     email_id: new FormControl('',[Validators.required,Validators.minLength(9),Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     home_address: new FormControl('',[Validators.required,Validators.minLength(3), Validators.pattern("^[a-zA-Z]+$")]),
-    phone_no: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10), Validators.pattern("^[0-9]+$")]),
-    account_no: new FormControl('',[Validators.required,Validators.minLength(10),Validators.pattern("^[0-9]+$")]),
-    ifsc_code: new FormControl('',[Validators.required,Validators.minLength(10),]),
-    pan: new FormControl('',[Validators.required,Validators.minLength(10)]),
-    Aadhar: new FormControl('',[Validators.required,Validators.minLength(10),Validators.pattern("^[0-9]+$")]),
+    phone_no: new FormControl('',[Validators.required,Validators.maxLength(10), Validators.pattern("^[0-9]+$")]),
+    account_no: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.pattern("^[0-9]+$")]),
+    ifsc_code: new FormControl('',[Validators.required,Validators.maxLength(10),]),
+    pan: new FormControl('',[Validators.required,Validators.maxLength(10)]),
+    Aadhar: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.pattern("^[0-9]+$")]),
     certificate:new FormControl('',[Validators.required])
   });
 
@@ -85,13 +85,13 @@ export class RegisterComponent implements OnInit {
   
   onSubmit() {
     
-    console.log(this.user_type.value);
+    
     this.RegisterService.register(this.contactForm.value).subscribe(res => {
-      console.log(res,"register response")
+      
      
      sessionStorage.setItem("userid",res);
       var uid=sessionStorage.getItem("userid");
-      console.log(uid,"userid display")
+      
     
     this.router.navigateByUrl('LandDetailsRegisterComponent')
     

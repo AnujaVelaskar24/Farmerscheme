@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { GetbidrequestService } from '../getbidrequest.service';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { RegisterService } from '../register.service';
+import { RouterModule, Router } from '@angular/router';
 import { SharedserviceService } from '../sharedservice.service';
 
 @Component({
@@ -10,8 +12,14 @@ import { SharedserviceService } from '../sharedservice.service';
 
 export class BidRequestComponent implements OnInit {
 
+  contactForm = new FormGroup({
+    bid:new FormControl('',[Validators.required,Validators.pattern("^[0-9]+$")]),
+    
+    
+  });
+
 crop_id:number;
-  constructor(private sharedservice:SharedserviceService) { }
+  constructor(private sharedservice:SharedserviceService,private router: Router) { }
 
   ngOnInit(): void {
     this.sharedservice.crop_id.subscribe((id)=>{
@@ -21,5 +29,10 @@ crop_id:number;
 
     
   }
+  get bid(){
+    return this.contactForm.get('bid');
+  }
+
+  onSubmit() { }
 
 }
