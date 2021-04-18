@@ -21,12 +21,12 @@
                                                     <label style="margin-right: 40px; font-size: 19px;"> <b>I am a </b> </label>
                                                 </td>
                                                 <td>
-                                                    <input type="radio" name="user_type" value="false" (click)="setradio('Male')" formControlName="user_type" >
+                                                    <input type="radio" name="user_type" value="false" (click)="setradio('Male')" formControlName="user_type" >&nbsp;&nbsp;
                                                     <label for="male" style="margin-right: 40px;">Farmer</label><br>
 
                                                 </td>
                                                 <td>
-                                                    <input type="radio" name="user_type" value="true" (click)="setradio('Female')" formControlName="user_type"  >
+                                                    <input type="radio" name="user_type" value="true" (click)="setradio('Female')" formControlName="user_type"  >&nbsp;&nbsp;
                                                     <label for="female">Bidder</label><br>
                                                 </td>
                                             </tr>
@@ -97,7 +97,7 @@
                                         <table style="width: 100%">
                                             <tr>
                                                 <td style="width: 45%">
-                                                    <label for="email_id"><b>email Address</b></label>
+                                                    <label for="email_id"><b>Email Address</b></label>
                                                     <input type="text" placeholder="Enter email_id Address" id="email_id"
                                                         name="email_id" formControlName="email_id">
                                                     <div *ngIf="!email_id?.valid && (email_id?.dirty ||email_id?.touched)">
@@ -113,7 +113,7 @@
                                                     </div>
                                                 </td>
                                                 <td style="position: relative; padding-left: 30px;">
-                                                    <label for="phone_no"><b>phone_no No.</b></label>
+                                                    <label for="phone_no"><b>Phone Number</b></label>
                                                     <input type="tel" placeholder="Enter phone_no Number" id="phone_no"
                                                         name="phone_no" formControlName="phone_no">
                                                     <div *ngIf="!phone_no?.valid && (phone_no?.dirty ||phone_no?.touched)">
@@ -136,7 +136,7 @@
                                         <table style="width: 100%">
                                             <tr>
                                                 <td style="width: 45%">
-                                                    <label for="ifsc_code"><b>ifsc code No.</b></label>
+                                                    <label for="ifsc_code"><b>IFSC Code Number</b></label>
                                                     <input type="text" placeholder="Enter ifsc_code Number" id="ifsc_code"
                                                         formControlName="ifsc_code">
                                                     <div *ngIf="!ifsc_code?.valid && (ifsc_code?.dirty ||ifsc_code?.touched)">
