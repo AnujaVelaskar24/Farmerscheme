@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { RegisterService } from '../register.service';
+import { RouterModule, Router } from '@angular/router';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class RegisterComponent implements OnInit {
     certificate:new FormControl('',[Validators.required])
   });
 
-  constructor( public RegisterService: RegisterService) { }
+  constructor( public RegisterService: RegisterService,private router: Router) { }
   
 
   ngOnInit(): void {}
@@ -74,18 +75,25 @@ export class RegisterComponent implements OnInit {
   get land_address(){
     return this.contactForm.get('land_address');
   }
-  get certificate(){
-    return this.contactForm.get('certificate');
-  }
   get area(){
     return this.contactForm.get('area');
   }
-
+  get certificate(){
+    return this.contactForm.get('certificate');
+  }
+ 
+  
   onSubmit() {
+    
     console.log(this.user_type.value);
     this.RegisterService.register(this.contactForm.value).subscribe(res => {
-      console.log(res)
-      // this.router.navigateByUrl('/home/')
+      console.log(res,"register response")
+     sessionStorage.setItem("userid",res.userid);
+      
+      console.log(sessionStorage.getItem("userid"),"user")
+    
+   // this.router.navigateByUrl('LandDetailsRegisterComponent')
+    
     });
     
   } 

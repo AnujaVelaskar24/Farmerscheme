@@ -27,7 +27,8 @@ ApproveForm = new FormGroup({
 })
   constructor( public fb: FormBuilder,
     private router: Router,
-    public adminaccountapprovalservice: AdminAccountApprovalService) { 
+    public adminaccountapprovalservice: AdminAccountApprovalService) 
+    { 
     this.adminaccountapprovalservice.Getuser_information().subscribe(res => {
       console.log(res,"const console");
       this.users=res;

@@ -1,12 +1,13 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
+import { Admin } from './admin';
 import {  Observable, throwError } from 'rxjs';
-import { Getbidclass } from './getbidclass';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GetbidrequestService {
+export class AdminlogService {
   private apiServer = "http://localhost:59012/api";
   httpOptions = {
     headers:new HttpHeaders({
@@ -15,7 +16,7 @@ export class GetbidrequestService {
   }
 
   constructor(private httpClient: HttpClient) { }
-  getbidrequest(): Observable<Getbidclass[]> {
-    return this.httpClient.get<Getbidclass[]>(this.apiServer + '/BidRequest/')
+  login(Admin): Observable<any> {
+    return this.httpClient.post<any>(this.apiServer + '/admin/', JSON.stringify(Admin), this.httpOptions)
   }
 }

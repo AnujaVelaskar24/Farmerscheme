@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GetbidrequestService } from './getbidrequest.service';
+import { AdminlogService } from './adminlog.service';
 
-describe('GetbidrequestService', () => {
-  let service: GetbidrequestService;
+describe('AdminlogService', () => {
+  let service: AdminlogService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(GetbidrequestService);
+    service = TestBed.inject(AdminlogService);
   });
 
   it('should be created', () => {

@@ -17,5 +17,8 @@ export class AdmincropapprovalService {
   admincropapproval(): Observable<any> {
     return this.httpClient.get<any>(this.apiServer + '/AdminCropApproval/');
   }
+  update(request_id:number): Observable<any> {
+    return this.httpClient.get<any>(this.apiServer + '/AdminCropApproval?request_id='+request_id )
+  }
 
 }

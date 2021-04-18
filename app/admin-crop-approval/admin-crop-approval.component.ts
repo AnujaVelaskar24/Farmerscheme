@@ -27,7 +27,18 @@ export class AdminCropApprovalComponent implements OnInit {
     // });
   }
 
+  onapprove(request_id)
+{
+  console.log(request_id, "REQUEST ID")
+  this.admincropapprovalservice.update(request_id).subscribe(res => {
+    console.log(res, "ontype console data");
+    this.ngOnInit();
+  });
+}
   ngOnInit(): void {
+    this.admincropapprovalservice.admincropapproval().subscribe(res => {      
+      this.crop_approval_data = res;
+    });
   }
 
 }
