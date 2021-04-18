@@ -26,6 +26,12 @@ import {ReactiveFormsModule} from '@angular/forms'
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ProfileComponent } from './profile/profile.component';
+
+import { AdminBidApprovalComponent } from './admin-bid-approval/admin-bid-approval.component';
+import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admin-insurance-approval.component';
+import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +56,13 @@ import { LandDetailsRegisterComponent } from './land-details-register/land-detai
     NavbarComponent,
     FooterComponent,
     ClaimInsuranceeComponent,
-    LandDetailsRegisterComponent
+    LandDetailsRegisterComponent,
+    AdminBidApprovalComponent,
+    AdminInsuranceApprovalComponent,
+    AdminInsuranceClaimApprovalComponent,
+    ForgotpasswordComponent,
+    ProfileComponent,
+ 
   ],
   imports: [
     BrowserModule,

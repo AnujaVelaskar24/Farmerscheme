@@ -2,12 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 
 import {  Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators'
-import {Landdetailsregister} from './model/landdetailsregister'
+import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class LandDetailsRegisterService {
+export class AdminBidApprovalService {
   private apiServer = "http://localhost:59012/api";
   httpOptions = {
     headers:new HttpHeaders({
@@ -15,8 +14,10 @@ export class LandDetailsRegisterService {
     })
   }
   constructor(private httpClient: HttpClient) { }
-
-landdetailsregister(landdetailregister): Observable<any> {
-  return this.httpClient.post<any>(this.apiServer + '/land/', JSON.stringify(landdetailregister), this.httpOptions)
-}
+  Getbid_information(): Observable<any> {
+    return this.httpClient.get<any>(this.apiServer + '/adminbidapproval/')
+  }
+  update(request_id:number): Observable<any> {
+    return this.httpClient.get<any>(this.apiServer + '/adminbidapproval?request_id='+request_id )
+  }
 }

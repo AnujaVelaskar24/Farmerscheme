@@ -1,4 +1,4 @@
-export class Register {
+export class Login1 {
     userid:number;
     user_type:boolean;
     username:string;
@@ -11,12 +11,4 @@ export class Register {
     pan:number;
     aadhar:number;
     certificate:boolean;
-    aas:boolean;
-
 }
-export class land{
-    land_address:string;
-    area:number;
-    userid:number;
-}
-
