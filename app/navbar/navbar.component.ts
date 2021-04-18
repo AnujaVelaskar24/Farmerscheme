@@ -29,7 +29,7 @@ get password() {
 
 logout(){
  sessionStorage.removeItem('userid'); 
- this.router.navigateByUrl('Home');
+ this.router.navigateByUrl('/home');
 }
 onSubmitLoginForm() {
   console.log(this.LoginForm.value);

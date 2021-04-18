@@ -33,9 +33,10 @@ import {AdminCropApprovalComponent} from './admin-crop-approval/admin-crop-appro
 import {AdminBidApprovalComponent} from './admin-bid-approval/admin-bid-approval.component';
 import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admin-insurance-approval.component';
 import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
+import { ClassMethod } from '@angular/compiler';
 
 const routes: Routes = [
-  {path: '', component: CommonmarketplaceComponent},
+  {path: '', component: HomeComponent},
 
   {path: 'home', component: HomeComponent},
   {path: 'aboutus', component:AboutUsComponent},
