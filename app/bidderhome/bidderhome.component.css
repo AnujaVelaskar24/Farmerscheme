@@ -11,6 +11,15 @@
     color: white;
     
 }
+h1{
+    color: white;
+    letter-spacing: 40px;
+    text-align: center;
+    font-size: 60px;
+    text-shadow: 2px 2px 8px green;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 #project-name{
     color: white;
     margin-right: 50px;
@@ -20,6 +29,15 @@
     font-size: 22px;
     /* position: absolute;
     left: 40px; */
+}
+#button{
+    background-color:green;
+    /* display: flex;
+    justify-content: center;
+    align-self: center; */
+    width: 30%;
+    margin-top: 20px;
+    height: 50px;
 }
 .nav-button{
     height:35px;
