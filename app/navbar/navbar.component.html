@@ -51,6 +51,8 @@
                         </tr>
                       </table>
 
+                            
+                          
                       <label for="username"><b>Username</b></label>
                       <input type="text" placeholder="Enter Username" name="username" formControlName="username">
                       <div *ngIf="!username?.valid && (username?.dirty ||username?.touched)">
@@ -65,7 +67,7 @@
                           Password is required
                         </div>
                       </div>
-                      <button type="submit" id="loginbutton">Login</button>
+                      <button type="submit" id="loginbutton" [disabled]="!LoginForm.valid">Login</button>
                       <a href="adminlogin">Admin login</a>
                     </div>
 

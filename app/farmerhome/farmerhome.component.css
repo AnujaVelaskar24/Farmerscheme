@@ -231,7 +231,9 @@ background-color:#ff00ff !important;
       width: 100%;
       font-size: 15px;
     }
-  
+    button:disabled {
+      background-color:#8bc995;
+  }
     button:hover {
       opacity: 0.8;
     }

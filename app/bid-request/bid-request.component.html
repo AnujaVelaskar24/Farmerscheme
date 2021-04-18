@@ -64,13 +64,22 @@
             </div>
             <div class="col-sm-3">
 
-              <form id="form">
+              <form  [formGroup]="contactForm"  (ngSubmit)="onSubmit()" novalidate>
 
                 <div>
-                  <input type="text" class="form-control" placeholder="Enter your bid amount">
+                  <input type="text" class="form-control" placeholder="Enter your bid amount" formControlName="bid">
+                  <div *ngIf="!bid?.valid && (bid?.dirty ||bid?.touched)">
+                    <div [hidden]="!bid.errors.pattern" style="color: crimson;">
+                        enter number
+                    </div>
+                    <div [hidden]="!bid.errors.required" style="color: crimson;">
+                        bid is required
+                    </div>
+                    
+                </div>
                 </div>
                 <div class="d" style="width: auto;">
-                  <input type="submit" class="btn btn-outline-success" id="btn10" value="Place bid">
+                  <input type="submit" class="btn btn-outline-success" id="btn10" value="Place bid" [disabled]="!contactForm.valid">
                 </div>
 
               </form>
