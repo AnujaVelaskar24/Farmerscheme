@@ -28,11 +28,11 @@ import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admi
 import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 
 const routes: Routes = [
-  {path: '', component: AdminInsuranceClaimApprovalComponent},
-  {path: 'Home', component: HomeComponent},
-  {path: 'Farmerhome', component: FarmerhomeComponent},
-  {path: 'BidderHome', component: BidderhomeComponent},
-  {path: 'LoginComponent', component: LoginComponent},
+  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'farmerhome', component: FarmerhomeComponent},
+  {path: 'bidderhome', component: BidderhomeComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'ForgotpasswordComponent', component: ForgotpasswordComponent},
   {path: 'RegisterComponent', component: RegisterComponent},
   {path: 'LandDetailsRegisterComponent', component: LandDetailsRegisterComponent},
