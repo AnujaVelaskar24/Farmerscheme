@@ -11,31 +11,53 @@
     style="background-color: rgb(209, 255, 209); border-color: green; position: absolute;margin-left: 0px;right: 60px;"
     type="button" value="Logout" />
 </div> -->
+<h1>WELCOME BIDDER!</h1>
 <div  id="welcome-paragraph">
   <p class="paragraph-text">It might surprise you to hear that over the course of lockdown, we have continued to support a steady stream of businesses between farmer and bidder. 
     Online tendering is a method of standardising the procurement process.Items for the auction will be displayed,the interested bidder can bid the amount.Buyers and sellers should keep in mind that the company holding the auction does not own the product or service featured on the auction site but rather it helps to promote and provide both end users a rewarding experience for purchasing the item or service.
     </p>
 </div>
 
-<div class="row" style="margin-left: 180px;  margin-right:180px">
-    <div class="col-sm-6">
+<div class="row" >
+    <div class="col-sm-4">
       <div class="card-body" id="news-container">
         <h5 class="card-title">
           <img id="fact-icons" src="/assets/images/marketplace.jpg" />
         </h5>
         <p class="card-text" id="fact-number">Marketplace</p>
         <p> View all the crops that are on sale in the market.</p>
-        <a href="#" class="btn btn-primary"  routerLink="MarketplaceComponent" style="background-color: green;">Go</a>
+        <!-- <a href="#" class="btn btn-primary"  routerLink="MarketplaceComponent" style="background-color: green;">Go</a> -->
+        <button type="button" id="button" class="btn btn-primary"  routerLink="MarketplaceComponent" data-toggle="modal">
+            Go
+          </button>
       </div>
     </div>
-    <div class="col-sm-6" >
+    <div class="col-sm-4" >
       <div class="card-body" id="news-container">
         <h5 class="card-title">
           <img id="fact-icons"  style ="height:70px; width: 70px; border-radius: 20px; margin-bottom: 30px;" src="/assets/images/history.png" />
         </h5>
         <p class="card-text" id="fact-number">History</p>
         <p>View all the previous transactions of your crops.</p>
-        <a href="#" class="btn btn-primary"  routerLink="BidderTransactionHistoryComponent" style="background-color: green;">Go</a>
+        <!-- <a href="#" class="btn btn-primary"  routerLink="BidderTransactionHistoryComponent" style="background-color: green;">Go</a> -->
+        <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
+        routerLink="BidderTransactionHistoryComponent">
+            Go
+          </button>
+      </div>
+    </div>
+    <div class="col-sm-4" >
+      <div class="card-body" id="news-container">
+        <h5 class="card-title">
+          <img id="fact-icons"  style ="height:70px; width: 70px; border-radius: 20px; margin-bottom: 30px;" src="/assets/images/profile_icon1.png" />
+        </h5>
+        <p class="card-text" id="fact-number">Profile</p>
+        <p>View your profile.</p>
+        <!-- <a href="#" class="btn btn-primary"  routerLink="BidderTransactionHistoryComponent" style="background-color: green;">Go</a> -->
+        <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
+            routerLink="MarketplaceComponent">
+            Go
+          </button>
       </div>
     </div>
 </div>

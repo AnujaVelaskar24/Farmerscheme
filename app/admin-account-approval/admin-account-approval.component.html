@@ -1,104 +1,62 @@
 
-<body>
-  
-  <div id="page-container">
-    <div id="content-wrap">
-    <!-- <div class="main">
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Sr No.</th>
-            <th scope="col">User Type</th>
-            <th scope="col">Name</th>
-            <th scope="col">Phone No.</th>
-            <th scope="col">Email</th>
-            <th scope="col">Home Address</th>
-            <th scope="col">Account No.</th>
-            <th scope="col">IFSC Code</th>
-            <th scope="col" colspan="2">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr id="i">
-            <th scope="row">1</th>
-            <td>Farmer</td>
-            <td>F1N</td>
-            <td>F1P</td>
-            <td>F1E</td>
-            <td>F1HA</td>
-            <td>F1A</td>
-            <td>F1I</td>
-            <td><input type="button" class="btn btn-outline-success" id="btn1" value="Approve"></td>
-            <td><input type="button" class="btn btn-outline-danger" id="btn2" value="Disapprove"></td>
-          </tr>
-          <tr id="j">
-            <th scope="row">2</th>
-            <td>Bidder</td>
-            <td>B1N</td>
-            <td>B1P</td>
-            <td>B1E</td>
-            <td>B1HA</td>
-            <td>B1A</td>
-            <td>B1I</td>
-            <td><input type="button" class="btn btn-outline-success" id="btn1" value="Approve"></td>
-            <td><input type="button" class="btn btn-outline-danger" id="btn2" value="Disapprove"></td>
-          </tr>
-          <tr id="i">
-            <th scope="row">3</th>
-            <td>Farmer</td>
-            <td>F2N</td>
-            <td>F2P</td>
-            <td>F2E</td>
-            <td>F2HA</td>
-            <td>F2A</td>
-            <td>F2I</td>
-            <td><input type="button" class="btn btn-outline-success" id="btn1" value="Approve"></td>
-            <td><input type="button" class="btn btn-outline-danger" id="btn2" value="Disapprove"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    </div>
-    </div> -->
-
-
+<div id="page-container">
+  <div id="content-wrap">
     <div class="main">
-      <table class="table" cellpadding="0" cellspacing="0" border="1">
+      <h1>ACCOUNT APPROVAL</h1>
+      <table class="table">
         <thead>
-          <tr style="font-size: smaller;width: 100%;">
+          <tr id="heading_style">
             <th scope="col">User ID</th>
             <th scope="col">User Type</th>
             <th scope="col">Username</th>
             <th scope="col">Phone No.</th>
             <th scope="col">Email ID</th>
-            <th scope="col">Password</th>
+            <!-- <th scope="col">Password</th>
             <th scope="col">Home Address</th>
             <th scope="col">Account No.</th>
             <th scope="col">IFSC Code</th>
             <th scope="col">PAN</th>
             <th scope="col">Aadhar</th>
-            <th scope="col">Certificate</th>
+            <th scope="col">Certificate</th> -->
             <th scope="col" colspan="2">Action</th>
           </tr>
         </thead>
       
-        <tbody style="font-size: smaller;width: 100%;">
-          <tr *ngFor="let item of users ">
+        <tbody *ngFor="let item of users;index as i ">
+          <tr id="i" *ngIf="i%2==0">
             <td> {{item.userid}}</td>
             <td>{{item.user_type}}</td>
             <td> {{item.username}}</td>
             <td> {{item.phone_no}}</td>
             <td> {{item.email_id}}</td>
-            <td> {{item.password}}</td>
+            <!-- <td> {{item.password}}</td>
             <td> {{item.home_address}}</td>
             <td> {{item.account_no}}</td>
             <td> {{item.ifsc_code}}</td>
             <td> {{item.pan}}</td>
             <td> {{item.aadhar}}</td>
-            <td> {{item.certificate}}</td>
+            <td> {{item.certificate}}</td> -->
             
-            <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.userid)">Approve</button></td>
-            <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
+            <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.userid)">View</button></td>
+        </tr>
+          
+        </tbody>
+        <tbody  *ngFor="let item of users;;index as i ">
+          <tr id="j" *ngIf="i%2!=0">
+            <td> {{item.userid}}</td>
+            <td>{{item.user_type}}</td>
+            <td> {{item.username}}</td>
+            <td> {{item.phone_no}}</td>
+            <td> {{item.email_id}}</td>
+            <!-- <td> {{item.password}}</td>
+            <td> {{item.home_address}}</td>
+            <td> {{item.account_no}}</td>
+            <td> {{item.ifsc_code}}</td>
+            <td> {{item.pan}}</td>
+            <td> {{item.aadhar}}</td>
+            <td> {{item.certificate}}</td> -->
+            
+            <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.userid)">View</button></td>
         </tr>
           
         </tbody>
@@ -108,4 +66,3 @@
         </div>
         </div>
         </div>
-</body>
