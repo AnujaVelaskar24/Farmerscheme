@@ -88,11 +88,12 @@ export class RegisterComponent implements OnInit {
     console.log(this.user_type.value);
     this.RegisterService.register(this.contactForm.value).subscribe(res => {
       console.log(res,"register response")
-     sessionStorage.setItem("userid",res.userid);
-      
-      console.log(sessionStorage.getItem("userid"),"user")
+     
+     sessionStorage.setItem("userid",res);
+      var uid=sessionStorage.getItem("userid");
+      console.log(uid,"userid display")
     
-   // this.router.navigateByUrl('LandDetailsRegisterComponent')
+    this.router.navigateByUrl('LandDetailsRegisterComponent')
     
     });
     
