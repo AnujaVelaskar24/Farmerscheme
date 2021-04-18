@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import {LandDetailsRegisterService} from '../land-details-register.service';
+import { RouterModule, Router } from '@angular/router';
 @Component({
   selector: 'app-land-details-register',
   templateUrl: './land-details-register.component.html',
@@ -10,20 +11,20 @@ export class LandDetailsRegisterComponent implements OnInit {
   LandDetailsRegisterForm = new FormGroup({
     land_address:new FormControl('',[Validators.required,Validators.minLength(3), Validators.pattern("^[a-zA-Z]+$")]),
     area:new FormControl(''),
-    userid: new FormControl(sessionStorage.getItem("userid")),
+    userid:new FormControl(sessionStorage.getItem("userid")),
     
   });
   
   //console.log(uid);
   
-  constructor( public LandDetailsRegisterService: LandDetailsRegisterService) { 
-    var uid:String = sessionStorage.getItem("userid");
-    console.log(uid);
+  constructor( public LandDetailsRegisterService: LandDetailsRegisterService,private router: Router) { 
+    
   }
   
   
   ngOnInit(): void {
-
+    var uid:number = Number(sessionStorage.getItem("userid"));
+    console.log(uid,"construct");
   
     
     
@@ -40,16 +41,16 @@ export class LandDetailsRegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.userid);
-    let landobj = new land();
-    landobj.land_address=this.land_address.value.land_address;
-    landobj.area=this.land_address.value.area;
-    landobj.userid= Number(sessionStorage.getItem("userid"));
-    console.log(landobj,"land detail")
+    console.log( Number(sessionStorage.getItem("userid")),"onsub");
+    // let landobj = new land();
+    // landobj.land_address=this.land_address.value.land_address;
+    // landobj.area=this.land_address.value.area;
+    // landobj.userid= Number(sessionStorage.getItem("userid"));
+    // console.log(landobj,"land detail")
     this.LandDetailsRegisterService.landdetailsregister(this.LandDetailsRegisterForm.value).subscribe(res => {
       console.log(res)
-     
-      // this.router.navigateByUrl('/home/')
+      this.router.navigateByUrl('Farmerhome')
+      //this.router.navigateByUrl('/home/')
     });
 
     
