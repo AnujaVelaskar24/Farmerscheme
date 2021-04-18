@@ -3,16 +3,25 @@
 <div class="row">
     <div class="main">
         <div class="card">       
-        <form>
+        <form [formGroup]="applyinsuranceForm" (ngSubmit)="onSubmit()" novalidate>
+            
             <div class="container">
                 <h2 align="center">Insurance Premium Calculator</h2>
                 <table style="width: 100%">
                     <tr>
-                        <td style="width: 45%">              
-  <div class="form-group">
-    <label for="season"><b>Season</b></label>
-    <select class="form-control"  name="season" id="season">
-        <option value="kharif">Kharif</option>
+                        <td style="width: 45%">  
+                          
+                            
+  <div class="form-group" >
+    <label for="croptype"><b>Crop Type</b></label>
+    <select class="form-control"  name="season" id="season" 
+    [(ngModel)]="selectedtype" (change)="ontypeSelect(selectedtype)" formControlName="croptype">
+    <!-- <option value="" disabled selected>Choose a drink</option> -->
+    <!-- <option default>Select Your Beverage</option> -->
+    <!-- <option selected="selected">Select Your Beverage</option> -->
+    <!-- <option value="" selected data-default>select your beverage</option> -->
+    <!-- <option value="">Select One …</option> -->
+    <option value="kharif">Kharif</option>
         <option value="rabi">Rabi</option>
         <option value="commercial">Commercial</option>  
     </select> 
@@ -31,8 +40,8 @@
     <tr>
         <td style="width: 45%"> 
   <div class="form-group">
-    <label for="cropname"><b>Crop Name</b></label>
-    <select class="form-control"  name="cropname" id="cropname">
+    <!-- <label for="cropname"><b>Crop Name</b></label>
+    <select class="form-control"  name="cropname" >
         <option value="paddy">Paddy</option>
         <option value="jowar">jowar</option>
         <option value="bajra">Bajra</option>
@@ -58,15 +67,20 @@
         <option value="sugarcane">sugarcane</option>
         <option value="jute">jute</option>
 
-      </select> 
+      </select>  -->
+      <label id="labels" for="crop_id"><b>Crop Name</b></label>
+                        
+                        <select class="form-control" name="my-select" formControlName="crop_id" >
+                          <option [value]="item.crop_id" *ngFor="let item of crops">
+                              {{item.crop_name}}    
+                          </option>
+                        </select>
+                            
   </div> </td>
-  <td style="position: relative; padding-left: 45px;">
+<td style="position: relative; padding-left: 45px;">
 
                 <label for="area"><b>Area (In Hectare)</b></label>
                 <input type="text" placeholder="Enter area in hectare" name="area">
-
-
-                
                 </td>
                 </tr>
                 </table>
@@ -82,27 +96,38 @@
             <td style="position: relative; padding-left: 30px;">
                 
                 <button (click)=displaytext()>CALCULATE</button>
-                </td></tr></table>
+                </td></tr></table><hr>
                 <div *ngIf="isShow">
 
                    
                     <table class="table" style="margin-top: 5%;" >
                         <tr></tr>
                         <tr>
-                            <th>Insurance Company</th>        
-                            <th>Crop Name</th>
-                            <th>Area</th>
-                           
+                            <th>Insurance Company</th>  
+                            <th>Sum Insured(per hectare)</th>
+                            <th>Farmer Share(%)</th>
                         </tr>
                         <tr>
-                            <td>XYZ</td> 
+                            <td>Yojna Insurance</td> 
                             <td>ABC</td>
                             <td>10</td>
                         </tr>
                         <tr>
-                            <th>Sum Insured(per hectare)</th>
-                            <th>Share Premium</th>
-                            <th>Premium Amount</th>
+                            <th>Actual Rate(%)</th>
+                            <th>Crop Name</th>
+                            <th>Area</th>
+                            
+                        </tr>
+                        <tr>
+                            <td>123</td>
+                            <td>123</td>
+                            <td>123</td>
+
+                        </tr>
+                        <tr>
+                            <th>Premium paid by farmer(Rs)</th> 
+                            <th>Premium paid by Govt(Rs)</th> 
+                            <th>Sum Insured</th>
                         </tr>
                         <tr>
                             <td>123</td>
