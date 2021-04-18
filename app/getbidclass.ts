@@ -6,5 +6,11 @@ export class Getbidclass {
     msp :number
     base_price:number
     current_price:number 
-
+    request_id:number
+}
+export class bid_history {
+    request_id:number;
+    userid:number;
+    amount: number;
+    bidding_time: Date;
 }

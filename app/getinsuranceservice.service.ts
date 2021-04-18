@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Getinsurance } from './getinsurance';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 
 import {  Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AdmincropapprovalService {
+export class GetinsuranceserviceService {
   private apiServer = "http://localhost:59012/api";
   httpOptions = {
     headers:new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
+
+
   constructor(private httpClient: HttpClient) { }
-  admincropapproval(): Observable<any> {
-    return this.httpClient.get<any>(this.apiServer + '/AdminCropApproval/');
-  }
-  update(request_id:number): Observable<any> {
-    return this.httpClient.get<any>(this.apiServer + '/AdminCropApproval?request_id='+request_id )
+  getinsurance():Observable<Getinsurance[]> {
+    return this.httpClient.get<Getinsurance[]>(this.apiServer + '/insurance/')
   }
 
 }
