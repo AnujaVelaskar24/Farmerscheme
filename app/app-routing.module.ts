@@ -22,6 +22,7 @@ import {BidRequestComponent} from './bid-request/bid-request.component';
 import {FarmerTransactionHistoryComponent} from './farmer-transaction-history/farmer-transaction-history.component';
 import {ApplyInsuranceComponent} from './apply-insurance/apply-insurance.component';
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
+import {CommonmarketplaceComponent} from './commonmarketplace/commonmarketplace.component'
 
 import { BidderhomeComponent } from './bidderhome/bidderhome.component';
 import {BidderTransactionHistoryComponent} from './bidder-transaction-history/bidder-transaction-history.component';
@@ -34,7 +35,7 @@ import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admi
 import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 
 const routes: Routes = [
-  {path: '', component: AdminhomeComponent},
+  {path: '', component: CommonmarketplaceComponent},
 
   {path: 'home', component: HomeComponent},
   {path: 'aboutus', component:AboutUsComponent},
@@ -55,6 +56,7 @@ const routes: Routes = [
   {path: 'farmertransactionhistory', component: FarmerTransactionHistoryComponent},
   {path: 'applyinsurance', component: ApplyInsuranceComponent},
   {path: ' claiminsurancee ', component:  ClaimInsuranceeComponent },
+  {path: 'commonmarketplace', component:CommonmarketplaceComponent},
 
 
   {path: 'bidderhome', component: BidderhomeComponent},
