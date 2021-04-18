@@ -27,6 +27,7 @@ import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.co
 import { HttpClientModule } from '@angular/common/http';
 import { LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     ClaimInsuranceeComponent,
     LandDetailsRegisterComponent,
     ForgotpasswordComponent,
+    ProfileComponent,
  
   ],
   imports: [
