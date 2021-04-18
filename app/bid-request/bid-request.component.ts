@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetbidrequestService } from '../getbidrequest.service';
+// import { GetbidrequestService } from '../getbidrequest.service';
 import { SharedserviceService } from '../sharedservice.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { SharedserviceService } from '../sharedservice.service';
 export class BidRequestComponent implements OnInit {
 
 crop_id:number;
-  constructor(private sharedservice:SharedserviceService,public getbidrequest:GetbidrequestService) { }
+  constructor(private sharedservice:SharedserviceService) { }
 
   ngOnInit(): void {
     this.sharedservice.crop_id.subscribe((id)=>{
