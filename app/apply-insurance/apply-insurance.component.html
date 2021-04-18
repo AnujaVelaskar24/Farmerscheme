@@ -6,7 +6,7 @@
         <form [formGroup]="applyinsuranceForm" (ngSubmit)="onSubmit()" novalidate>
             
             <div class="container">
-                <h2 align="center">Insurance Premium Calculator</h2>
+                <h2 align="center">Insurance Premium Calculator</h2><br>
                 <table style="width: 100%">
                     <tr>
                         <td style="width: 45%">  
@@ -26,6 +26,12 @@
         <option value="commercial">Commercial</option>  
     </select> 
   </div>
+  <div *ngIf="!crop_type?.valid && (crop_type?.dirty ||crop_type?.touched)">
+    <div   [hidden]="!crop_type.errors.required" style="color: crimson;" >
+        Crop Type is required
+    </div>
+    
+</div>
   </td>
   <td style="position: relative; padding-left: 45px;">
 
@@ -40,63 +46,50 @@
     <tr>
         <td style="width: 45%"> 
   <div class="form-group">
-    <!-- <label for="cropname"><b>Crop Name</b></label>
-    <select class="form-control"  name="cropname" >
-        <option value="paddy">Paddy</option>
-        <option value="jowar">jowar</option>
-        <option value="bajra">Bajra</option>
-
-        <option value="maize">Maize</option>
-        <option value="ragi">Ragi</option>
-        <option value="tur">Tur</option>
-        <option value="moong">Moong</option>
-        <option value="urad">Urad</option>
-        <option value="cotton">Cotton</option>
-        <option value="groundnut">Groundnut</option>
-        <option value="sunflower seed">Sunflower seed</option>
-        <option value="soyabean">Soyabean</option>
-        <option value="sesamum">Sesamum</option>
-        <option value="nigerseed">nigerseed</option>
-        <option value="wheat">wheat</option>
-        <option value="barley">barley</option>
-        <option value="gram">gram</option>
-        <option value="masur">masur</option>
-        <option value="mustard">mustard</option>
-        <option value="safflower">safflower</option>
-        <option value="copra">copra</option>
-        <option value="sugarcane">sugarcane</option>
-        <option value="jute">jute</option>
-
-      </select>  -->
+    
       <label id="labels" for="crop_name"><b>Crop Name</b></label>
                         
                         <select class="form-control" name="my-select" formControlName="crop_name" >
-                            <option value="">Select One …</option> 
+                            <option value="">Select crop name</option>
                           <option [value]="item.crop_name" *ngFor="let item of crops">
                               {{item.crop_name}}    
                           </option>
                         </select>
                             
-  </div> </td>
+  </div>
+  <div *ngIf="!crop_name?.valid && (crop_name?.dirty ||crop_name?.touched)">
+    <div   [hidden]="!crop_name.errors.required" style="color: crimson;" >
+        Crop Name is required
+    </div>
+    
+</div> </td>
 <td style="position: relative; padding-left: 45px;">
 
                 <label for="area"><b>Area (In Hectare)</b></label>
                 <input type="text" placeholder="Enter area in hectare" name="area" formControlName="area">
-                </td>
+                <div *ngIf="!area?.valid && (area?.dirty ||area?.touched)">
+                    <div   [hidden]="!area.errors.required" style="color: crimson;" >
+                        area is required
+                    </div>
+                    
+                </div>   
+            
+            </td>
+                
                 </tr>
                 </table>
 
 
                 <table style="width: 100%">
                     <tr>
-                        <td style="width: 45%">
+                        <td style="width: 45%;padding-top: 1%;">
                 <input type="reset" value="RESET" data-inline="true">
                
                 <!-- <button type="submit" data-inline="true" onclick="ShowHideDiv(this)" value="yes">CALCULATE</button> -->
             </td>
             <td style="position: relative; padding-left: 30px;">
                 
-                <button (click)=displaytext()>CALCULATE</button>
+                <button (click)="displaytext()" >CALCULATE</button>
                 </td></tr></table><hr>
                 <div *ngIf="isShow">
 
@@ -105,31 +98,35 @@
                         <tr></tr>
                         <tr>
                             <th>Insurance Company</th>  
-                            <th>Sum Insured(per hectare)</th>
-                            <th>Farmer Share(%)</th>
-                        </tr>
-        
-                        <tr *ngFor="let getinsurance of getinsurances" >
-                            <td>Yojna Insurance</td> 
-                            <td>{{getinsurance.sum_insured_per_hectare}}</td>
-                            <td>{{getinsurance.farmer_share_percent}}</td>
-                        </tr>
-                        <tr>
-                            <th>Actual Rate(%)</th>
                             <th>Crop Name</th>
                             <th>Area</th>
                             
                         </tr>
-                        <tr *ngFor="let getinsurance of getinsurances">
-                            <td>{{getinsurance.actual_rate}}</td>
+        
+                        <tr >
+                            <td>Yojna Insurance</td> 
                             <td>{{cropname}}</td>
                             <td>{{area1}}</td>
+                           
+                           
+                        </tr>
+                        <tr>
+                            <th>Farmer Share(%)</th>
+                            <th>Actual Rate(%)</th>
+                            <th>Sum Insured(per hectare)</th>
+                          
+                            
+                        </tr>
+                        <tr>
+                             <td>{{farmershare}}</td>
+                            <td>{{actualrate}}</td> 
+                            <td>{{suminsuredperhectare}}</td>
 
                         </tr>
                         <tr>
                             <th>Premium paid by farmer(Rs)</th> 
                             <th>Premium paid by Govt(Rs)</th> 
-                            <th>Sum Insured</th>
+                            <th>Total Sum Insured</th>
                         </tr>
                         <tr>
                             <td>{{premiumpaidbyfarmer}}</td>
@@ -141,7 +138,7 @@
                         
                     </table>
     
-                    <button type="submit" (click)=displayalert() >APPLY</button>
+                    <button type="submit" (click)=displayalert()>APPLY</button>
 
                 </div>
             </div>
