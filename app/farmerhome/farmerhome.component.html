@@ -16,7 +16,10 @@
         insurance.Also, a farmer can place the request for bidding of crops.Farmers’ Portal is an endeavour in this
         direction to create one stop shop for meeting all informational needs relating to Agriculture,sale of an Indian
         farmer. -->
-        Now you can sell your produce directly to end consumer i.e. Retailers, Bulk buyers, Institution, Group Co-operative Societies, Citizen Associations or any other group buyers on kisanyojana.com & also you can save a lot of money via Group buying of Agri products or machinery directly from Manufacturing Companies and big distributors on a fair price.
+        Now you can sell your produce directly to end consumer i.e. Retailers, Bulk buyers, Institution, Group
+        Co-operative Societies, Citizen Associations or any other group buyers on kisanyojana.com & also you can save a
+        lot of money via Group buying of Agri products or machinery directly from Manufacturing Companies and big
+        distributors on a fair price.
       </p>
     </div>
     <div id="small-text">Lets </div>
@@ -56,8 +59,8 @@
                         <h2 style="margin-bottom: 30px;">Request for Bid</h2>
 
                         <label id="labels" for="croptype"><b>Crop Type</b></label>
-                        <select class="form-control" name="season" name="drinks" style="height: 45px;" id="season" [(ngModel)]="selectedtype"
-                          (change)="ontypeSelect(selectedtype)" formControlName="croptype">
+                        <select class="form-control" name="season" name="drinks" style="height: 45px;" id="season"
+                          [(ngModel)]="selectedtype" (change)="ontypeSelect(selectedtype)" formControlName="croptype">
                           <option value="" style="color: brown;" disabled selected>Choose a drink</option>
                           <option disabled>Select an Option</option>
 
@@ -134,7 +137,7 @@
                           <div [hidden]="!base_price.errors.pattern" style="color: crimson; font-size:12px;">
                             Only numbers are allowed
                           </div>
-                          
+
 
                         </div>
                         <button [disabled]="!SellRequestForm.valid" type="submit">Place Request</button>
@@ -157,8 +160,7 @@
           <p> View all the crops that are on sale in the market.</p>
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
-          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="/marketplace">
+          <button type="button" id="button" class="btn btn-primary" routerLink="/marketplace">
             Go
           </button>
         </div>
@@ -172,179 +174,11 @@
           <p> Get Insurance for your crops</p>
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
-          <!-- <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="ApplyInsuranceComponent">
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
+            routerLink="/applyinsurance">
             Go
-          </button> -->
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#applyinsurancemodal">
-            Launch demo modal
           </button>
-
-          <!-- Modal -->
-          <div class="modal fade" id="applyinsurancemodal" tabindex="-1" role="dialog" aria-labelledby="applyinsurancemodalTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                
-                <div class="modal-body">
-                  <div id="page-container">
-                    <div id="content-wrap">
-                    <div class="row">
-                        <div class="main">
-                            <div class="card">       
-                            <form [formGroup]="applyinsuranceForm" (ngSubmit)="onSubmit()" novalidate>
-                                
-                                <div class="container">
-                                    <h2 align="center">Insurance Premium Calculator</h2><br>
-                                    <table style="width: 100%">
-                                        <tr>
-                                            <td style="width: 45%">  
-                                              
-                                                
-                      <div class="form-group" >
-                        <label for="crop_type"><b>Crop Type</b></label>
-                        <select class="form-control"  name="crop_type" id="crop_type" 
-                        [(ngModel)]="selectedtype" (change)="ontypeSelect(selectedtype)" formControlName="crop_type">
-                        <!-- <option value="" disabled selected>Choose a drink</option> -->
-                        <!-- <option default>Select Your Beverage</option> -->
-                        <!-- <option selected="selected">Select Your Beverage</option> -->
-                        <!-- <option value="" selected data-default>select your beverage</option> -->
-                        <option value="">Select One …</option> 
-                        <option value="kharif">Kharif</option>
-                            <option value="rabi">Rabi</option>
-                            <option value="commercial">Commercial</option>  
-                        </select> 
-                      </div>
-                      <div *ngIf="!crop_type?.valid && (crop_type?.dirty ||crop_type?.touched)">
-                        <div   [hidden]="!crop_type.errors.required" style="color: crimson;" >
-                            Crop Type is required
-                        </div>
-                        
-                    </div>
-                      </td>
-                      <td style="position: relative; padding-left: 45px;">
-                    
-                      <div class="form-group">
-                        <label for="year"><b>Year</b></label>
-                        <select class="form-control"  name="year" id="year">
-                            <option value="2020">2020</option>
-                          </select> 
-                      </div>
-                    </td></tr></table>
-                    <table style="width: 100%">
-                        <tr>
-                            <td style="width: 45%"> 
-                      <div class="form-group">
-                        
-                          <label id="labels" for="crop_name"><b>Crop Name</b></label>
-                                            
-                                            <select class="form-control" name="my-select" formControlName="crop_name" >
-                                                <option value="">Select crop name</option>
-                                              <option [value]="item.crop_name" *ngFor="let item of crops">
-                                                  {{item.crop_name}}    
-                                              </option>
-                                            </select>
-                                                
-                      </div>
-                      <div *ngIf="!crop_name?.valid && (crop_name?.dirty ||crop_name?.touched)">
-                        <div   [hidden]="!crop_name.errors.required" style="color: crimson;" >
-                            Crop Name is required
-                        </div>
-                        
-                    </div> </td>
-                    <td style="position: relative; padding-left: 45px;">
-                    
-                                    <label for="area"><b>Area (In Hectare)</b></label>
-                                    <input type="text" placeholder="Enter area in hectare" name="area" formControlName="area">
-                                    <div *ngIf="!area?.valid && (area?.dirty ||area?.touched)">
-                                        <div   [hidden]="!area.errors.required" style="color: crimson;" >
-                                            area is required
-                                        </div>
-                                        
-                                    </div>   
-                                
-                                </td>
-                                    
-                                    </tr>
-                                    </table>
-                    
-                    
-                                    <table style="width: 100%">
-                                        <tr>
-                                            <td style="width: 45%;padding-top: 1%;">
-                                    <input type="reset" value="RESET" data-inline="true">
-                                   
-                                    <!-- <button type="submit" data-inline="true" onclick="ShowHideDiv(this)" value="yes">CALCULATE</button> -->
-                                </td>
-                                <td style="position: relative; padding-left: 30px;">
-                                    
-                                    <button (click)="displaytext()" >CALCULATE</button>
-                                    </td></tr></table><hr>
-                                    <div *ngIf="isShow">
-                    
-                                       
-                                        <table class="table" style="margin-top: 5%;" >
-                                            <tr></tr>
-                                            <tr>
-                                                <th>Insurance Company</th>  
-                                                <th>Crop Name</th>
-                                                <th>Area</th>
-                                                
-                                            </tr>
-                            
-                                            <tr >
-                                                <td>Yojna Insurance</td> 
-                                                <td>{{cropname}}</td>
-                                                <td>{{area1}}</td>
-                                               
-                                               
-                                            </tr>
-                                            <tr>
-                                                <th>Farmer Share(%)</th>
-                                                <th>Actual Rate(%)</th>
-                                                <th>Sum Insured(per hectare)</th>
-                                              
-                                                
-                                            </tr>
-                                            <tr>
-                                                 <td>{{farmershare}}</td>
-                                                <td>{{actualrate}}</td> 
-                                                <td>{{suminsuredperhectare}}</td>
-                    
-                                            </tr>
-                                            <tr>
-                                                <th>Premium paid by farmer(Rs)</th> 
-                                                <th>Premium paid by Govt(Rs)</th> 
-                                                <th>Total Sum Insured</th>
-                                            </tr>
-                                            <tr>
-                                                <td>{{premiumpaidbyfarmer}}</td>
-                                                <td>{{premiumpaidbygovt}}</td>
-                                                <td>{{suminsured1}}</td>
-                    
-                                            </tr>
-                                            
-                                            
-                                        </table>
-                        
-                                        <button type="submit" (click)=displayalert()>APPLY</button>
-                    
-                                    </div>
-                                </div>
-                            </form>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
       <div class="col-sm-4">
@@ -372,8 +206,7 @@
           <p>You can claim the insurance for your crop loss.</p>
           <!-- <a routerLink="ClaimInsuranceeComponent" class="btn btn-primary" id="button" >Go</a> -->
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal" routerLink="/claiminsurance"
-          data-target="#claiminsurance"
-            (click)="onGetInsurance()">
+            data-target="#claiminsurance" (click)="onGetInsurance()">
             Go
           </button>
 
@@ -393,10 +226,10 @@
                         <tr>
                           <td>
 
-                          
 
-                        <label id="labels" for="policyno"><b>Policy Number</b></label>
-                        <!-- <input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno">
+
+                            <label id="labels" for="policyno"><b>Policy Number</b></label>
+                            <!-- <input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno">
                       <div *ngIf="!policyno?.valid && (policyno?.dirty ||policyno?.touched)">
                         <div [hidden]="!policyno.errors.pattern" style="color: crimson; font-size:12px;">
                           Only numbers are allowed
@@ -406,16 +239,16 @@
                         </div>
 
                       </div> -->
-                    </td>
-                    <td>
-                      <label name="policyno" formControlName="policyno">{{insurancedata[0].policy_no}}</label>
-                      <!-- <input type="text" value={{insurancedata[0].policy_no}} name="policyno" formControlName="policyno"> -->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                        <label id="labels" for="insurancecompany"><b>Insurance Company</b></label>
-                        <!-- <input type="text" placeholder="Enter Company name" name="insurancecompany"
+                          </td>
+                          <td>
+                            <label name="policyno" formControlName="policyno">{{insurancedata[0].policy_no}}</label>
+                            <!-- <input type="text" value={{insurancedata[0].policy_no}} name="policyno" formControlName="policyno"> -->
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="labels" for="insurancecompany"><b>Insurance Company</b></label>
+                            <!-- <input type="text" placeholder="Enter Company name" name="insurancecompany"
                           formControlName="insurancecompany">
                         <div *ngIf="!insurancecompany?.valid && (insurancecompany?.dirty ||insurancecompany?.touched)">
                           <div [hidden]="!insurancecompany.errors.pattern" style="color: crimson; font-size:12px;">
@@ -426,11 +259,11 @@
                           </div>
 
                         </div> -->
-                        <td>
-                          <label>{{insurancedata[0].insurance_company}}</label>
-                        </td>
-                    </tr>
-                    <!-- <tr>
+                          <td>
+                            <label>{{insurancedata[0].insurance_company}}</label>
+                          </td>
+                        </tr>
+                        <!-- <tr>
                       <td>
 
                         <label id="labels" for="nameofinusree"><b>Name of Insuree</b></label>
@@ -447,11 +280,11 @@
                         </div>
                       </td>
                     </tr> -->
-                    <tr>
-                      <td>
+                        <tr>
+                          <td>
 
-                        <label id="labels" for="suminsured"><b>Sum Insured</b></label>
-                        <!-- <input type="text" placeholder="Enter Sum Insured" name="suminsured"
+                            <label id="labels" for="suminsured"><b>Sum Insured</b></label>
+                            <!-- <input type="text" placeholder="Enter Sum Insured" name="suminsured"
                           formControlName="suminsured">
                         <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
                           <div [hidden]="!suminsured.errors.pattern" style="color: crimson; font-size:12px;">
@@ -462,18 +295,18 @@
                           </div>
 
                         </div> -->
-                      </td>
-                      <td>
-                        <label>{{insurancedata[0].sum_insured}}</label>
-                      </td>
-                    </tr>
+                          </td>
+                          <td>
+                            <label>{{insurancedata[0].sum_insured}}</label>
+                          </td>
+                        </tr>
 
                         <h2 align="center">Details of Cause for Loss</h2>
 
                         <label id="labels" for="cause_of_loss"><b>Cause of Loss</b></label>
                         <!-- <input type="text" placeholder="Enter the cause of loss" name="cause_of_loss"
                           formControlName="cause_of_loss"> -->
-                          <select class="form-control" name="cause_of_loss" id="cause_of_loss" [(ngModel)]="selectedcause"
+                        <select class="form-control" name="cause_of_loss" id="cause_of_loss" [(ngModel)]="selectedcause"
                           (change)="on_cause_of_loss(selectedcause)" formControlName="cause_of_loss">
                           <option value="Fire" selected>Fire</option>
                           <option value="weather conditions">Weather Conditions</option>
@@ -483,7 +316,7 @@
                           <option value="localized calamities" selected>Localized calamities</option>
                         </select>
                         <div *ngIf="!cause_of_loss?.valid && (cause_of_loss?.dirty ||cause_of_loss?.touched)">
-                          
+
                           <div [hidden]="!cause_of_loss.errors.required" style="color: crimson; font-size:12px;">
                             Cause of Loss is required
                           </div>
@@ -520,13 +353,12 @@
           <p> View your profile.</p>
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
-          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="MarketplaceComponent">
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal" routerLink="/profile">
             Go
           </button>
         </div>
       </div>
     </div>
-    
+
   </div>
 </div>

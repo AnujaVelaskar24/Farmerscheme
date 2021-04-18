@@ -94,12 +94,18 @@
             -moz-box-shadow: 0 0 0px rgb(0,0,0);
             float: initial;
         }
+        td{
+            font-size: 20px;
+        }
+        th{
+            font-size: 20px;
+        }
         .card1
         {
              background-color: #37a468; 
             /* background-image: linear-gradient(to right, #2b9f3b,#279035); */
             margin: auto;
-            margin-top:2%;
+            /* margin-top:2%; */
             box-shadow: #d0ead6;
             -webkit-box-shadow: 0 0 5px grey;
             width:60%;
@@ -129,12 +135,16 @@
         
         .card-title
         {
-            font-size: 55px;
+            font-size: 60px;
             color: white;
+        }
+        .card-text
+        {
+            font-size: 20px;
         }
         .card2
         {
-            /* background-color:#cbb19b; */
+            background-color:white;
             margin: auto;
             margin-top:2px; 
             box-shadow: #d0ead6;
@@ -215,6 +225,7 @@
         background-color: #3cb371;
         /* border-color: white; */
         margin-top: 8%;
+        font-size: 20px;
         display: flex; 
         justify-content: center;
             

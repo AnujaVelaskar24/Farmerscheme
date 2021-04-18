@@ -1,12 +1,12 @@
- 
+
 <div id="page-container">
   <div id="content-wrap">
     <div class="main">
       <h1>MARKETPLACE</h1>
+      
       <table class="table">
         <thead>
-          <tr
-            id="heading_style">
+          <tr id="heading_style">
             <th scope="col">Sr No.</th>
             <th scope="col">request ID</th>
             <th scope="col">Name</th>
@@ -18,10 +18,10 @@
         </thead>
         <tbody *ngFor="let getmarket of getmarkets;index as i">
 
-          <tr id="i" *ngIf="i%2==0">
-            
+          <tr id="j">
+
             <th>{{i+1}}</th>
-            <td>{{getmarket.request_id}}</td>
+            <td style="font-size: 16px;">{{getmarkets[i].request_id}}</td>
 
             <td>{{getmarket.crop_name}}</td>
             <td>{{getmarket.quantity}}</td>
@@ -29,60 +29,37 @@
             <td>{{getmarket.amount}}</td>
             <!-- <td>2500</td> -->
             <td>
-              <!-- <input type="button" class="btn btn-outline-success" id="btn1" value="Bid"
-                routerLink="BidRequestComponent" (click)="applybid(getmarket.request_id)"> -->
-                <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#bidrequest"
+              <input type="button" class="btn btn-outline-success" id="btn1" value="Bid"
+                routerLink="/bidrequest" (click)="applybid(getmarket.request_id, getmarket.crop_id)">
+              <!-- <button type="button" id="btn1" class="btn btn-primary" data-toggle="modal" 
                 (click)="applybid(getmarket.request_id)">
+                data-target="#bidrequest" 
                 Go
-              </button>
-              </td>
+              </button> -->
+            </td>
           </tr>
-
-          <tr id="j" *ngIf="i%2!=0">
-            
-            <th>{{i+1}}</th>
-            <td>{{getmarket.request_id}}</td>
-
-            <td>{{getmarket.crop_name}}</td>
-            <td>{{getmarket.quantity}}</td>
-            <td>{{getmarket.base_price}}</td>
-            <td>{{getmarket.amount}}</td>
-            <!-- <td>2500</td> -->
-            <td>
-              <!-- <input type="button" class="btn btn-outline-success" id="btn1" value="Bid"
-                routerLink="BidRequestComponent" (click)="applybid(getmarket.request_id)"> -->
-                <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#bidrequest"
-                (click)="applybid(getmarket.request_id)">
-                Go
-              </button>
-              </td>
-          </tr>
-
         </tbody>
       </table>
+      
     </div>
   </div>
 </div>
-<!-- Modal -->
-
+<!-- 
 <div class="modal fade" id="bidrequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-  <div class="modal-content">
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
       <div class="card1">
         <div class="row no-gutters">
           <div class="col-sm-3 row-sm-3" id="pic">
-            <!-- <img class="card-img1" src="C:/Users/Sneha/Downloads/wheat.jpg"> -->
           </div>
           <div class="col-sm-6">
             <div class="card-body">
               <h5 class="card-title">Wheat</h5>
               <p class="card-text">100% organic and premium quality bla bla bla.</p>
-              <!-- <a href="#" class="btn btn-primary">View Profile</a> -->
             </div>
           </div>
           <div class="col-sm-3">
-            <!-- <img class="card-img2" src="C:\Users\Sneha\Downloads\approved.png"> -->
           </div>
         </div>
       </div>
@@ -121,24 +98,23 @@ aria-hidden="true">
             <form id="form" [formGroup]="BidForm" (ngSubmit)="onPlacebid()" novalidate>
 
               <div>
-                <input type="text" class="form-control" placeholder="Enter your bid amount" name="placebid" formControlName="placebid">
+                <input type="text" class="form-control" placeholder="Enter your bid amount" name="placebid"
+                  formControlName="placebid">
               </div>
               <div class="d" style="width: auto;">
-                <!-- <input type="submit" class="btn btn-outline-success" id="btn10" value="Place bid" > -->
-                <button class="btn btn-outline-success" id="btn10" type="submit" routerLink="bidrequest">Place Bid</button>
+                <button class="btn btn-outline-success" id="btn10" type="submit" routerLink="/bidrequest">Place
+                  Bid</button>
               </div>
 
             </form>
           </div>
           <div>
-            <!-- <img src="C:\Users\Sneha\Downloads\checked.png" style="height:100px; width: 100px; margin-top: 200px; margin-right: 50px; color: mediumseagreen;"> -->
           </div>
 
         </div>
       </div>
-    <div class="modal-body">
+      <div class="modal-body">
+      </div>
     </div>
   </div>
-</div>
-</div>
-
+</div> -->
