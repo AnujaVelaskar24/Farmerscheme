@@ -12,6 +12,28 @@
     color: white;
     
 }
+#small-text{
+  color: green;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 5px;
+  margin-top: 40px;
+}
+#big-text{
+  color: rgb(2, 82, 2);
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+h1{
+      color: white;
+      letter-spacing: 40px;
+      text-align: center;
+      font-size: 60px;
+      text-shadow: 2px 2px 8px green;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
 #project-name{
     color: white;
     margin-right: 50px;
@@ -209,7 +231,9 @@ background-color:#ff00ff !important;
       width: 100%;
       font-size: 15px;
     }
-  
+    button:disabled {
+      background-color:#8bc995;
+  }
     button:hover {
       opacity: 0.8;
     }

@@ -3,9 +3,10 @@
   <div id="page-container">
     <div id="content-wrap">
     <div class="main">
+      <h1>APPROVE CROPS</h1>
     <table class="table">
         <thead>
-          <tr>
+          <tr id="heading_style">
             <th scope="col">Sr No.</th>
             <th scope="col">User ID</th>
             <th scope="col">Crop Name</th>
@@ -17,7 +18,7 @@
           </tr>
         </thead>
         <tbody *ngFor="let item of crop_approval_data; index as i">
-          <tr id="i">
+          <tr id="i" *ngIf="i%2==0">
             <th scope="row">{{i+1}}</th>
             <td>{{item.userid}}</td>
             <td>{{item.crop_name}}</td>
@@ -28,6 +29,17 @@
             <td><input type="button" class="btn btn-outline-success" id="btn1" (click)="onapprove(item.request_id)" value="Approve"/></td>
             <td><input type="button" class="btn btn-outline-danger" id="btn2" value="Disapprove"></td>
           </tr> 
+          <tr id="j" *ngIf="i%2!=0">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.userid}}</td>
+            <td>{{item.crop_name}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.fertilizer_type}}</td>
+            <td>{{item.msp}}</td>
+            <td>{{item.base_price}}</td>
+            <td><input type="button" class="btn btn-outline-success" id="btn1" (click)="onapprove(item.request_id)" value="Approve"/></td>
+            <td><input type="button" class="btn btn-outline-danger" id="btn2" value="Disapprove"></td>
+          </tr>
         </tbody>
       </table>
     </div>
