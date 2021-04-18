@@ -43,6 +43,7 @@ tr
 }
 #btn1
 {
+    height: 40px;
     color: white;
     background-color: #28a745;
     border-color: white;
