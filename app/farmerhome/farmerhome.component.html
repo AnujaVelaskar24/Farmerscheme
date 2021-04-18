@@ -1,11 +1,6 @@
 <div id="page-container">
   <div id="content-wrap">
 
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <div id="welcome-paragraph">
       <p class="paragraph-text">Agriculture is the most healthful,useful and noble employment of man.It is felt that
         with provision of timely and adequate inputs such as fertilizers, seeds, pesticides and by making available
@@ -149,7 +144,7 @@
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="MarketplaceComponent">
+            routerLink="/marketplace">
             Go
           </button>
         </div>
@@ -164,7 +159,7 @@
           <p>View all the previous transactions of your crops.</p>
           <!-- <a routerLink="FarmerTransactionHistoryComponent" class="btn btn-primary" id="button">Go</a> -->
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="FarmerTransactionHistoryComponent">
+            routerLink="/farmertransactionhistory">
             Go
           </button>
         </div>
@@ -178,7 +173,8 @@
           <p class="card-text" id="fact-number">Claim Insurance</p>
           <p>You can claim the insurance for your crop loss.</p>
           <!-- <a routerLink="ClaimInsuranceeComponent" class="btn btn-primary" id="button" >Go</a> -->
-          <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#claiminsurance"
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal" routerLink="/claiminsurance"
+          data-target="#claiminsurance"
             (click)="onGetInsurance()">
             Go
           </button>
