@@ -8,7 +8,7 @@
 
     <h1>WELCOME FARMER!</h1>
     <div id="welcome-paragraph">
-      <p class="paragraph-text">
+      <p class="paragraph-text"><i>
         <!-- Agriculture is the most healthful,useful and noble employment of man.It is felt that
         with provision of timely and adequate inputs such as fertilizers, seeds, pesticides and by making available
         affordable agricultural credit /crop insurance, Indian farmers are going to ensure food and nutritional security
@@ -16,10 +16,15 @@
         insurance.Also, a farmer can place the request for bidding of crops.Farmers’ Portal is an endeavour in this
         direction to create one stop shop for meeting all informational needs relating to Agriculture,sale of an Indian
         farmer. -->
+<<<<<<< HEAD
         Now you can sell your produce directly to end consumer i.e. Retailers, Bulk buyers, Institution, Group
         Co-operative Societies, Citizen Associations or any other group buyers on kisanyojana.com & also you can save a
         lot of money via Group buying of Agri products or machinery directly from Manufacturing Companies and big
         distributors on a fair price.
+=======
+        Now you can sell your produce directly to end consumer i.e. Retailers, Bulk buyers, Institution, Group Co-operative Societies, Citizen Associations or any other group buyers on kisanyojana.com & also you can save a lot of money via Group buying of Agri products or machinery directly from Manufacturing Companies and big distributors on a fair price.
+      </i>
+>>>>>>> d55acae70956356ffa8bd80e3f9527661dcbd48a
       </p>
     </div>
     <div id="small-text">Lets </div>
@@ -59,9 +64,9 @@
                         <h2 style="margin-bottom: 30px;">Request for Bid</h2>
 
                         <label id="labels" for="croptype"><b>Crop Type</b></label>
-                        <select class="form-control" name="season" name="drinks" style="height: 45px;" id="season"
-                          [(ngModel)]="selectedtype" (change)="ontypeSelect(selectedtype)" formControlName="croptype">
-                          <option value="" style="color: brown;" disabled selected>Choose a drink</option>
+                        <select class="form-control" name="season" name="drinks" style="height: 45px;" id="season" [(ngModel)]="selectedtype"
+                          (change)="ontypeSelect(selectedtype)" formControlName="croptype">
+                          <!-- <option value="" style="color: brown;" disabled selected></option> -->
                           <option disabled>Select an Option</option>
 
                           <option value="kharif" selected>Kharif</option>
@@ -220,8 +225,8 @@
                   <form style="width: 100%;" [formGroup]="contactForm1" (ngSubmit)="onSubmit1()" novalidate>
 
 
-                    <div>
-                      <h2 align="center">Particulars of Insuree</h2>
+                    <div  class="container">
+                      <h2 align="center">Particulars of Insuree</h2><br>
                       <table>
                         <tr>
                           <td>
@@ -287,6 +292,10 @@
                             <!-- <input type="text" placeholder="Enter Sum Insured" name="suminsured"
                           formControlName="suminsured">
                         <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
+                        <label id="labels" for="suminsured"><b>Sum Insured</b></label>
+                          <input type="text" placeholder="Enter Sum Insured" name="suminsured"
+                          formControlName="suminsured"> -->
+                        <!-- <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
                           <div [hidden]="!suminsured.errors.pattern" style="color: crimson; font-size:12px;">
                             Only numbers are allowed
                           </div>
@@ -353,7 +362,8 @@
           <p> View your profile.</p>
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
-          <button type="button" id="button" class="btn btn-primary" data-toggle="modal" routerLink="/profile">
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
+            routerLink="/profile">
             Go
           </button>
         </div>
