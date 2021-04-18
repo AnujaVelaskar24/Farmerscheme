@@ -21,6 +21,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
 import {ForgotpasswordComponent} from './forgotpassword/forgotpassword.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
 import {LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
 import {AdminBidApprovalComponent} from './admin-bid-approval/admin-bid-approval.component';
@@ -28,11 +29,12 @@ import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admi
 import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 
 const routes: Routes = [
-  {path: '', component: AdminInsuranceClaimApprovalComponent},
+  {path: '', component: ProfileComponent},
   {path: 'Home', component: HomeComponent},
   {path: 'Farmerhome', component: FarmerhomeComponent},
   {path: 'BidderHome', component: BidderhomeComponent},
   {path: 'LoginComponent', component: LoginComponent},
+  {path: 'ProfileComponent', component: ProfileComponent},
   {path: 'ForgotpasswordComponent', component: ForgotpasswordComponent},
   {path: 'RegisterComponent', component: RegisterComponent},
   {path: 'LandDetailsRegisterComponent', component: LandDetailsRegisterComponent},
