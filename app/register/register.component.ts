@@ -93,7 +93,16 @@ export class RegisterComponent implements OnInit {
       var uid=sessionStorage.getItem("userid");
       
     
-    this.router.navigateByUrl('LandDetailsRegisterComponent')
+      if(this.user_type.value==='false')
+      {
+        console.log("farmer");
+        this.router.navigateByUrl('landdetailsregister');
+      }
+      else
+      {
+        this.router.navigateByUrl('bidderhome');
+      }
+    
     
     });
     

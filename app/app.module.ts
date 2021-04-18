@@ -32,6 +32,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { AdminBidApprovalComponent } from './admin-bid-approval/admin-bid-approval.component';
 import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admin-insurance-approval.component';
 import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
+import { CommonmarketplaceComponent } from './commonmarketplace/commonmarketplace.component';
+
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-ap
     AdminInsuranceClaimApprovalComponent,
     ForgotpasswordComponent,
     ProfileComponent,
+    CommonmarketplaceComponent,
  
   ],
   imports: [

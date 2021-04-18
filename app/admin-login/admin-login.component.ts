@@ -46,7 +46,7 @@ onSubmit() {
       //sessionStorage.setItem("username",this.LoginForm.value.username)
       sessionStorage.setItem("userid",res.userid)
       
-        this.router.navigateByUrl('AdminhomeComponent');
+        this.router.navigateByUrl('adminhome');
       
      
       

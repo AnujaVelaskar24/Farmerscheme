@@ -49,7 +49,7 @@ export class LandDetailsRegisterComponent implements OnInit {
     // console.log(landobj,"land detail")
     this.LandDetailsRegisterService.landdetailsregister(this.LandDetailsRegisterForm.value).subscribe(res => {
       console.log(res)
-      this.router.navigateByUrl('Farmerhome')
+      this.router.navigateByUrl('farmerhome')
       //this.router.navigateByUrl('/home/')
     });
 

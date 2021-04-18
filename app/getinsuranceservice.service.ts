@@ -16,8 +16,11 @@ export class GetinsuranceserviceService {
 
 
   constructor(private httpClient: HttpClient) { }
-  getinsurance():Observable<Getinsurance[]> {
-    return this.httpClient.get<Getinsurance[]>(this.apiServer + '/insurance/')
+  // getinsurance():Observable<Getinsurance[]> {
+  //   return this.httpClient.get<Getinsurance[]>(this.apiServer + '/insurance/')
+  // }
+  getinsurance(crop_name:string): Observable<any> {
+    return this.httpClient.get<any>(this.apiServer + '/insurance?crop_name=' + crop_name)
   }
 
 }

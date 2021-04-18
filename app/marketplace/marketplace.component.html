@@ -1,4 +1,4 @@
-
+ 
 <div id="page-container">
   <div id="content-wrap">
     <div class="main">
@@ -6,7 +6,7 @@
       <table class="table">
         <thead>
           <tr
-            style="background-color: rgb(48, 100, 24); color:white; height:60px; text-align: center; margin-top: 20px;">
+            id="heading_style">
             <th scope="col">Sr No.</th>
             <th scope="col">request ID</th>
             <th scope="col">Name</th>
@@ -16,9 +16,10 @@
             <th scope="col">Place Bid</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let getmarket of getmarkets;index as i">
 
-          <tr *ngFor="let getmarket of getmarkets;index as i">
+          <tr id="i" *ngIf="i%2==0">
+            
             <th>{{i+1}}</th>
             <td>{{getmarket.request_id}}</td>
 
@@ -36,6 +37,27 @@
               </button>
               </td>
           </tr>
+
+          <tr id="j" *ngIf="i%2!=0">
+            
+            <th>{{i+1}}</th>
+            <td>{{getmarket.request_id}}</td>
+
+            <td>{{getmarket.crop_name}}</td>
+            <td>{{getmarket.quantity}}</td>
+            <td>{{getmarket.base_price}}</td>
+            <td>{{getmarket.amount}}</td>
+            <!-- <td>2500</td> -->
+            <td>
+              <!-- <input type="button" class="btn btn-outline-success" id="btn1" value="Bid"
+                routerLink="BidRequestComponent" (click)="applybid(getmarket.request_id)"> -->
+                <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#bidrequest"
+                (click)="applybid(getmarket.request_id)">
+                Go
+              </button>
+              </td>
+          </tr>
+
         </tbody>
       </table>
     </div>
@@ -103,7 +125,7 @@ aria-hidden="true">
               </div>
               <div class="d" style="width: auto;">
                 <!-- <input type="submit" class="btn btn-outline-success" id="btn10" value="Place bid" > -->
-                <button class="btn btn-outline-success" id="btn10" type="submit">Place Bid</button>
+                <button class="btn btn-outline-success" id="btn10" type="submit" routerLink="bidrequest">Place Bid</button>
               </div>
 
             </form>

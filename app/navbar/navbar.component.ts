@@ -43,16 +43,17 @@ onSubmitLoginForm() {
     }
     else
     {
+      
       console.log("valid");
       //sessionStorage.setItem("username",this.LoginForm.value.username)
       sessionStorage.setItem("userid",res.userid)
       if(res.user_type===false)
       {
-        this.router.navigateByUrl('Farmerhome');
+        this.router.navigateByUrl('farmerhome');
       }
       else
       {
-        this.router.navigateByUrl('BidderHome');
+        this.router.navigateByUrl('bidderhome');
       }
      
       

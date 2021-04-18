@@ -6,14 +6,8 @@
     /* padding-top: 200px; */
   }
 #content-wrap {
+    
     padding-bottom: 2.5rem;    /* Footer height */
-  }
-  #heading_style{
-    background-color: rgb(48, 100, 24);
-     color:white;
-     height:60px;
-     text-align: center;
-     margin-top: 20px;
   }
   h1{
       color: white;
@@ -22,7 +16,6 @@
       font-size: 60px;
       text-shadow: 2px 2px 8px rgb(28, 44, 30);
   }
-
 .table
 {
     text-align: center;
@@ -30,16 +23,18 @@
 }
 tr
 {
-    height: 70px;
+    height: 30px;
     background-color: white;
 }
 #j
     {
-        background-color:#f5fcf6;
+        background-color: white;
+        /* background-color:#f5fcf6; */
     }
 #i
 {
-    background-color:#d0ead6;
+    background-color: white;
+    /* background-color:#d0ead6; */
 }
 #btn1
 {
@@ -59,6 +54,7 @@ tr
 }
 .main
 {
+    
     width:80%;
     margin: auto;
 }
@@ -227,9 +223,6 @@ tr
         .styled-table td {
             padding: 12px 15px;
         }
-        td{
-            font-size: 16px;
-        }
         .styled-table tbody tr {
             border-bottom: 1px solid #dddddd;
         }
@@ -246,15 +239,14 @@ tr
             color: #009879;
         }
         #i
-        {
-            /* background-color:#e4f6ec; */
-            background-color:#f0fff5;
-        }
-        
-        #j
-        {
-            background-color:white;
-        }
+    {
+        background-color:#e4f6ec;
+    }
+    
+    #j
+    {
+        background-color:#8cd9ae;
+    }
     #form
     {   
         margin-right: 10%;
