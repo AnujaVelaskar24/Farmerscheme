@@ -1,0 +1,49 @@
+
+<body>
+  
+    <div id="page-container">
+      <div id="content-wrap">
+       
+      <div class="main">
+        <h2>bid approval</h2>
+        <table class="table" cellpadding="0" cellspacing="0" border="1">
+          <thead>
+            <tr style="font-size: smaller;width: 100%;">
+              <th scope="col">Bid ID</th>
+              <th scope="col">Request ID</th>
+              <th scope="col">Bidder User ID</th>
+              <th scope="col">Crop Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Fertilizer Type</th>
+              <th scope="col">MSP</th>
+              <th scope="col">Base Price</th>
+              <th scope="col">Bid Amount</th>
+              <th scope="col" colspan="2">Action</th>
+            </tr>
+          </thead>
+        
+          <tbody style="font-size: smaller;width: 100%;">
+            <tr *ngFor="let item of bid_res ">
+              <td> {{item.bid_id}}</td>
+              <td>{{item.request_id}}</td>
+              <td> {{item.userid}}</td>
+              <td> {{item.crop_name}}</td>
+              <td> {{item.quantity}}</td>
+              <td> {{item.fertilizer_type}}</td>
+              <td> {{item.msp}}</td>
+              <td> {{item.base_price}}</td>
+              <td> {{item.amount}}</td>
+              
+              <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.request_id)">Approve</button></td>
+              <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
+          </tr>
+            
+          </tbody>
+      
+        </table>
+  
+          </div>
+          </div>
+          </div>
+  </body>
+  

@@ -29,6 +29,9 @@ import { LandDetailsRegisterComponent } from './land-details-register/land-detai
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import { AdminBidApprovalComponent } from './admin-bid-approval/admin-bid-approval.component';
+import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admin-insurance-approval.component';
+import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,9 @@ import { ProfileComponent } from './profile/profile.component';
     FooterComponent,
     ClaimInsuranceeComponent,
     LandDetailsRegisterComponent,
+    AdminBidApprovalComponent,
+    AdminInsuranceApprovalComponent,
+    AdminInsuranceClaimApprovalComponent,
     ForgotpasswordComponent,
     ProfileComponent,
  
