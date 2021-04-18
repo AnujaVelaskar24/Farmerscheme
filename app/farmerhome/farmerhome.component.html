@@ -6,18 +6,23 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <h1>WELCOME FARMER!</h1>
     <div id="welcome-paragraph">
-      <p class="paragraph-text">Agriculture is the most healthful,useful and noble employment of man.It is felt that
+      <p class="paragraph-text">
+        <!-- Agriculture is the most healthful,useful and noble employment of man.It is felt that
         with provision of timely and adequate inputs such as fertilizers, seeds, pesticides and by making available
         affordable agricultural credit /crop insurance, Indian farmers are going to ensure food and nutritional security
         to the Nation.In the farmer's portal, a farmer will be able to perform activites such as application/claim of
         insurance.Also, a farmer can place the request for bidding of crops.Farmers’ Portal is an endeavour in this
         direction to create one stop shop for meeting all informational needs relating to Agriculture,sale of an Indian
-        farmer.</p>
+        farmer. -->
+        Now you can sell your produce directly to end consumer i.e. Retailers, Bulk buyers, Institution, Group Co-operative Societies, Citizen Associations or any other group buyers on kisanyojana.com & also you can save a lot of money via Group buying of Agri products or machinery directly from Manufacturing Companies and big distributors on a fair price.
+      </p>
     </div>
-
+    <div id="small-text">Lets </div>
+    <div id="big-text">Start Selling!</div>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <div class="card-body" id="news-container">
           <h5 class="card-title">
             <img id="fact-icons" src="/assets/images/sell_request.jpg" />
@@ -51,8 +56,11 @@
                         <h2 style="margin-bottom: 30px;">Request for Bid</h2>
 
                         <label id="labels" for="croptype"><b>Crop Type</b></label>
-                        <select class="form-control" name="season" id="season" [(ngModel)]="selectedtype"
+                        <select class="form-control" name="season" name="drinks" style="height: 45px;" id="season" [(ngModel)]="selectedtype"
                           (change)="ontypeSelect(selectedtype)" formControlName="croptype">
+                          <option value="" style="color: brown;" disabled selected>Choose a drink</option>
+                          <option disabled>Select an Option</option>
+
                           <option value="kharif" selected>Kharif</option>
                           <option value="rabi">Rabi</option>
                           <option value="commercial">Commercial</option>
@@ -67,7 +75,7 @@
 
                         <label id="labels" for="crop_id"><b>Crop Name</b></label>
 
-                        <select class="form-control" name="my-select" formControlName="crop_id">
+                        <select class="form-control" name="my-select" style="height: 45px;" formControlName="crop_id">
                           <option [value]="item.crop_id" *ngFor="let item of crops">
                             {{item.crop_name}}
                           </option>
@@ -80,7 +88,7 @@
                         </div>
 
                         <label id="labels" for="fertilizer_type"><b>Fertilizer Type</b></label>
-                        <select class="form-control" name="fertilizer_type" id="fertilizer_type"
+                        <select class="form-control" style="height: 45px;" name="fertilizer_type" id="fertilizer_type"
                           [(ngModel)]="selectedfertilizertype" (change)="onfertilizertypeSelect(selectedfertilizertype)"
                           formControlName="fertilizer_type">
                           <option value="Powder" selected>Powder</option>
@@ -139,7 +147,7 @@
 
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <div class="card-body" id="news-container">
           <h5 class="card-title">
             <img id="fact-icons" src="/assets/images/marketplace.jpg" />
@@ -149,12 +157,27 @@
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="MarketplaceComponent">
+            routerLink="/marketplace">
             Go
           </button>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
+        <div class="card-body" id="news-container">
+          <h5 class="card-title">
+            <img id="fact-icons" src="/assets/images/apply_insurance.jpg" />
+          </h5>
+          <p class="card-text" id="fact-number">Apply Insurance</p>
+          <p> Get Insurance for your crops</p>
+          <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
+
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
+            routerLink="ApplyInsuranceComponent">
+            Go
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-4">
         <div class="card-body" id="news-container">
           <h5 class="card-title">
             <img id="fact-icons" style="height:70px; width: 70px; border-radius: 20px; margin-bottom: 30px;"
@@ -164,13 +187,13 @@
           <p>View all the previous transactions of your crops.</p>
           <!-- <a routerLink="FarmerTransactionHistoryComponent" class="btn btn-primary" id="button">Go</a> -->
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="FarmerTransactionHistoryComponent">
+            routerLink="/farmertransactionhistory">
             Go
           </button>
         </div>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <div class="card-body" id="news-container">
           <h5 class="card-title">
             <img id="fact-icons" src="/assets/images/insurance_claim.jpg" />
@@ -178,7 +201,8 @@
           <p class="card-text" id="fact-number">Claim Insurance</p>
           <p>You can claim the insurance for your crop loss.</p>
           <!-- <a routerLink="ClaimInsuranceeComponent" class="btn btn-primary" id="button" >Go</a> -->
-          <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#claiminsurance"
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal" routerLink="/claiminsurance"
+          data-target="#claiminsurance"
             (click)="onGetInsurance()">
             Go
           </button>
@@ -319,6 +343,22 @@
           </div>
         </div>
       </div>
+      <div class="col-sm-4">
+        <div class="card-body" id="news-container">
+          <h5 class="card-title">
+            <img style="height:100px; width: 100px;" src="/assets/images/profile_icon1.png" />
+          </h5>
+          <p class="card-text" id="fact-number">My Profile</p>
+          <p> View your profile.</p>
+          <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
+
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
+            routerLink="MarketplaceComponent">
+            Go
+          </button>
+        </div>
+      </div>
     </div>
+    
   </div>
 </div>

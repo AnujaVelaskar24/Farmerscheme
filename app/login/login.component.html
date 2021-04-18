@@ -1,5 +1,5 @@
 
-  <div id="page-container">
+  <!-- <div id="page-container">
     <div id="content-wrap">
 <div class="row">
     <div class="main">
@@ -42,6 +42,53 @@
     </div>
 </div>
 </div>
-</div>
+</div> -->
 
+<!-- <li class="nav-item active">
+  <a class="nav-link" routerLink="registration" *ngIf="!(loginstatus$ | async) as loginstatus" >SignUp</a>   <!--Visible only if the user is not logged in-->
+<!-- </li>
+<li class="nav-item dropdown active">
+  <a routerLink="#" class="nav-link dropdown-toggle" data-toggle="dropdown" *ngIf="!(loginstatus$ | async) as loginstatus" >Login</a>  <!--Visible only if the user is not logged in-->
+  <!-- <div class="dropdown-menu dropdown-me --> --> -->
+
+<!-- 
+  <div class="row">
+    <div class="main">
+        <div class="card">
+            
+    <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" novalidate>
+     
+        <div class="container">
+          <div class="form-group">
+          <label for="username"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="username" formControlName="username">
+          <div *ngIf="!username?.valid && (username?.dirty ||username?.touched)">
+            <div  style="color: crimson;" [hidden]="!username.errors.required" >
+                user Name is required
+            </div>
+          </div>
+        </div> 
+
+        <div class="form-group">
+          <label for="password"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" formControlName="password">
+          <div *ngIf="!password?.valid && (password?.dirty ||password?.touched)">
+            <div   [hidden]="!password.errors.required" style="color: crimson;" >
+                password is required
+            </div>
+        </div>
+      </div>
+          <button type="submit"  *ngIf="!(loginstatus$ | async) as loginstatus" >Login</button>
+          <a href="#">Admin login</a>
+        </div>
+     
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <span class="password">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+        
+        </div>
+    </div>
+</div> -->
 

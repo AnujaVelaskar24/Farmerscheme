@@ -2,6 +2,7 @@ html{
     position:relative; 
     min-height: 100%;
   }
+
   /*Normalize html and body elements,this style is just good to have*/
   html,body{
     margin:0;
