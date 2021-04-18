@@ -128,12 +128,13 @@
                         <label id="labels" for="base_price"><b>Base Price</b></label>
                         <input type="text" placeholder="Enter crop type" name="base_price" formControlName="base_price">
                         <div *ngIf="!base_price?.valid && (base_price?.dirty ||base_price?.touched)">
-                          <div [hidden]="!base_price.errors.pattern" style="color: crimson; font-size:12px;">
-                            Only numbers are allowed
-                          </div>
                           <div [hidden]="!base_price.errors.required" style="color: crimson; font-size:12px;">
                             Base price is required
                           </div>
+                          <div [hidden]="!base_price.errors.pattern" style="color: crimson; font-size:12px;">
+                            Only numbers are allowed
+                          </div>
+                          
 
                         </div>
                         <button [disabled]="!SellRequestForm.valid" type="submit">Place Request</button>

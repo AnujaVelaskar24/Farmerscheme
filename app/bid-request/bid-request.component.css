@@ -206,7 +206,9 @@
         justify-content: center;
        
     } 
-    
+    form{
+        padding-top: 40px;
+    }
     #btn10
     {
         color: white;
@@ -216,6 +218,9 @@
         display: flex; 
         justify-content: center;
             
+    }
+    #btn10:disabled {
+        background-color:#8bc995;
     }
     #btn1:hover
     {

@@ -101,6 +101,9 @@
       align-self: center;
       width: 20%;
     }
+    button:disabled {
+      background-color:#8bc995;
+  }
   
     .cancelbtn {
       width: auto;

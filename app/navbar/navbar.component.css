@@ -167,6 +167,9 @@ html{
     cursor: pointer;
     width: 100%;
   }
+  #loginbutton:disabled {
+    background-color:#8bc995;
+}
 
   .modal-lg {
     max-width: 45%;
@@ -186,3 +189,6 @@ html{
   button:hover {
     opacity: 0.8;
   }
+  button:disabled {
+    background-color:#8bc995;
+}
