@@ -1,60 +1,73 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import { FarmerhomeComponent} from './farmerhome/farmerhome.component';
 
-import { BidderhomeComponent } from './bidderhome/bidderhome.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import {MarketplaceComponent} from './marketplace/marketplace.component';
-import {FarmerTransactionHistoryComponent} from './farmer-transaction-history/farmer-transaction-history.component';
-import {BidderTransactionHistoryComponent} from './bidder-transaction-history/bidder-transaction-history.component';
-import {BidRequestComponent} from './bid-request/bid-request.component';
-import {ApplyInsuranceComponent} from './apply-insurance/apply-insurance.component';
-import {AdminhomeComponent} from './adminhome/adminhome.component';
-import {AdminLoginComponent} from './admin-login/admin-login.component';
-import {AdminCropApprovalComponent} from './admin-crop-approval/admin-crop-approval.component';
-import {AdminAccountApprovalComponent} from './admin-account-approval/admin-account-approval.component';
-import {ApplyBidComponent} from './apply-bid/apply-bid.component';
-import {AboutUsComponent} from './about-us/about-us.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
-import {ForgotpasswordComponent} from './forgotpassword/forgotpassword.component';
+
+import {HomeComponent} from './home/home.component';
+import {AboutUsComponent} from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
+
+import { LoginComponent } from './login/login.component';
+import {AdminLoginComponent} from './admin-login/admin-login.component';
+import { RegisterComponent } from './register/register.component';
 import {LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
+import {ForgotpasswordComponent} from './forgotpassword/forgotpassword.component';
+
+import { FarmerhomeComponent} from './farmerhome/farmerhome.component';
+import {MarketplaceComponent} from './marketplace/marketplace.component';
+import {ApplyBidComponent} from './apply-bid/apply-bid.component';
+import {BidRequestComponent} from './bid-request/bid-request.component';
+import {FarmerTransactionHistoryComponent} from './farmer-transaction-history/farmer-transaction-history.component';
+import {ApplyInsuranceComponent} from './apply-insurance/apply-insurance.component';
+import { ClaimInsuranceeComponent } from './claim-insurancee/claim-insurancee.component';
+import {CommonmarketplaceComponent} from './commonmarketplace/commonmarketplace.component'
+
+import { BidderhomeComponent } from './bidderhome/bidderhome.component';
+import {BidderTransactionHistoryComponent} from './bidder-transaction-history/bidder-transaction-history.component';
+
+import {AdminhomeComponent} from './adminhome/adminhome.component';
+import {AdminAccountApprovalComponent} from './admin-account-approval/admin-account-approval.component';
+import {AdminCropApprovalComponent} from './admin-crop-approval/admin-crop-approval.component';
 import {AdminBidApprovalComponent} from './admin-bid-approval/admin-bid-approval.component';
 import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admin-insurance-approval.component';
 import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 
 const routes: Routes = [
-  {path: '', component: AdminhomeComponent},
-  {path: 'Home', component: HomeComponent},
-  {path: 'Farmerhome', component: FarmerhomeComponent},
-  {path: 'BidderHome', component: BidderhomeComponent},
-  {path: 'LoginComponent', component: LoginComponent},
-  {path: 'ProfileComponent', component: ProfileComponent},
-  {path: 'ForgotpasswordComponent', component: ForgotpasswordComponent},
-  {path: 'RegisterComponent', component: RegisterComponent},
-  {path: 'LandDetailsRegisterComponent', component: LandDetailsRegisterComponent},
-  {path: 'MarketplaceComponent', component: MarketplaceComponent},
-  {path: 'BidderTransactionHistoryComponent', component: BidderTransactionHistoryComponent},
-  {path: 'FarmerTransactionHistoryComponent', component: FarmerTransactionHistoryComponent},
-  {path: 'BidRequestComponent', component: BidRequestComponent},
-  {path: 'ApplyInsuranceComponent', component: ApplyInsuranceComponent},
-  {path: 'ApplyBidComponent', component: ApplyBidComponent},
-  {path: 'AdminhomeComponent', component: AdminhomeComponent},
-  {path: 'AdminLoginComponent', component: AdminLoginComponent},
-  {path: ' ClaimInsuranceeComponent ', component:  ClaimInsuranceeComponent },
-  {path: 'AdminCropApprovalComponent', component: AdminCropApprovalComponent},
-  {path: 'AdminAccountApprovalComponent', component: AdminAccountApprovalComponent},
-  {path: 'AdminInsuranceApprovalComponent', component: AdminInsuranceApprovalComponent},
-  {path: 'AdminBidApprovalComponent', component: AdminBidApprovalComponent},
-  {path: 'AdminInsuranceClaimApprovalComponent', component: AdminInsuranceClaimApprovalComponent},
+  {path: '', component: CommonmarketplaceComponent},
 
-  {path: 'AboutUsComponent', component:AboutUsComponent},
-  {path:'ContactUsComponent', component:ContactUsComponent}
+  {path: 'home', component: HomeComponent},
+  {path: 'aboutus', component:AboutUsComponent},
+  {path:'contactus', component:ContactUsComponent},
+
+  {path: 'adminlogin', component: AdminLoginComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'forgotpassword', component: ForgotpasswordComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'landdetailsregister', component: LandDetailsRegisterComponent},
+  
+
+  {path: 'farmerhome', component: FarmerhomeComponent},
+  {path: 'marketplace', component: MarketplaceComponent},
+  {path: 'applybid', component: ApplyBidComponent},
+  {path: 'bidrequest', component: BidRequestComponent},
+  {path: 'farmertransactionhistory', component: FarmerTransactionHistoryComponent},
+  {path: 'applyinsurance', component: ApplyInsuranceComponent},
+  {path: ' claiminsurancee ', component:  ClaimInsuranceeComponent },
+  {path: 'commonmarketplace', component:CommonmarketplaceComponent},
+
+
+  {path: 'bidderhome', component: BidderhomeComponent},
+  {path: 'biddertransactionhistory', component: BidderTransactionHistoryComponent},
+
+  {path: 'adminhome', component: AdminhomeComponent},
+  {path: 'adminaccountapproval', component: AdminAccountApprovalComponent},
+  {path: 'admincropapproval', component: AdminCropApprovalComponent},
+  {path: 'adminbidapproval', component: AdminBidApprovalComponent},
+  {path: 'admininsuranceapproval', component: AdminInsuranceApprovalComponent},
+  {path: 'admininsuranceclaimapproval', component: AdminInsuranceClaimApprovalComponent},
   // {path: '**', component: ErrorComponent},
 ];
 
@@ -63,4 +76,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-AdminInsuranceClaimApprovalComponent
