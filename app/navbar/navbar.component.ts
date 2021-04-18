@@ -44,7 +44,6 @@ onSubmitLoginForm() {
     }
     else
     {
-      
       console.log("valid");
       //sessionStorage.setItem("username",this.LoginForm.value.username)
       sessionStorage.setItem("userid",res.userid)
