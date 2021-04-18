@@ -193,8 +193,8 @@
                   <form style="width: 100%;" [formGroup]="contactForm1" (ngSubmit)="onSubmit1()" novalidate>
 
 
-                    <div>
-                      <h2 align="center">Particulars of Insuree</h2>
+                    <div  class="container">
+                      <h2 align="center">Particulars of Insuree</h2><br>
                       <table>
                         <tr>
                           <td>
@@ -202,8 +202,8 @@
                           
 
                         <label id="labels" for="policyno"><b>Policy Number</b></label>
-                        <!-- <input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno">
-                      <div *ngIf="!policyno?.valid && (policyno?.dirty ||policyno?.touched)">
+                         <!-- <input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno"> -->
+                      <!-- <div *ngIf="!policyno?.valid && (policyno?.dirty ||policyno?.touched)">
                         <div [hidden]="!policyno.errors.pattern" style="color: crimson; font-size:12px;">
                           Only numbers are allowed
                         </div>
@@ -221,9 +221,9 @@
                   <tr>
                     <td>
                         <label id="labels" for="insurancecompany"><b>Insurance Company</b></label>
-                        <!-- <input type="text" placeholder="Enter Company name" name="insurancecompany"
-                          formControlName="insurancecompany">
-                        <div *ngIf="!insurancecompany?.valid && (insurancecompany?.dirty ||insurancecompany?.touched)">
+                       <!-- <input type="text" placeholder="Enter Company name" name="insurancecompany"
+                          formControlName="insurancecompany"> -->
+                        <!-- <div *ngIf="!insurancecompany?.valid && (insurancecompany?.dirty ||insurancecompany?.touched)">
                           <div [hidden]="!insurancecompany.errors.pattern" style="color: crimson; font-size:12px;">
                             Only characters are allowed
                           </div>
@@ -233,7 +233,8 @@
 
                         </div> -->
                         <td>
-                          <label>{{insurancedata[0].insurance_company}}</label>
+                          <!-- <label>{{insurancedata[0].insurance_company}}</label> -->
+                          <label>Abc</label>
                         </td>
                     </tr>
                     <!-- <tr>
@@ -257,9 +258,9 @@
                       <td>
 
                         <label id="labels" for="suminsured"><b>Sum Insured</b></label>
-                        <!-- <input type="text" placeholder="Enter Sum Insured" name="suminsured"
-                          formControlName="suminsured">
-                        <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
+                         <!-- <input type="text" placeholder="Enter Sum Insured" name="suminsured"
+                          formControlName="suminsured"> -->
+                        <!-- <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
                           <div [hidden]="!suminsured.errors.pattern" style="color: crimson; font-size:12px;">
                             Only numbers are allowed
                           </div>
@@ -267,12 +268,13 @@
                             Sum Insured is required
                           </div>
 
-                        </div> -->
+                        </div> --> 
                       </td>
                       <td>
                         <label>{{insurancedata[0].sum_insured}}</label>
                       </td>
                     </tr>
+                    <br>
 
                         <h2 align="center">Details of Cause for Loss</h2>
 
