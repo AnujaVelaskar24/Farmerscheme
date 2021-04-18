@@ -49,14 +49,14 @@
                     <div class="container">
                       <div class="form-group">
                         <h2 style="margin-bottom: 30px;">Request for Bid</h2>
-                        
+
                         <label id="labels" for="croptype"><b>Crop Type</b></label>
-                        <select class="form-control"  name="season" id="season" 
-                        [(ngModel)]="selectedtype" (change)="ontypeSelect(selectedtype)" formControlName="croptype">
+                        <select class="form-control" name="season" id="season" [(ngModel)]="selectedtype"
+                          (change)="ontypeSelect(selectedtype)" formControlName="croptype">
                           <option value="kharif" selected>Kharif</option>
                           <option value="rabi">Rabi</option>
-                          <option value="commercial">Commercial</option>  
-                        </select> 
+                          <option value="commercial">Commercial</option>
+                        </select>
                         <!-- <input type="text" placeholder="Enter crop type" name="croptype" formControlName="croptype"> -->
                         <div *ngIf="!croptype?.valid && (croptype?.dirty ||croptype?.touched)">
                           <div [hidden]="!croptype.errors.required" style="color: crimson; font-size:12px;">
@@ -66,39 +66,40 @@
                         </div>
 
                         <label id="labels" for="crop_id"><b>Crop Name</b></label>
-                        
-                        <select class="form-control" name="my-select" formControlName="crop_id" >
+
+                        <select class="form-control" name="my-select" formControlName="crop_id">
                           <option [value]="item.crop_id" *ngFor="let item of crops">
-                              {{item.crop_name}}    
+                            {{item.crop_name}}
                           </option>
                         </select>
                         <div *ngIf="!crop_id?.valid && (crop_id?.dirty ||crop_id?.touched)">
                           <div [hidden]="!crop_id.errors.required" style="color: crimson;font-size:12px;">
                             Crop Name is required
                           </div>
- 
+
                         </div>
 
                         <label id="labels" for="fertilizer_type"><b>Fertilizer Type</b></label>
-                        <select class="form-control"  name="fertilizer_type" id="fertilizer_type" 
-                        [(ngModel)]="selectedfertilizertype" (change)="onfertilizertypeSelect(selectedfertilizertype)" formControlName="fertilizer_type">
+                        <select class="form-control" name="fertilizer_type" id="fertilizer_type"
+                          [(ngModel)]="selectedfertilizertype" (change)="onfertilizertypeSelect(selectedfertilizertype)"
+                          formControlName="fertilizer_type">
                           <option value="Powder" selected>Powder</option>
                           <option value="Crystals">Crystals</option>
                           <option value="Prills">Prills</option>
                           <option value="Granules">Granules</option>
                           <option value="Supergranules">Supergranules</option>
-                          <option value="Briquettes">Briquettes</option>  
+                          <option value="Briquettes">Briquettes</option>
                           <option value="Ammonium Sulphate">Ammonium Sulphate</option>
                           <option value="Ammonium chloride">Ammonium chloride</option>
                           <option value="Nitrate">Nitrate</option>
                           <option value="Ammoniacal">Ammoniacal</option>
                           <option value="Amide">Amide</option>
-                        </select> 
+                        </select>
 
                         <!-- <input type="text" placeholder="Enter fertilzer type" name="fertilizer_type"
                           formControlName="fertilizer_type"> -->
                         <div *ngIf="!fertilizer_type?.valid && (fertilizer_type?.dirty ||fertilizer_type?.touched)">
-                          
+
                           <div [hidden]="!fertilizer_type.errors.required" style="color: crimson;font-size:12px;">
                             Fertilizer Type is required
                           </div>
@@ -177,7 +178,8 @@
           <p class="card-text" id="fact-number">Claim Insurance</p>
           <p>You can claim the insurance for your crop loss.</p>
           <!-- <a routerLink="ClaimInsuranceeComponent" class="btn btn-primary" id="button" >Go</a> -->
-          <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#claiminsurance">
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#claiminsurance"
+            (click)="onGetInsurance()">
             Go
           </button>
 
@@ -193,8 +195,14 @@
 
                     <div>
                       <h2 align="center">Particulars of Insuree</h2>
-                      <label id="labels" for="policyno"><b>Policy Number</b></label>
-                      <input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno">
+                      <table>
+                        <tr>
+                          <td>
+
+                          
+
+                        <label id="labels" for="policyno"><b>Policy Number</b></label>
+                        <!-- <input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno">
                       <div *ngIf="!policyno?.valid && (policyno?.dirty ||policyno?.touched)">
                         <div [hidden]="!policyno.errors.pattern" style="color: crimson; font-size:12px;">
                           Only numbers are allowed
@@ -203,72 +211,103 @@
                           Policy Number is required
                         </div>
 
-                      </div>
+                      </div> -->
+                    </td>
+                    <td>
+                      <label name="policyno" formControlName="policyno">{{insurancedata[0].policy_no}}</label>
+                      <!-- <input type="text" value={{insurancedata[0].policy_no}} name="policyno" formControlName="policyno"> -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <label id="labels" for="insurancecompany"><b>Insurance Company</b></label>
+                        <!-- <input type="text" placeholder="Enter Company name" name="insurancecompany"
+                          formControlName="insurancecompany">
+                        <div *ngIf="!insurancecompany?.valid && (insurancecompany?.dirty ||insurancecompany?.touched)">
+                          <div [hidden]="!insurancecompany.errors.pattern" style="color: crimson; font-size:12px;">
+                            Only characters are allowed
+                          </div>
+                          <div [hidden]="!insurancecompany.errors.required" style="color: crimson; font-size:12px;">
+                            Insurance Company is required
+                          </div>
 
-                      <label id="labels" for="insurancecompany"><b>Insurance Company</b></label>
-                      <input type="text" placeholder="Enter Company name" name="insurancecompany"
-                        formControlName="insurancecompany">
-                      <div *ngIf="!insurancecompany?.valid && (insurancecompany?.dirty ||insurancecompany?.touched)">
-                        <div [hidden]="!insurancecompany.errors.pattern" style="color: crimson; font-size:12px;">
-                          Only characters are allowed
+                        </div> -->
+                        <td>
+                          <label>{{insurancedata[0].insurance_company}}</label>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                      <td>
+
+                        <label id="labels" for="nameofinusree"><b>Name of Insuree</b></label>
+                        <!-- <input type="text" placeholder="Enter number of insuree" name="nameofinusree"
+                          formControlName="nameofinusree">
+                        <div *ngIf="!nameofinusree?.valid && (nameofinusree?.dirty ||nameofinusree?.touched)">
+                          <div [hidden]="!nameofinusree.errors.pattern" style="color: crimson; font-size:12px;">
+                            Only characters are allowed
+                          </div>
+                          <div [hidden]="!nameofinusree.errors.required" style="color: crimson; font-size:12px;">
+                            Name of Insuree is required
+                          </div>
+
                         </div>
-                        <div [hidden]="!insurancecompany.errors.required" style="color: crimson; font-size:12px;">
-                          Insurance Company is required
+                      </td>
+                    </tr> -->
+                    <tr>
+                      <td>
+
+                        <label id="labels" for="suminsured"><b>Sum Insured</b></label>
+                        <!-- <input type="text" placeholder="Enter Sum Insured" name="suminsured"
+                          formControlName="suminsured">
+                        <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
+                          <div [hidden]="!suminsured.errors.pattern" style="color: crimson; font-size:12px;">
+                            Only numbers are allowed
+                          </div>
+                          <div [hidden]="!suminsured.errors.required" style="color: crimson; font-size:12px;">
+                            Sum Insured is required
+                          </div>
+
+                        </div> -->
+                      </td>
+                      <td>
+                        <label>{{insurancedata[0].sum_insured}}</label>
+                      </td>
+                    </tr>
+
+                        <h2 align="center">Details of Cause for Loss</h2>
+
+                        <label id="labels" for="cause_of_loss"><b>Cause of Loss</b></label>
+                        <!-- <input type="text" placeholder="Enter the cause of loss" name="cause_of_loss"
+                          formControlName="cause_of_loss"> -->
+                          <select class="form-control" name="cause_of_loss" id="cause_of_loss" [(ngModel)]="selectedcause"
+                          (change)="on_cause_of_loss(selectedcause)" formControlName="cause_of_loss">
+                          <option value="Fire" selected>Fire</option>
+                          <option value="weather conditions">Weather Conditions</option>
+                          <option value="yield losses">Yield losses</option>
+                          <option value="prevented sowing" selected>Prevented sowing</option>
+                          <option value="post harvest loss" selected>Post Harvest Loss</option>
+                          <option value="localized calamities" selected>Localized calamities</option>
+                        </select>
+                        <div *ngIf="!cause_of_loss?.valid && (cause_of_loss?.dirty ||cause_of_loss?.touched)">
+                          
+                          <div [hidden]="!cause_of_loss.errors.required" style="color: crimson; font-size:12px;">
+                            Cause of Loss is required
+                          </div>
+
                         </div>
 
-                      </div>
+                        <label id="labels" for="date_of_loss"><b>Date of Loss </b></label>
+                        <input type="date" name="date_of_loss" formControlName="date_of_loss">
+                        <div *ngIf="!date_of_loss?.valid && (date_of_loss?.dirty ||date_of_loss?.touched)">
 
-                      <label id="labels" for="nameofinusree"><b>Name of Insuree</b></label>
-                      <input type="text" placeholder="Enter number of insuree" name="nameofinusree"
-                        formControlName="nameofinusree">
-                      <div *ngIf="!nameofinusree?.valid && (nameofinusree?.dirty ||nameofinusree?.touched)">
-                        <div [hidden]="!nameofinusree.errors.pattern" style="color: crimson; font-size:12px;">
-                          Only characters are allowed
-                        </div>
-                        <div [hidden]="!nameofinusree.errors.required" style="color: crimson; font-size:12px;">
-                          Name of Insuree is required
+                          <div [hidden]="!date_of_loss.errors.required" style="color: crimson; font-size:12px;">
+                            Date of Loss is required
+                          </div>
+
                         </div>
 
-                      </div>
-
-                      <label id="labels" for="suminsured"><b>Sum Insured</b></label>
-                      <input type="text" placeholder="Enter Sum Insured" name="suminsured" formControlName="suminsured">
-                      <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
-                        <div [hidden]="!suminsured.errors.pattern" style="color: crimson; font-size:12px;">
-                          Only numbers are allowed
-                        </div>
-                        <div [hidden]="!suminsured.errors.required" style="color: crimson; font-size:12px;">
-                          Sum Insured is required
-                        </div>
-
-                      </div>
-
-                      <h2 align="center">Details of Cause for Loss</h2>
-
-                      <label id="labels" for="causeofloss"><b>Cause of Loss</b></label>
-                      <input type="text" placeholder="Enter the cause of loss" name="causeofloss"
-                        formControlName="causeofloss">
-                      <div *ngIf="!causeofloss?.valid && (causeofloss?.dirty ||causeofloss?.touched)">
-                        <div [hidden]="!causeofloss.errors.pattern" style="color: crimson; font-size:12px;">
-                          Only characters are allowed
-                        </div>
-                        <div [hidden]="!causeofloss.errors.required" style="color: crimson; font-size:12px;">
-                          Cause of Loss is required
-                        </div>
-
-                      </div>
-
-                      <label id="labels" for="dateofloss"><b>Date of Loss </b></label>
-                      <input type="date" name="dateofloss" formControlName="dateofloss">
-                      <div *ngIf="!dateofloss?.valid && (dateofloss?.dirty ||dateofloss?.touched)">
-
-                        <div [hidden]="!dateofloss.errors.required" style="color: crimson; font-size:12px;">
-                          Date of Loss is required
-                        </div>
-
-                      </div>
-
-                      <button type="submit">Claim</button>
+                        <button type="submit">Claim</button>
+                      </table>
                     </div>
 
                   </form>
