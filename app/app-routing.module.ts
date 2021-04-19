@@ -38,6 +38,7 @@ import { ClassMethod } from '@angular/compiler';
 const routes: Routes = [
   {path: '', component: HomeComponent},
 
+
   {path: 'home', component: HomeComponent},
   {path: 'aboutus', component:AboutUsComponent},
   {path:'contactus', component:ContactUsComponent},

@@ -106,6 +106,9 @@ body{
     font-size: 15px;
     margin-left: 30%;
   }
+  button:disabled {
+    background-color:#8bc995;
+}
  
   button:hover {
     opacity: 0.8;

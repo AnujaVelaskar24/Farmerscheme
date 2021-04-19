@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     home_address: new FormControl('',[Validators.required,Validators.minLength(3), Validators.pattern("^[a-zA-Z]+$")]),
     phone_no: new FormControl('',[Validators.required,Validators.maxLength(10), Validators.pattern("^[0-9]+$")]),
     account_no: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.pattern("^[0-9]+$")]),
-    ifsc_code: new FormControl('',[Validators.required,Validators.maxLength(10),]),
+    ifsc_code: new FormControl('',[Validators.required,Validators.maxLength(4),]),
     pan: new FormControl('',[Validators.required,Validators.maxLength(10)]),
     Aadhar: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.pattern("^[0-9]+$")]),
     certificate:new FormControl('',[Validators.required])
