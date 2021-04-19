@@ -12,12 +12,12 @@ import { GetinsuranceserviceService } from '../getinsuranceservice.service';
 })
 export class ApplyInsuranceComponent implements OnInit {
   applyinsuranceForm = new FormGroup({
-    crop_type: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    crop_id : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    crop_name:new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    // crop_type: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    // crop_id : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    // crop_name:new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
     area:new FormControl('',[Validators.required]),
-    suminsured:new FormControl('',[Validators.required]),
-    farmer_share_percent:new FormControl('',[Validators.required]),
+    // suminsured:new FormControl('',[Validators.required]),
+    // farmer_share_percent:new FormControl('',[Validators.required]),
     
   })
   public area1:number;

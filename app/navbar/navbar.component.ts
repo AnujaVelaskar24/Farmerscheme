@@ -8,6 +8,7 @@ import {LoginService} from '../login.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  public uid:number;
   LoginForm : FormGroup;
   constructor(public fb: FormBuilder,
     private router: Router,
@@ -15,10 +16,12 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit(){
+    this.uid = Number(sessionStorage.getItem("userid"));
     this.LoginForm = this.fb.group({
     username: ['',Validators.required],
     password: ['',Validators.required]
   })
+  
 }
 get username() {
   return this.LoginForm.get('username');
@@ -29,7 +32,7 @@ get password() {
 
 logout(){
  sessionStorage.removeItem('userid'); 
- this.router.navigateByUrl('Home');
+ this.router.navigateByUrl('home');
 }
 onSubmitLoginForm() {
   console.log(this.LoginForm.value);

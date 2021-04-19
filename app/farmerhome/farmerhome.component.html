@@ -331,7 +331,7 @@
 
                         </div>
 
-                        <button type="submit">Claim</button>
+                        <button type="submit" [disabled]="!contactForm1.valid">Claim</button>
                       </table>
                     </div>
 
@@ -352,7 +352,7 @@
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="MarketplaceComponent">
+            routerLink="/profile">
             Go
           </button>
         </div>
