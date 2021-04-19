@@ -34,11 +34,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
   
   
-
-  
-
- 
-  
   get user_type(){
     return this.contactForm.get('user_type');
   }

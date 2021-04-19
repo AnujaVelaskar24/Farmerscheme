@@ -41,6 +41,7 @@ export class FarmerhomeComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    
   }
   get croptype() {
     return this.SellRequestForm.get('croptype');
