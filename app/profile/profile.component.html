@@ -1,20 +1,24 @@
 <div class="container">
-  <div class="main-body" *ngFor="let Login of Login1">
-
-    <!-- Breadcrumb -->
-
-    <!-- /Breadcrumb -->
-    <h1 align="center">Profile</h1>
-    <div class="row gutters-sm">
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex flex-column align-items-center text-center">
-              <img src="/assets/images/profile_icon.png" alt="Admin" class="rounded-circle" width="150">
-              <div class="mt-3">
-                <h4>{{Login.username}}</h4>
-                <p class="text-secondary mb-1">Welcome User</p>
-
+  <h1 align="center">Profile</h1>
+    <div class="main-body" *ngFor="let Login of Login1">
+    
+          <!-- Breadcrumb -->
+          
+          <!-- /Breadcrumb -->
+    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="/assets/images/profile_icon.png" alt="Admin" class="rounded-circle" width="150">                    <div class="mt-3">
+                      <h4>{{Login.username}}</h4>
+                      <p class="text-secondary mb-1" *ngIf="user_type">Bidder</p>
+                      <p class="text-secondary mb-1" *ngIf="!user_type">Farmer</p>
+                      
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
