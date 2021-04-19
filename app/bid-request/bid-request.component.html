@@ -1,4 +1,5 @@
-<body>
+
+<body style="background-color: rgb(241, 255, 241);padding-top:80px">
   <div id="page-container">
     <div id="content-wrap">
 
@@ -13,13 +14,11 @@
       <div class="main">
         <div class="card1">
           <div class="row no-gutters">
-            <div class="col-sm-3 row-sm-3" id="pic">
-              <!-- <img class="card-img1" src="C:/Users/Sneha/Downloads/wheat.jpg"> -->
-            </div>
+            
             <div class="col-sm-6">
               <div class="card-body">
-                <h5 class="card-title">Wheat</h5>
-                <p class="card-text">100% organic and premium quality bla bla bla.</p>
+                <h5 class="card-title">{{bidrequestdata[0].crop_name}}</h5>
+                <p class="card-text">100% organic and premium quality</p>
                 <!-- <a href="#" class="btn btn-primary">View Profile</a> -->
               </div>
             </div>
@@ -34,60 +33,56 @@
               <table class="styled-table">
                 <tr id="j">
                   <th>Name</th>
-                  <td>Wheat</td>
+                  <td>{{bidrequestdata[0].crop_name}}</td>
                 </tr>
                 <tr id="i">
                   <th>Quantity</th>
-                  <td>5</td>
+                  <td>{{bidrequestdata[0].quantity}}</td>
                 </tr>
                 <tr id="j">
                   <th>Fertilizer</th>
-                  <td>Granule</td>
+                  <td>{{bidrequestdata[0].fertilizer_type}}</td>
                 </tr>
                 <tr id="i">
                   <th>MSP</th>
-                  <td>1925</td>
+                  <td>{{bidrequestdata[0].msp}}</td>
                 </tr>
                 <tr id="j">
                   <th>Base Price</th>
-                  <td>12000</td>
-                </tr>
-                <tr id="i">
-                  <th>Previous 3 Bids</th>
-                  <td>12500, 13000, 13500</td>
+                  <td>{{bidrequestdata[0].base_price}}</td>
                 </tr>
                 <tr id="j">
                   <th>Current Price</th>
-                  <td>14000</td>
+                  <td>{{bidrequestdata[0].current_amount}}</td>
                 </tr>
               </table>
             </div>
             <div class="col-sm-3">
-
-              <form  [formGroup]="contactForm"  (ngSubmit)="onSubmit()" novalidate>
-
+  
+              <form id="form" [formGroup]="BidForm" (ngSubmit)="onPlacebid()" novalidate>
+  
                 <div>
-                  <input type="text" class="form-control" placeholder="Enter your bid amount" formControlName="bid">
-                  <div *ngIf="!bid?.valid && (bid?.dirty ||bid?.touched)">
-                    <div [hidden]="!bid.errors.pattern" style="color: crimson;">
-                        enter number
-                    </div>
-                    <div [hidden]="!bid.errors.required" style="color: crimson;">
-                        bid is required
-                    </div>
-                    
-                </div>
+                  <input type="text" class="form-control" placeholder="Enter your bid amount" name="placebid"
+                    formControlName="placebid">
                 </div>
                 <div class="d" style="width: auto;">
-                  <input type="submit" class="btn btn-outline-success" id="btn10" value="Place bid" [disabled]="!contactForm.valid">
+                  <!-- <input type="submit" class="btn btn-outline-success" id="btn10" value="Place bid" > -->
+                  <button class="btn btn-outline-success" id="btn10" type="submit" routerLink="/bidrequest">Place
+                    Bid</button>
                 </div>
-
+  
               </form>
-            </div>
-            <div>
-              <!-- <img src="C:\Users\Sneha\Downloads\checked.png" style="height:100px; width: 100px; margin-top: 200px; margin-right: 50px; color: mediumseagreen;"> -->
-            </div>
+              <div style="display: flex; justify-content: center; padding-top: 40px; margin-left:60px">
+                <img id="fact-icons" src="/assets/images/checked.svg" style="height:100px; width: 100px; color: mediumseagreen;"/>
 
+              </div>
+
+            </div>
+            <!-- <div style="display:flex;justify-content: center;">
+              
+              <img id="fact-icons" src="/assets/images/checked.svg" style="height:100px; width: 100px; margin-top: 200px; padding-right:70px;background-color: brown; color: mediumseagreen;"/>
+            </div> -->
+  
           </div>
         </div>
       </div>
