@@ -30,8 +30,15 @@ export class ForgotpasswordComponent implements OnInit {
 
   onSubmit() {
   this.ForgotService.getAll(this.LoginForm.value).subscribe(res => {
-    
-    console.log(res, "console data");
+    console.log(res, "res");
+    if(res=="Successfull")
+    {
+      alert("Mail submitted sucessfully!! Please Login..");
+      this.router.navigateByUrl("/home");
+    }
+    else if(res=="Unsuccessful"){
+      alert("Invalid Mail!!");
+    }
     
     
   });

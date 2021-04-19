@@ -8,9 +8,9 @@
         <table class="table">
           <thead>
             <tr id="heading_style">
-              <th scope="col">Bid ID</th>
+              <!-- <th scope="col">Bid ID</th> -->
               <th scope="col">Request ID</th>
-              <th scope="col">Bidder User ID</th>
+              <!-- <th scope="col">Bidder User ID</th> -->
               <th scope="col">Crop Name</th>
               <th scope="col">Quantity</th>
               <th scope="col">Fertilizer Type</th>
@@ -23,9 +23,9 @@
         
           <tbody *ngFor="let item of bid_res;index as i  ">
             <tr  id="i" *ngIf="i%2==0">
-              <td> {{item.bid_id}}</td>
+              <!-- <td> {{item.bid_id}}</td> -->
               <td>{{item.request_id}}</td>
-              <td> {{item.userid}}</td>
+              <!-- <td> {{item.userid}}</td> -->
               <td> {{item.crop_name}}</td>
               <td> {{item.quantity}}</td>
               <td> {{item.fertilizer_type}}</td>
@@ -34,12 +34,12 @@
               <td> {{item.amount}}</td>
               
               <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.request_id)">Approve</button></td>
-              <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
+              <!-- <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td> -->
           </tr>
           <tr  id="j" *ngIf="i%2!=0">
-            <td> {{item.bid_id}}</td>
+            <!-- <td> {{item.bid_id}}</td> -->
             <td>{{item.request_id}}</td>
-            <td> {{item.userid}}</td>
+            <!-- <td> {{item.userid}}</td> -->
             <td> {{item.crop_name}}</td>
             <td> {{item.quantity}}</td>
             <td> {{item.fertilizer_type}}</td>
@@ -48,7 +48,7 @@
             <td> {{item.amount}}</td>
             
             <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.request_id)">Approve</button></td>
-            <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
+            <!-- <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td> -->
         </tr>
             
           </tbody>

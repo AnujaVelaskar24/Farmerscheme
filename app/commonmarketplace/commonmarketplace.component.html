@@ -3,10 +3,10 @@
     <div id="content-wrap">
       <div class="main">
         <h1>MARKETPLACE</h1>
-        <table class="table">
+        <table class="table" style="width:100%">
           <thead>
             <tr
-              style="background-color: rgb(48, 100, 24); color:white; height:60px; text-align: center; margin-top: 20px;">
+              style="background-color: rgb(48, 100, 24); width:100%; color:white; height:60px; text-align: center; margin-top: 20px;">
               <th scope="col">Sr No.</th>
               <th scope="col">request ID</th>
               <th scope="col">Name</th>
@@ -26,14 +26,13 @@
               <td>{{getmarket.base_price}}</td>
               <td>{{getmarket.amount}}</td>
               <!-- <td>2500</td> -->
-              <td>
+              
                 <!-- <input type="button" class="btn btn-outline-success" id="btn1" value="Bid"
                   routerLink="BidRequestComponent" (click)="applybid(getmarket.request_id)"> -->
                   <!-- <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#bidrequest"
                   (click)="applybid(getmarket.request_id)">
                   Go
                 </button> -->
-                </td>
             </tr>
           </tbody>
         </table>
