@@ -15,6 +15,7 @@ export class GetlandService {
 
   constructor(private httpClient: HttpClient) { }
   getlandid(userid): Observable<any> {
+    console.log(userid, "UNSERID");
     return this.httpClient.get<any>(this.apiServer + '/land?userid=' + userid)
   }
 }
