@@ -5,16 +5,20 @@ import { CroptypefetchService } from '../croptypefetch.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Getinsurance } from '../getinsurance';
 import { GetinsuranceserviceService } from '../getinsuranceservice.service';
+import { ApplyinsuranceinsertService } from '../applyinsuranceinsert.service';
+import { Getlandclass } from '../model/getlandclass';
+
 @Component({
   selector: 'app-apply-insurance',
   templateUrl: './apply-insurance.component.html',
   styleUrls: ['./apply-insurance.component.css']
 })
 export class ApplyInsuranceComponent implements OnInit {
+  land2:Applyinsuranceclass[]=[];
   applyinsuranceForm = new FormGroup({
-    // crop_type: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    // crop_id : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    // crop_name:new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    crop_type: new FormControl(''),
+    crop_id : new FormControl(''),
+    crop_name:new FormControl(''),
     area:new FormControl('',[Validators.required]),
     // suminsured:new FormControl('',[Validators.required]),
     // farmer_share_percent:new FormControl('',[Validators.required]),
@@ -57,26 +61,58 @@ public actualrate:number=0;
    
       //  console.log(this.suminsuredperhectare,this.farmershare,this.actualrate, "get insurance console");
     });
-
+    // userid:number;
+    // land_id:number;
+    // season:string;
+    // year:number;
+    // crop_id:number;
+    // sum_insured:number;
+    // insurance_company:string;
+    // premium_amount:number;
+    // start_date:Date;
+    // end_date:Date;
   }
-  displayalert(){
-    alert("Your Insurance is successfully applied");
-  }
+  
   constructor(public fb: FormBuilder,
     private router: Router,
     public croptypefetchService: CroptypefetchService,
-    public getinsurservice:GetinsuranceserviceService) { 
+    public getinsurservice:GetinsuranceserviceService,
+    public insertinsurance:ApplyinsuranceinsertService) { 
     this.isShow=false;
    
+  }
+  displayalert(){
+    let applyinsurance_obj = new Applyinsuranceclass();
+    applyinsurance_obj.userid=this.land2[0].userid;
+    applyinsurance_obj.land_id=this.land2[0].land_id;
+    applyinsurance_obj.season=this.applyinsuranceForm.value.season;
+    applyinsurance_obj.year=this.applyinsuranceForm.value.year;
+    applyinsurance_obj.crop_id=this.land2[0].crop_id;
+    applyinsurance_obj.sum_insured=this.applyinsuranceForm.value.sum_insured;
+    applyinsurance_obj.insurance_company=this.applyinsuranceForm.value.insurance_company;
+    applyinsurance_obj.premium_amount=this.applyinsuranceForm.value.premium_amount;
+    applyinsurance_obj.start_date = new Date();
+    applyinsurance_obj.end_date=new Date();
+    //change this to 1 yr later
+    // this..getinsurance(applyinsurance_obj).subscribe(res => {
+
+    // });
+    console.log(applyinsurance_obj, "OBJECT")
+    this.insertinsurance.applyinsurance(applyinsurance_obj).subscribe(res=>{
+
+    })
+
+
+    alert("Your Insurance is successfully applied");
   }
   getinsurances : Getinsurance[]=[];
   public selectedtype:string;
   public crops = [];
   ontypeSelect(selectedtype){
-  // console.log(selectedtype);
+  console.log(selectedtype, "SELECTED");
   
   this.croptypefetchService.croptypefetch(this.selectedtype).subscribe(res => {
-  //console.log(res, "ontype console data");
+  console.log(res, "CROP TYPEEEE");
   this.crops=res;
   });
   }
@@ -112,6 +148,19 @@ public actualrate:number=0;
   
 
 }
+export class Applyinsuranceclass {
+  userid:number;
+  land_id:number;
+  season:string;
+  year:number;
+  crop_id:number;
+  sum_insured:number;
+  insurance_company:string;
+  premium_amount:number;
+  start_date:Date;
+  end_date:Date;
+}
+
 
 
 

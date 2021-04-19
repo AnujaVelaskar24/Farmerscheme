@@ -20,7 +20,7 @@
           </thead>
         
           <tbody *ngFor="let item of insuranceclaim_res ">
-            <tr id="i" *ngIf="i%2==0">
+            <tr id="i">
               <td> {{item.claim_id}}</td>
               <td>{{item.policy_no}}</td>
               <td> {{item.date_of_loss}}</td>
@@ -30,10 +30,10 @@
               <td> {{item.username}}</td>
               <td> {{item.area}}</td>
               
-              <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.policy_no)">Approve</button></td>
-              <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
-          </tr>
-          <tr id="j" *ngIf="i%2!=0">
+              <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.claim_id)">Approve</button></td>
+              <!-- <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td> -->
+          <!-- </tr> -->
+          <!-- <tr id="j" *ngIf="i%2!=0">
             <td> {{item.claim_id}}</td>
             <td>{{item.policy_no}}</td>
             <td> {{item.date_of_loss}}</td>
@@ -44,8 +44,8 @@
             <td> {{item.area}}</td>
             
             <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.policy_no)">Approve</button></td>
-            <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
-        </tr>
+             <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td> -->
+        
           </tbody>
       
         </table>

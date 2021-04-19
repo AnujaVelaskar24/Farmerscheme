@@ -33,9 +33,13 @@ export class AdminBidApprovalComponent implements OnInit {
 
   ngOnInit() 
   {
-    this.adminbidapprovalservice.Getbid_information().subscribe(res => {
+      this.adminbidapprovalservice.Getbid_information().subscribe(res => {
       this.bid_res=res;
-      console.log("hi");
+      console.log(res[0].request_id, "hi");
+      
+    });
+    this.adminbidapprovalservice.Get_bidid(this.bid_res[0].request_id).subscribe(res1 => {
+      console.log(res1,"BID_ID")
     });
   }
 
@@ -68,10 +72,14 @@ export class AdminBidApprovalComponent implements OnInit {
   } 
   onapprove(request_id)
 {
-  this.adminbidapprovalservice.update(request_id).subscribe(res => {
+  console.log(request_id,  this.bid_id, "ONAPPROVE CONSOLE");
+  this.adminbidapprovalservice.update(request_id ).subscribe(res => {
     console.log(res, "ontype console data");
     this.ngOnInit();
   });
 }
 }
-
+export class bidapprovalobj{
+  request_id:number;
+  bid_id:number;
+}
