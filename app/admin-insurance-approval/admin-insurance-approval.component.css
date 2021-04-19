@@ -222,7 +222,7 @@ tr
         {
             
         border-collapse: collapse;
-        margin: 25px 0;
+        /* margin: 25px 0; */
         font-size: 0.9em;
         font-family: sans-serif;
         min-width: 400px;
@@ -299,5 +299,15 @@ tr
         color: #28a745;
         background-color: white;
         border-color:#28a745;
+    }
+
+    #modalbody
+    {
+        /* padding: 50px; */
+        background-color: white;
+        justify-content: center;
+        display:flex;
+        width: 50%;
+
     }
     

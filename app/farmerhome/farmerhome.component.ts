@@ -95,7 +95,7 @@ export class FarmerhomeComponent implements OnInit {
 
   contactForm1 = new FormGroup({
     
-    policyno: new FormControl(),
+    contactForm1: new FormControl(),
     // insurancecompany : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
     // nameofinusree : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
     // suminsured : new FormControl('',[Validators.required, Validators.pattern("^[0-9]+$")]),

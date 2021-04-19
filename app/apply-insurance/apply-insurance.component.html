@@ -92,7 +92,7 @@
             </td>
             <td style="position: relative; padding-left: 30px;">
                 
-                <button (click)="displaytext()" >CALCULATE</button>
+                <button (click)="displaytext()"[disabled]="!applyinsuranceForm.valid" >CALCULATE</button>
                 </td></tr></table><hr>
                 <div *ngIf="isShow">
 

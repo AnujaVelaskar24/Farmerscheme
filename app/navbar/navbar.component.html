@@ -24,7 +24,7 @@
           <!-- <button type="button" class="btn btn-outline-success" id="btn1" routerLink="LoginComponent">Login</button> -->
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-outline-success" id="btn1" data-toggle="modal"
-            data-target="#exampleModalCenter">
+            data-target="#exampleModalCenter" *ngIf="!uid">
             Login
           </button>
 
@@ -67,7 +67,7 @@
                           Password is required
                         </div>
                       </div>
-                      <button type="submit" id="loginbutton" [disabled]="!LoginForm.valid">Login</button>
+                      <button type="submit" id="loginbutton" [disabled]="!LoginForm.valid" >Login</button>
                       <a href="adminlogin">Admin login</a>
                     </div>
 
@@ -83,10 +83,10 @@
         </li>
         <li class="nav-item ">
           <button type="button" class="btn btn-outline-success" id="btn2"
-            routerLink="register">Register</button>
+            routerLink="register" *ngIf="!uid">Register</button>
         </li>
         <li class="nav-item ">
-          <button type="button" class="btn btn-outline-success" id="btn2" (click)="logout()">Log Out</button>
+          <button type="button" class="btn btn-outline-success" id="btn2" (click)="logout()" *ngIf="uid">Log Out</button>
         </li>
       </ul>
     </div>
