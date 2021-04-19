@@ -36,7 +36,11 @@ import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-ap
 import { ClassMethod } from '@angular/compiler';
 
 const routes: Routes = [
+<<<<<<< HEAD
+  {path: '', component: ApplyInsuranceComponent},
+=======
   {path: '', component: FarmerhomeComponent},
+>>>>>>> 867d79799b20a9acd8746b699b03f1be2d558d8f
 
   {path: 'home', component: HomeComponent},
   {path: 'aboutus', component:AboutUsComponent},
