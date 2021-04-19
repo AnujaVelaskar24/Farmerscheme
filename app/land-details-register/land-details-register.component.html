@@ -37,10 +37,14 @@
 
                     <table style="width: 100%">
                         <tr>
-                            <td style="width: 60%">
-                                <label for="land_address"><b>Land Address</b></label>
-                                <input type="text" placeholder="Enter email_id Address" id="land_address"
-                                    name="land_address" formControlName="land_address">
+                            <td style="width: 100%">
+                                <label for="land_address"><b>Land Address</b></label><br>
+                                <!-- <input type="textarea" placeholder="Enter Land Address" id="land_address"
+                                    name="land_address" formControlName="land_address"> -->
+                                    <textarea placeholder="Enter Land Address" id="land_address"
+                                    name="land_address" formControlName="land_address" rows="2" cols="100" style="padding-left: 20px;padding-top: 15px;">
+
+                                    </textarea>
                                 <div *ngIf="!land_address?.valid && (land_address?.dirty ||land_address?.touched)">
                                     <div [hidden]="!land_address.errors.pattern" style="color: crimson;">
                                         enter characters only
@@ -51,9 +55,11 @@
                                     
                                 </div>
                             </td>
-                            <td style="position: relative; padding-left: 30px;">
+                            </tr>
+                            <tr>
+                            <td style="position: relative;">
                                 <label for="area"><b>Land Area</b></label>
-                                <input type="text" placeholder="Enter phone Number" id="area"
+                                <input type="text" placeholder="Enter land area(in hectare)" id="area"
                                     name="area" formControlName="area" >
                                 <div *ngIf="!area?.valid && (area?.dirty ||area?.touched)">
                                     <div [hidden]="!area.errors.pattern" style="color: crimson;">
