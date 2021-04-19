@@ -96,11 +96,11 @@ export class FarmerhomeComponent implements OnInit {
   contactForm1 = new FormGroup({
     
     contactForm1: new FormControl(),
-    // insurancecompany : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    // nameofinusree : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    // suminsured : new FormControl('',[Validators.required, Validators.pattern("^[0-9]+$")]),
-    cause_of_loss : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    date_of_loss : new FormControl('',[Validators.required]),
+    insurancecompany : new FormControl(''),
+    nameofinusree : new FormControl(''),
+    suminsured : new FormControl(''),
+    cause_of_loss : new FormControl(''),
+    date_of_loss : new FormControl(''),
     // userid : new FormControl(sessionStorage.getItem("userid")),
   })
 
