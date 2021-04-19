@@ -16,9 +16,9 @@ import { Getlandclass } from '../model/getlandclass';
 export class ApplyInsuranceComponent implements OnInit {
   land2:Applyinsuranceclass[]=[];
   applyinsuranceForm = new FormGroup({
-    // crop_type: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    // crop_id : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    // crop_name:new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+  crop_type: new FormControl(''),
+  crop_id : new FormControl(''),
+   crop_name:new FormControl(''),
     area:new FormControl('',[Validators.required]),
     // suminsured:new FormControl('',[Validators.required]),
     // farmer_share_percent:new FormControl('',[Validators.required]),
