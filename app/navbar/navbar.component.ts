@@ -32,11 +32,7 @@ get password() {
 
 logout(){
  sessionStorage.removeItem('userid'); 
-<<<<<<< HEAD
- this.router.navigateByUrl('home');
-=======
  this.router.navigateByUrl('/home');
->>>>>>> 867d79799b20a9acd8746b699b03f1be2d558d8f
 }
 onSubmitLoginForm() {
   console.log(this.LoginForm.value);
@@ -45,12 +41,12 @@ onSubmitLoginForm() {
     if(res === "Unsuccessful")
     {
       console.log("invalid");
+      alert("Invalid Credentials");
       // sessionStorage.setItem("username",this.LoginForm.value.username)
       // this.router.navigateByUrl('Farmerhome');
     }
     else
     {
-      
       console.log("valid");
       //sessionStorage.setItem("username",this.LoginForm.value.username)
       sessionStorage.setItem("userid",res.userid)
