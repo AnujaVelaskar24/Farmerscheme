@@ -33,6 +33,7 @@ import { AdminBidApprovalComponent } from './admin-bid-approval/admin-bid-approv
 import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admin-insurance-approval.component';
 import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 import { CommonmarketplaceComponent } from './commonmarketplace/commonmarketplace.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { CommonmarketplaceComponent } from './commonmarketplace/commonmarketplac
     ForgotpasswordComponent,
     ProfileComponent,
     CommonmarketplaceComponent,
+    ResetpasswordComponent,
  
   ],
   imports: [
