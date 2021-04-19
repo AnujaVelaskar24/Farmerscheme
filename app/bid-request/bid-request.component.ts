@@ -60,15 +60,25 @@ crop_id:number;
    }
    uid:number = Number(sessionStorage.getItem("userid"));
    onPlacebid(){
-    
-    let bidobj = new bid_history();
-    bidobj.request_id= Number(this.request_id);
+    console.log(this.BidForm.value.placebid,this.bidrequestdata[0].current_amount,"The dataAAAA")
+    if(this.bidrequestdata[0].current_amount>=this.BidForm.value.placebid)
+    {
+      console.log("Inside if")
+      alert("The Bid Price Should Be Greater Than Current Amount")
+    }
+    else
+    {
+      console.log(Number(this.request_id),"Inside else")
+      let bidobj = new bid_history();
+    bidobj.request_id= Number(JSON.parse(localStorage.getItem('request_id')));
     bidobj.userid=this.uid;
     bidobj.amount=this.BidForm.value.placebid;
     bidobj.bidding_time = new Date();
     this.bidrequestservice.placebid(bidobj).subscribe(res => {
-
+      this.router.navigateByUrl('/marketplace');
     });
+    }
+    
   }
   ngOnInit(): void {
     this.sharedservice.crop_id.subscribe((id)=>{

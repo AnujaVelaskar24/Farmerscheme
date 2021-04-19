@@ -16,14 +16,17 @@ import { Getlandclass } from '../model/getlandclass';
 export class ApplyInsuranceComponent implements OnInit {
   land2:Applyinsuranceclass[]=[];
   applyinsuranceForm = new FormGroup({
-  crop_type: new FormControl(''),
-  crop_id : new FormControl(''),
-   crop_name:new FormControl(''),
+    crop_type: new FormControl(''),
+    crop_id : new FormControl(''),
+    crop_name:new FormControl(''),
     area:new FormControl('',[Validators.required]),
     // suminsured:new FormControl('',[Validators.required]),
     // farmer_share_percent:new FormControl('',[Validators.required]),
     
   })
+
+
+
   public area1:number;
   public cropname:string;
  public premiumpaidbyfarmer:number=0;
@@ -35,6 +38,10 @@ public actualrate:number=0;
   public govtshare:number;
   public premiumpaidbygovt:number;
   isShow:boolean
+
+  public userid:number;
+  public landid:number;
+
   public cropdata=[];
  
   displaytext(){
@@ -61,7 +68,7 @@ public actualrate:number=0;
    
       //  console.log(this.suminsuredperhectare,this.farmershare,this.actualrate, "get insurance console");
     });
-    // userid:number;
+   
     // land_id:number;
     // season:string;
     // year:number;
@@ -77,17 +84,26 @@ public actualrate:number=0;
     private router: Router,
     public croptypefetchService: CroptypefetchService,
     public getinsurservice:GetinsuranceserviceService,
-    public insertinsurance:ApplyinsuranceinsertService) { 
+    public insertinsurance:ApplyinsuranceinsertService
+    ) { 
+      let  uid = sessionStorage.getItem("userid");
+
+    let landid= sessionStorage.getItem("land_id");
+    console.log(landid,"from apply insurance ts");
     this.isShow=false;
    
   }
   displayalert(){
+  
+    console.log(this.userid,"from insuarnce");
+    console.log(this.land2,"LAND 2 DATA");
+   
     let applyinsurance_obj = new Applyinsuranceclass();
-    applyinsurance_obj.userid=this.land2[0].userid;
-    applyinsurance_obj.land_id=this.land2[0].land_id;
+    applyinsurance_obj.userid=this.userid;
+    applyinsurance_obj.land_id=this.landid;
     applyinsurance_obj.season=this.applyinsuranceForm.value.season;
     applyinsurance_obj.year=this.applyinsuranceForm.value.year;
-    applyinsurance_obj.crop_id=this.land2[0].crop_id;
+    applyinsurance_obj.crop_id=this.applyinsuranceForm.value.crop_id;
     applyinsurance_obj.sum_insured=this.applyinsuranceForm.value.sum_insured;
     applyinsurance_obj.insurance_company=this.applyinsuranceForm.value.insurance_company;
     applyinsurance_obj.premium_amount=this.applyinsuranceForm.value.premium_amount;
@@ -97,6 +113,7 @@ public actualrate:number=0;
     // this..getinsurance(applyinsurance_obj).subscribe(res => {
 
     // });
+    console.log(applyinsurance_obj, "OBJECT")
     this.insertinsurance.applyinsurance(applyinsurance_obj).subscribe(res=>{
 
     })
@@ -108,10 +125,10 @@ public actualrate:number=0;
   public selectedtype:string;
   public crops = [];
   ontypeSelect(selectedtype){
-  // console.log(selectedtype);
+  console.log(selectedtype, "SELECTED");
   
   this.croptypefetchService.croptypefetch(this.selectedtype).subscribe(res => {
-  //console.log(res, "ontype console data");
+  console.log(res, "CROP TYPEEEE");
   this.crops=res;
   });
   }

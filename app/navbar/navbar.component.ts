@@ -62,7 +62,7 @@ onSubmitLoginForm() {
           console.log(res,"LAND ID ");
           this.land1=res;
        
-        // sessionStorage.setItem("land_id",res.land_id)
+        //sessionStorage.setItem("land_id",res.land_id)
         console.log(this.land1[0].land_id,"SESION SE LAND ID")
       })
         
