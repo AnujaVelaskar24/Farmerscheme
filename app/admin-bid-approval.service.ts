@@ -20,8 +20,8 @@ export class AdminBidApprovalService {
   // update(request_id:number, Register): Observable<any> {
   //   return this.httpClient.post<any>(this.apiServer + '/adminbidapproval?request_id='+request_id, JSON.stringify(Register), this.httpOptions )
   // }
-  update(request_id:number): Observable<any> {
-    return this.httpClient.get<any>(this.apiServer + '/adminbidapproval?request_id='+request_id )
+  update(request_id:number, transactionobject): Observable<any> {
+    return this.httpClient.post<any>(this.apiServer + '/adminbidapproval?request_id='+request_id, JSON.stringify(transactionobject), this.httpOptions )
   }
   Get_bidid(request_id:number): Observable<any> {
     return this.httpClient.get<any>(this.apiServer + '/adminbidapproval?request_id='+request_id )

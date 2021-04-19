@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit(){
-    this.uid = Number(sessionStorage.getItem("userid"));
+    
     this.LoginForm = this.fb.group({
     username: ['',Validators.required],
     password: ['',Validators.required]
@@ -39,7 +39,7 @@ logout(){
  this.router.navigateByUrl('/home');
 }
 onSubmitLoginForm() {
-  console.log(this.LoginForm.value);
+  
   this.loginService.login(this.LoginForm.value).subscribe(res => {
     console.log(res,"res value");
     if(res === "Unsuccessful")
@@ -58,12 +58,14 @@ onSubmitLoginForm() {
       if(res.user_type===false)
       {
         this.router.navigateByUrl('farmerhome');
-        this.landservice.getlandid(this.uid).subscribe(res=>{
-          console.log(res,"LAND ID");
+        console.log(res.userid, "UserID");
+        this.landservice.getlandid(res.userid).subscribe(res=>{
+          console.log(res,"LAND ID ");
           this.land1=res;
        
-        // sessionStorage.setItem("land_id",res.land_id)
-        console.log(this.land1[0].land_id,"SESION SE LAND ID")
+        sessionStorage.setItem("land_id",res.land_id)
+        // console.log(this.land1[0].land_id,"SESION SE LAND ID")
+        // console.log(res.land_id, "SESSION")
       })
         
       }
