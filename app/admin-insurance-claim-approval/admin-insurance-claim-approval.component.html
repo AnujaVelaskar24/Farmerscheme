@@ -1,14 +1,12 @@
 
-<body>
-  
     <div id="page-container">
       <div id="content-wrap">
        
       <div class="main">
-        <h2>Insurance approval</h2>
-        <table class="table" cellpadding="0" cellspacing="0" border="1">
+        <h1>APPROVE INSURANCE CLAIM</h1>
+        <table class="table">
           <thead>
-            <tr style="font-size: smaller;width: 100%;">
+            <tr id="heading_style">
               <th scope="col">Claim ID</th>
               <th scope="col">Policy Number</th>
               <th scope="col">Date of loss</th>
@@ -21,8 +19,8 @@
             </tr>
           </thead>
         
-          <tbody style="font-size: smaller;width: 100%;">
-            <tr *ngFor="let item of insuranceclaim_res ">
+          <tbody *ngFor="let item of insuranceclaim_res ">
+            <tr id="i" *ngIf="i%2==0">
               <td> {{item.claim_id}}</td>
               <td>{{item.policy_no}}</td>
               <td> {{item.date_of_loss}}</td>
@@ -35,7 +33,19 @@
               <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.policy_no)">Approve</button></td>
               <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
           </tr>
+          <!-- <tr id="j" *ngIf="i%2!=0">
+            <td> {{item.claim_id}}</td>
+            <td>{{item.policy_no}}</td>
+            <td> {{item.date_of_loss}}</td>
+            <td> {{item.cause_of_loss}}</td>
+            <td> {{item.claim_date}}</td>
+            <td> {{item.crop_name}}</td>
+            <td> {{item.username}}</td>
+            <td> {{item.area}}</td>
             
+            <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.policy_no)">Approve</button></td>
+            <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
+        </tr> -->
           </tbody>
       
         </table>
@@ -43,6 +53,3 @@
           </div>
           </div>
           </div>
-  </body>
-  
-

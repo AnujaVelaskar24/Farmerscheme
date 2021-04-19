@@ -8,7 +8,7 @@
 
     <h1>WELCOME FARMER!</h1>
     <div id="welcome-paragraph">
-      <p class="paragraph-text">
+      <p class="paragraph-text"><i>
         <!-- Agriculture is the most healthful,useful and noble employment of man.It is felt that
         with provision of timely and adequate inputs such as fertilizers, seeds, pesticides and by making available
         affordable agricultural credit /crop insurance, Indian farmers are going to ensure food and nutritional security
@@ -17,6 +17,7 @@
         direction to create one stop shop for meeting all informational needs relating to Agriculture,sale of an Indian
         farmer. -->
         Now you can sell your produce directly to end consumer i.e. Retailers, Bulk buyers, Institution, Group Co-operative Societies, Citizen Associations or any other group buyers on kisanyojana.com & also you can save a lot of money via Group buying of Agri products or machinery directly from Manufacturing Companies and big distributors on a fair price.
+      </i>
       </p>
     </div>
     <div id="small-text">Lets </div>
@@ -58,7 +59,7 @@
                         <label id="labels" for="croptype"><b>Crop Type</b></label>
                         <select class="form-control" name="season" name="drinks" style="height: 45px;" id="season" [(ngModel)]="selectedtype"
                           (change)="ontypeSelect(selectedtype)" formControlName="croptype">
-                          <option value="" style="color: brown;" disabled selected>Choose a drink</option>
+                          <!-- <option value="" style="color: brown;" disabled selected></option> -->
                           <option disabled>Select an Option</option>
 
                           <option value="kharif" selected>Kharif</option>
@@ -134,7 +135,7 @@
                           <div [hidden]="!base_price.errors.pattern" style="color: crimson; font-size:12px;">
                             Only numbers are allowed
                           </div>
-                          
+
 
                         </div>
                         <button [disabled]="!SellRequestForm.valid" type="submit">Place Request</button>
@@ -157,8 +158,7 @@
           <p> View all the crops that are on sale in the market.</p>
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
-          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="/marketplace">
+          <button type="button" id="button" class="btn btn-primary" routerLink="/marketplace">
             Go
           </button>
         </div>
@@ -176,6 +176,7 @@
             routerLink="/applyinsurance">
             Go
           </button>
+          
         </div>
       </div>
       <div class="col-sm-4">
@@ -203,8 +204,7 @@
           <p>You can claim the insurance for your crop loss.</p>
           <!-- <a routerLink="ClaimInsuranceeComponent" class="btn btn-primary" id="button" >Go</a> -->
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal" routerLink="/claiminsurance"
-          data-target="#claiminsurance"
-            (click)="onGetInsurance()">
+            data-target="#claiminsurance" (click)="onGetInsurance()">
             Go
           </button>
 
@@ -218,16 +218,16 @@
                   <form style="width: 100%;" [formGroup]="contactForm1" (ngSubmit)="onSubmit1()" novalidate>
 
 
-                    <div>
-                      <h2 align="center">Particulars of Insuree</h2>
+                    <div  class="container">
+                      <h2 align="center">Particulars of Insuree</h2><br>
                       <table>
                         <tr>
                           <td>
 
-                          
 
-                        <label id="labels" for="policyno"><b>Policy Number</b></label>
-                        <!-- <input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno">
+
+                            <label id="labels" for="policyno"><b>Policy Number</b></label>
+                            <!-- <input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno">
                       <div *ngIf="!policyno?.valid && (policyno?.dirty ||policyno?.touched)">
                         <div [hidden]="!policyno.errors.pattern" style="color: crimson; font-size:12px;">
                           Only numbers are allowed
@@ -237,16 +237,16 @@
                         </div>
 
                       </div> -->
-                    </td>
-                    <td>
-                      <label name="policyno" formControlName="policyno">{{insurancedata[0].policy_no}}</label>
-                      <!-- <input type="text" value={{insurancedata[0].policy_no}} name="policyno" formControlName="policyno"> -->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                        <label id="labels" for="insurancecompany"><b>Insurance Company</b></label>
-                        <!-- <input type="text" placeholder="Enter Company name" name="insurancecompany"
+                          </td>
+                          <td>
+                            <label name="policyno" formControlName="policyno">{{insurancedata[0].policy_no}}</label>
+                            <!-- <input type="text" value={{insurancedata[0].policy_no}} name="policyno" formControlName="policyno"> -->
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="labels" for="insurancecompany"><b>Insurance Company</b></label>
+                            <!-- <input type="text" placeholder="Enter Company name" name="insurancecompany"
                           formControlName="insurancecompany">
                         <div *ngIf="!insurancecompany?.valid && (insurancecompany?.dirty ||insurancecompany?.touched)">
                           <div [hidden]="!insurancecompany.errors.pattern" style="color: crimson; font-size:12px;">
@@ -257,11 +257,11 @@
                           </div>
 
                         </div> -->
-                        <td>
-                          <label>{{insurancedata[0].insurance_company}}</label>
-                        </td>
-                    </tr>
-                    <!-- <tr>
+                          <td>
+                            <label>{{insurancedata[0].insurance_company}}</label>
+                          </td>
+                        </tr>
+                        <!-- <tr>
                       <td>
 
                         <label id="labels" for="nameofinusree"><b>Name of Insuree</b></label>
@@ -278,13 +278,17 @@
                         </div>
                       </td>
                     </tr> -->
-                    <tr>
-                      <td>
+                        <tr>
+                          <td>
 
-                        <label id="labels" for="suminsured"><b>Sum Insured</b></label>
-                        <!-- <input type="text" placeholder="Enter Sum Insured" name="suminsured"
+                            <label id="labels" for="suminsured"><b>Sum Insured</b></label>
+                            <!-- <input type="text" placeholder="Enter Sum Insured" name="suminsured"
                           formControlName="suminsured">
                         <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
+                        <label id="labels" for="suminsured"><b>Sum Insured</b></label>
+                          <input type="text" placeholder="Enter Sum Insured" name="suminsured"
+                          formControlName="suminsured"> -->
+                        <!-- <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
                           <div [hidden]="!suminsured.errors.pattern" style="color: crimson; font-size:12px;">
                             Only numbers are allowed
                           </div>
@@ -293,18 +297,18 @@
                           </div>
 
                         </div> -->
-                      </td>
-                      <td>
-                        <label>{{insurancedata[0].sum_insured}}</label>
-                      </td>
-                    </tr>
+                          </td>
+                          <td>
+                            <label>{{insurancedata[0].sum_insured}}</label>
+                          </td>
+                        </tr>
 
                         <h2 align="center">Details of Cause for Loss</h2>
 
                         <label id="labels" for="cause_of_loss"><b>Cause of Loss</b></label>
                         <!-- <input type="text" placeholder="Enter the cause of loss" name="cause_of_loss"
                           formControlName="cause_of_loss"> -->
-                          <select class="form-control" name="cause_of_loss" id="cause_of_loss" [(ngModel)]="selectedcause"
+                        <select class="form-control" name="cause_of_loss" id="cause_of_loss" [(ngModel)]="selectedcause"
                           (change)="on_cause_of_loss(selectedcause)" formControlName="cause_of_loss">
                           <option value="Fire" selected>Fire</option>
                           <option value="weather conditions">Weather Conditions</option>
@@ -314,7 +318,7 @@
                           <option value="localized calamities" selected>Localized calamities</option>
                         </select>
                         <div *ngIf="!cause_of_loss?.valid && (cause_of_loss?.dirty ||cause_of_loss?.touched)">
-                          
+
                           <div [hidden]="!cause_of_loss.errors.required" style="color: crimson; font-size:12px;">
                             Cause of Loss is required
                           </div>
@@ -358,6 +362,6 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 </div>

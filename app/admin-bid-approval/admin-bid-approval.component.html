@@ -1,14 +1,13 @@
 
-<body>
-  
     <div id="page-container">
       <div id="content-wrap">
        
       <div class="main">
-        <h2>bid approval</h2>
-        <table class="table" cellpadding="0" cellspacing="0" border="1">
+        <h1>APPROVE BIDDINGS</h1>
+
+        <table class="table">
           <thead>
-            <tr style="font-size: smaller;width: 100%;">
+            <tr id="heading_style">
               <th scope="col">Bid ID</th>
               <th scope="col">Request ID</th>
               <th scope="col">Bidder User ID</th>
@@ -22,8 +21,8 @@
             </tr>
           </thead>
         
-          <tbody style="font-size: smaller;width: 100%;">
-            <tr *ngFor="let item of bid_res ">
+          <tbody *ngFor="let item of bid_res;index as i  ">
+            <tr  id="i" *ngIf="i%2==0">
               <td> {{item.bid_id}}</td>
               <td>{{item.request_id}}</td>
               <td> {{item.userid}}</td>
@@ -37,6 +36,20 @@
               <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.request_id)">Approve</button></td>
               <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
           </tr>
+          <tr  id="j" *ngIf="i%2!=0">
+            <td> {{item.bid_id}}</td>
+            <td>{{item.request_id}}</td>
+            <td> {{item.userid}}</td>
+            <td> {{item.crop_name}}</td>
+            <td> {{item.quantity}}</td>
+            <td> {{item.fertilizer_type}}</td>
+            <td> {{item.msp}}</td>
+            <td> {{item.base_price}}</td>
+            <td> {{item.amount}}</td>
+            
+            <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.request_id)">Approve</button></td>
+            <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td>
+        </tr>
             
           </tbody>
       
@@ -45,5 +58,4 @@
           </div>
           </div>
           </div>
-  </body>
   
