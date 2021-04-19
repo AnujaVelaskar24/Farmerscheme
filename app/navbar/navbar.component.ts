@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import {LoginService} from '../login.service';
+import {GetlandService} from '../getland.service';
+import { Getlandclass } from '../model/getlandclass';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,10 +11,12 @@ import {LoginService} from '../login.service';
 })
 export class NavbarComponent implements OnInit {
   public uid:number;
+  land1:Getlandclass[]=[];
   LoginForm : FormGroup;
   constructor(public fb: FormBuilder,
     private router: Router,
-    public loginService: LoginService) { }
+    public loginService: LoginService,
+    public landservice:GetlandService) { }
 
 
   ngOnInit(){
@@ -50,9 +54,18 @@ onSubmitLoginForm() {
       console.log("valid");
       //sessionStorage.setItem("username",this.LoginForm.value.username)
       sessionStorage.setItem("userid",res.userid)
+     
       if(res.user_type===false)
       {
         this.router.navigateByUrl('farmerhome');
+        this.landservice.getlandid(this.uid).subscribe(res=>{
+          console.log(res,"LAND ID ");
+          this.land1=res;
+       
+        // sessionStorage.setItem("land_id",res.land_id)
+        console.log(this.land1[0].land_id,"SESION SE LAND ID")
+      })
+        
       }
       else
       {
