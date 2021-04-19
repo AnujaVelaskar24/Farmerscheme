@@ -5,6 +5,9 @@ import { SellrequestService } from '../sellrequest.service';
 import { CroptypefetchService } from '../croptypefetch.service';
 import { InsuranceService } from '../insurance.service';
 import { InsuranceclaimService } from '../insuranceclaim.service';
+import { Getinsurance } from '../getinsurance';
+import { GetinsuranceserviceService } from '../getinsuranceservice.service';
+
 @Component({
   selector: 'app-farmerhome',
   templateUrl: './farmerhome.component.html',
@@ -28,7 +31,9 @@ export class FarmerhomeComponent implements OnInit {
     public croptypefetchService: CroptypefetchService,
     public insuranceService: InsuranceService,
     public insuranceclaimService: InsuranceclaimService,
+    public getinsurservice:GetinsuranceserviceService
     ) { 
+      this.isShow=false;
       this.insuranceService.insurance(this.uid).subscribe(res => {
         // console.log(res, "get insurance console");
         this.insurancedata=res;
@@ -147,6 +152,99 @@ export class FarmerhomeComponent implements OnInit {
 
     });
   } 
+
+
+  // ------------APPLY INSURANCE--------------------------
+  applyinsuranceForm = new FormGroup({
+    crop_type: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    crop_id1 : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    crop_name:new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    area:new FormControl('',[Validators.required]),
+    suminsured1:new FormControl('',[Validators.required]),
+    farmer_share_percent:new FormControl('',[Validators.required]),
+    
+  })
+  public area1:number;
+  public cropname:string;
+ public premiumpaidbyfarmer:number=0;
+ public suminsured1:number=0;
+ public suminsured1perhectare:number;
+ public farmershare:number;
+public actualrate:number=0;
+ 
+  public govtshare:number;
+  public premiumpaidbygovt:number;
+  isShow:boolean
+  public cropdata=[];
+ 
+  displaytext(){
+    this.isShow=!this.isShow;
+    this.getinsurservice.getinsurance(this.applyinsuranceForm.value.crop_name).subscribe(res => {
+    this.cropdata=res;
+    this.suminsured1perhectare= this.cropdata[0].sum_insured_per_hectare;
+    this.farmershare=this.cropdata[0].farmer_share_percent;
+     this.actualrate=this.cropdata[0].actual_rate;
+    //console.log(this.applyinsuranceForm.value.crop_name);
+  //  this.cropname=this.applyinsuranceForm.value.crop_name;
+    // console.log(this.area1,"AREA1");
+    // console.log(this.applyinsuranceForm.value.area,"DATA")
+    this.area1=this.applyinsuranceForm.value.area;
+    this.cropname=this.applyinsuranceForm.value.crop_name;
+    this.suminsured1=this.area1*this.suminsured1perhectare;
+   
+    this.premiumpaidbyfarmer=(this.farmershare*this.suminsured1)/100;
+    // console.log(this.premiumpaidbyfarmer,this.farmershare,"farmershare");
+
+    this.premiumpaidbygovt=((this.actualrate-this.farmershare)*this.suminsured1)/100;
+    // console.log(this.premiumpaidbygovt);
+
+   
+      //  console.log(this.suminsuredperhectare,this.farmershare,this.actualrate, "get insurance console");
+    });
+
+  }
+  displayalert(){
+    alert("Your Insurance is successfully applied");
+  }
+ 
+  getinsurances : Getinsurance[]=[];
+  // public selectedtype:string;
+  // public crops = [];
+  // ontypeSelect(selectedtype){
+  // // console.log(selectedtype);
+  
+  // this.croptypefetchService.croptypefetch(this.selectedtype).subscribe(res => {
+  // //console.log(res, "ontype console data");
+  // this.crops=res;
+  // });
+  // }
+
+  // onSubmit(){
+  //   console.log(this.applyinsuranceForm.value);
+  // }
+  
+  get crop_id1() {
+    return this.applyinsuranceForm.get('crop_id1');
+  } 
+  get crop_type() {
+    return this.applyinsuranceForm.get('crop_type');
+  }
+  get area() {
+    return this.applyinsuranceForm.get('area');
+  }
+  get crop_name(){
+    return this.applyinsuranceForm.get('crop_name');
+  }
+  get sum_insured_per_hectare(){
+    return this.applyinsuranceForm.get('sum_insured_per_hectare');
+  }
+  get farmer_share_percent(){
+    return this.applyinsuranceForm.get('farmer_share_percent');
+  }
+
+
+  
+
 }
 
 export class insurance_claim_class

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Getmarketclass } from '../getmarketclass';
 import {GetmarketplaceService} from '../getmarketplace.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { SharedserviceService } from '../sharedservice.service';
 import { BidrequestService } from '../bidrequest.service';
 @Component({
@@ -12,7 +11,7 @@ import { BidrequestService } from '../bidrequest.service';
 })
 export class MarketplaceComponent implements OnInit {
 
-  uid:number = Number(sessionStorage.getItem("userid"));
+  uid:number = Number(sessionStorage.getItem('userid'));
 
   BidForm = new FormGroup({
     placebid: new FormControl('',[Validators.required]),
@@ -44,6 +43,7 @@ export class MarketplaceComponent implements OnInit {
     })
   }
   onPlacebid(){
+    
     let bidobj = new bid_history();
     bidobj.request_id= this.reqid;
     bidobj.userid=this.uid;
@@ -56,14 +56,18 @@ export class MarketplaceComponent implements OnInit {
 
   public reqid:number;
   public bidrequestdata = [];
-  applybid(request_id:number){
+  applybid(request_id:string, crop_id:string){
+    console.log("IN HERE")
+    localStorage.setItem('request_id',request_id)
+    localStorage.setItem('crop_id',crop_id)
+    // this.router.navigateByUrl('/bidrequest');
    // this.router.navigateByUrl('BidRequest');
    //console.log(crop_id);
   //  this.sharedservice.crop_id.next(crop_id);
-  this.reqid = request_id; 
-  this.bidrequestservice.getvalues(request_id).subscribe(res => {
-    this.bidrequestdata = res;
-  });
+  // this.reqid = request_id; 
+  // this.bidrequestservice.getvalues(request_id).subscribe(res => {
+  //   this.bidrequestdata = res;
+  // });
     
   }
 
