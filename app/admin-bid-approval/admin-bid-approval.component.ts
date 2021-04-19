@@ -66,6 +66,7 @@ export class AdminBidApprovalComponent implements OnInit {
   get amount() {
     return this.BidApproveForm.get('amount');
   } 
+  
   onapprove(request_id)
 {
   this.adminbidapprovalservice.update(request_id).subscribe(res => {
