@@ -15,6 +15,9 @@ import { Getlandclass } from '../model/getlandclass';
 })
 export class ApplyInsuranceComponent implements OnInit {
   land2:Applyinsuranceclass[]=[];
+  public uid = Number(sessionStorage.getItem("userid"));
+        
+  public landid:number= Number(sessionStorage.getItem("land_id"));
   applyinsuranceForm = new FormGroup({
     crop_type: new FormControl(''),
     crop_id : new FormControl(''),
@@ -41,6 +44,7 @@ public actualrate:number=0;
     this.isShow=!this.isShow;
     this.getinsurservice.getinsurance(this.applyinsuranceForm.value.crop_name).subscribe(res => {
     this.cropdata=res;
+    console.log(res, "Incomming values");
     this.suminsuredperhectare= this.cropdata[0].sum_insured_per_hectare;
     this.farmershare=this.cropdata[0].farmer_share_percent;
      this.actualrate=this.cropdata[0].actual_rate;
@@ -78,26 +82,34 @@ public actualrate:number=0;
     public croptypefetchService: CroptypefetchService,
     public getinsurservice:GetinsuranceserviceService,
     public insertinsurance:ApplyinsuranceinsertService) { 
+      {
+        
+        
+        this.isShow=false;
+        
+        }
     this.isShow=false;
    
   }
+  
   displayalert(){
+    console.log(this.landid,"from apply insurance ts");
     let applyinsurance_obj = new Applyinsuranceclass();
-    applyinsurance_obj.userid=this.land2[0].userid;
-    applyinsurance_obj.land_id=this.land2[0].land_id;
-    applyinsurance_obj.season=this.applyinsuranceForm.value.season;
-    applyinsurance_obj.year=this.applyinsuranceForm.value.year;
-    applyinsurance_obj.crop_id=this.land2[0].crop_id;
-    applyinsurance_obj.sum_insured=this.applyinsuranceForm.value.sum_insured;
-    applyinsurance_obj.insurance_company=this.applyinsuranceForm.value.insurance_company;
-    applyinsurance_obj.premium_amount=this.applyinsuranceForm.value.premium_amount;
+    applyinsurance_obj.userid=this.uid;
+    applyinsurance_obj.land_id=this.landid;
+    applyinsurance_obj.season=this.cropdata[0].crop_type;
+    applyinsurance_obj.year=2020;
+    applyinsurance_obj.crop_id=this.cropdata[0].crop_id;
+    applyinsurance_obj.sum_insured=this.suminsured;
+    applyinsurance_obj.insurance_company="Yojna Insurance";
+    applyinsurance_obj.premium_amount=this.premiumpaidbyfarmer;
     applyinsurance_obj.start_date = new Date();
     applyinsurance_obj.end_date=new Date();
+    console.log(applyinsurance_obj,"DISPLAY ALERT CONSOLE")
     //change this to 1 yr later
     // this..getinsurance(applyinsurance_obj).subscribe(res => {
 
     // });
-    console.log(applyinsurance_obj, "OBJECT")
     this.insertinsurance.applyinsurance(applyinsurance_obj).subscribe(res=>{
 
     })
@@ -121,7 +133,6 @@ public actualrate:number=0;
     console.log(this.applyinsuranceForm.value);
   }
   ngOnInit(): void {
-    
   }
 
 
