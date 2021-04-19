@@ -16,9 +16,9 @@ import { Getlandclass } from '../model/getlandclass';
 export class ApplyInsuranceComponent implements OnInit {
   land2:Applyinsuranceclass[]=[];
   applyinsuranceForm = new FormGroup({
-    // crop_type: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    // crop_id : new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    // crop_name:new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
+    crop_type: new FormControl(''),
+    crop_id : new FormControl(''),
+    crop_name:new FormControl(''),
     area:new FormControl('',[Validators.required]),
     // suminsured:new FormControl('',[Validators.required]),
     // farmer_share_percent:new FormControl('',[Validators.required]),
@@ -97,6 +97,7 @@ public actualrate:number=0;
     // this..getinsurance(applyinsurance_obj).subscribe(res => {
 
     // });
+    console.log(applyinsurance_obj, "OBJECT")
     this.insertinsurance.applyinsurance(applyinsurance_obj).subscribe(res=>{
 
     })
@@ -108,10 +109,10 @@ public actualrate:number=0;
   public selectedtype:string;
   public crops = [];
   ontypeSelect(selectedtype){
-  // console.log(selectedtype);
+  console.log(selectedtype, "SELECTED");
   
   this.croptypefetchService.croptypefetch(this.selectedtype).subscribe(res => {
-  //console.log(res, "ontype console data");
+  console.log(res, "CROP TYPEEEE");
   this.crops=res;
   });
   }

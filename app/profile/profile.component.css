@@ -6,7 +6,8 @@ body{
     background-color: #e2e8f0;    
 }
 .container{
-    height:  700px;
+    /* height:  700px; */
+    height: 100%
 }
 .main-body {
     padding: 15px;
@@ -33,6 +34,13 @@ body{
     background-clip: border-box;
     border: 0 solid rgba(0,0,0,.125);
     border-radius: .25rem;
+}
+h1{
+    color: rgb(6, 124, 6);
+    letter-spacing: 20px;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 8px rgb(134, 202, 143);
 }
 .col-md-8{
     height: 100%;
