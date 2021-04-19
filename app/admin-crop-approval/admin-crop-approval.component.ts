@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdmincropapprovalService } from '../admincropapproval.service';
+import { Register } from '../register';
 
 @Component({
   selector: 'app-admin-crop-approval',
@@ -11,7 +12,7 @@ import { AdmincropapprovalService } from '../admincropapproval.service';
 
 export class AdminCropApprovalComponent implements OnInit {
   sellrequestService: any;
-
+  
   public crop_approval_data = [];
   constructor(public fb: FormBuilder,
     private router: Router,
@@ -26,11 +27,15 @@ export class AdminCropApprovalComponent implements OnInit {
     //   console.log(res, "sell request console");
     // });
   }
-
+  uid:number = Number(sessionStorage.getItem("userid"));
   onapprove(request_id)
-{
-  console.log(request_id, "REQUEST ID")
-  this.admincropapprovalservice.update(request_id).subscribe(res => {
+{ let biddataobj=new bidinsert
+  biddataobj.request_id=request_id;
+  biddataobj.userid=this.uid;
+  biddataobj.amount=0
+ biddataobj.bidding_time=new Date();
+  console.log(biddataobj, "bid obj")
+  this.admincropapprovalservice.update(request_id,biddataobj).subscribe(res => {
     console.log(res, "ontype console data");
     this.ngOnInit();
   });
@@ -41,4 +46,11 @@ export class AdminCropApprovalComponent implements OnInit {
     });
   }
 
+}
+export class bidinsert
+{
+  request_id:Number;
+  userid:Number;
+  amount:Number;
+  bidding_time:Date;
 }

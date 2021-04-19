@@ -55,6 +55,9 @@ crop_id:number;
   // this.reqid = request_id; 
   this.bidrequestservice.getvalues(request_id).subscribe(res => {
     this.bidrequestdata = res;
+    if(this.bidrequestdata[0].current_amount==0){
+      this.bidrequestdata[0].current_amount=this.bidrequestdata[0].base_price;
+    }
     console.log(this.bidrequestdata, "DATA OF BID")
   });
    }
