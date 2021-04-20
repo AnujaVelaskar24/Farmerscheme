@@ -14,12 +14,12 @@ import { Forgot } from '../forgot';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  public status: boolean = false;
-  public uid: number = Number(sessionStorage.getItem('userid'));
-  public usertype:string=(sessionStorage.getItem('user_type'));
 
-  land1: Getlandclass[] = [];
-  LoginForm: FormGroup;
+  public status:boolean=false;
+  public uid:number=Number(sessionStorage.getItem('userid'));
+  public usertype:string=(sessionStorage.getItem('user_type'));
+  land1:Getlandclass[]=[];
+  LoginForm : FormGroup;
   ForgetPasswordForm: FormGroup;
 
   constructor(public fb: FormBuilder,
@@ -36,67 +36,47 @@ export class NavbarComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     })
+    this.ForgetPasswordForm = this.fb.group({
+      email_id: ['', Validators.required],
 
-  this.ForgetPasswordForm = this.fb.group({
-    email_id: ['', Validators.required],
+    })
 
-  })
+  }
+  get username() {
+    return this.LoginForm.get('username');
+  }
+  get password() {
+    return this.LoginForm.get('password');
+  }
 
-}
-get username() {
-  return this.LoginForm.get('username');
-}
-get password() {
-  return this.LoginForm.get('password');
-}
+  logout() {
+    sessionStorage.removeItem('userid');
+    sessionStorage.removeItem('usertype');
+    sessionStorage.removeItem('username');
+    this.router.navigateByUrl('/home');
+  }
+  onSubmitLoginForm() {
 
-logout(){
- sessionStorage.removeItem('userid'); 
- sessionStorage.removeItem('usertype');
- sessionStorage.removeItem('username');
- this.router.navigateByUrl('/home');
-}
-onSubmitLoginForm() {
-  
-  this.loginService.login(this.LoginForm.value).subscribe(res => {
-    console.log(res,"res value");
-    if(res === "Unsuccessful")
-    {
-      console.log("invalid");
-      alert("Invalid Credentials");
-      // sessionStorage.setItem("username",this.LoginForm.value.username)
-      // this.router.navigateByUrl('Farmerhome');
-    }
-    else
-    {
-      console.log("valid");
-      sessionStorage.setItem("username",this.LoginForm.value.username)
-      sessionStorage.setItem("userid",res.userid)
-      sessionStorage.setItem("user_type",res.user_type)
-      console.log(this.usertype,"usertype!!");
-     
-      if(res.user_type===false)
-      {
-        this.router.navigateByUrl('farmerhome');
-        console.log(res.userid, "UserID");
-        this.landservice.getlandid(res.userid).subscribe(res=>{
-          console.log(res,"LAND ID ");
-          this.land1=res;
-       
-        sessionStorage.setItem("land_id",res.land_id)
-        // console.log(this.land1[0].land_id,"SESION SE LAND ID")
-        // console.log(res.land_id, "SESSION")
-      })
-        
+    this.loginService.login(this.LoginForm.value).subscribe(res => {
+      console.log(res, "res value");
+      if (res === "Unsuccessful") {
+        console.log("invalid");
+        alert("Invalid Credentials");
+        // sessionStorage.setItem("username",this.LoginForm.value.username)
+        // this.router.navigateByUrl('Farmerhome');
       }
       else {
         console.log("valid");
         sessionStorage.setItem("username", this.LoginForm.value.username)
         sessionStorage.setItem("userid", res.userid)
+        sessionStorage.setItem("user_type", res.user_type)
+        console.log(this.usertype, "usertype!!");
 
         if (res.user_type === false) {
           this.router.navigateByUrl('farmerhome');
+          console.log(res.userid, "UserID");
           this.landservice.getlandid(res.userid).subscribe(res => {
+            console.log(res, "LAND ID ");
             this.land1 = res;
 
             sessionStorage.setItem("land_id", res.land_id)
@@ -106,15 +86,33 @@ onSubmitLoginForm() {
 
         }
         else {
-          this.router.navigateByUrl('bidderhome');
+          console.log("valid");
+          sessionStorage.setItem("username", this.LoginForm.value.username)
+          sessionStorage.setItem("userid", res.userid)
+
+          if (res.user_type === false) {
+            this.router.navigateByUrl('farmerhome');
+            this.landservice.getlandid(res.userid).subscribe(res => {
+              this.land1 = res;
+
+              sessionStorage.setItem("land_id", res.land_id)
+              // console.log(this.land1[0].land_id,"SESION SE LAND ID")
+              // console.log(res.land_id, "SESSION")
+            })
+
+          }
+          else {
+            this.router.navigateByUrl('bidderhome');
+          }
+
+
         }
-
-
+        //console.log('User Logged In!')
+        //this.router.navigateByUrl('/home/')
       }
-      //console.log('User Logged In!')
-      //this.router.navigateByUrl('/home/')
     });
   }
+
   get loginFormControl() {
     return this.LoginForm.controls;
   }
@@ -124,8 +122,8 @@ onSubmitLoginForm() {
   get email_id() {
     return this.ForgetPasswordForm.get('email_id');
   }
-  Onpasswordclick(){
-    this.status=!status;
+  Onpasswordclick() {
+    this.status = !status;
     console.log(this.status);
   }
   onForgetPasswordSubmit() {
