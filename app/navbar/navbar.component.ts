@@ -10,7 +10,7 @@ import { Getlandclass } from '../model/getlandclass';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  public uid:number;
+  public uid:number=Number(sessionStorage.getItem('userid'));
   land1:Getlandclass[]=[];
   LoginForm : FormGroup;
   constructor(public fb: FormBuilder,
