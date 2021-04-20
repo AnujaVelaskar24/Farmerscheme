@@ -9,15 +9,18 @@
     <h1>WELCOME FARMER!</h1>
     <div id="welcome-paragraph">
       <p class="paragraph-text"><i>
-        <!-- Agriculture is the most healthful,useful and noble employment of man.It is felt that
+          <!-- Agriculture is the most healthful,useful and noble employment of man.It is felt that
         with provision of timely and adequate inputs such as fertilizers, seeds, pesticides and by making available
         affordable agricultural credit /crop insurance, Indian farmers are going to ensure food and nutritional security
         to the Nation.In the farmer's portal, a farmer will be able to perform activites such as application/claim of
         insurance.Also, a farmer can place the request for bidding of crops.Farmers’ Portal is an endeavour in this
         direction to create one stop shop for meeting all informational needs relating to Agriculture,sale of an Indian
         farmer. -->
-        Now you can sell your produce directly to end consumer i.e. Retailers, Bulk buyers, Institution, Group Co-operative Societies, Citizen Associations or any other group buyers on kisanyojana.com & also you can save a lot of money via Group buying of Agri products or machinery directly from Manufacturing Companies and big distributors on a fair price.
-      </i>
+          Now you can sell your produce directly to end consumer i.e. Retailers, Bulk buyers, Institution, Group
+          Co-operative Societies, Citizen Associations or any other group buyers on kisanyojana.com & also you can save
+          a lot of money via Group buying of Agri products or machinery directly from Manufacturing Companies and big
+          distributors on a fair price.
+        </i>
       </p>
     </div>
     <div id="small-text">Lets </div>
@@ -58,8 +61,8 @@
                         <h2 style="margin-bottom: 30px;">Request for Bid</h2>
 
                         <label id="labels" for="croptype"><b>Crop Type</b></label>
-                        <select class="form-control" name="season" name="drinks" style="height: 45px;" id="season" [(ngModel)]="selectedtype"
-                          (change)="ontypeSelect(selectedtype)" formControlName="croptype">
+                        <select class="form-control" name="season" name="drinks" style="height: 45px;" id="season"
+                          [(ngModel)]="selectedtype" (change)="ontypeSelect(selectedtype)" formControlName="croptype">
                           <!-- <option value="" style="color: brown;" disabled selected></option> -->
                           <option disabled>Select an Option</option>
 
@@ -148,7 +151,7 @@
             </div>
           </div>
 
-        <!-- </div> -->
+          <!-- </div> -->
         </div>
       </div>
       <div class="col-sm-4">
@@ -174,11 +177,10 @@
           <p> Get Insurance for your crops</p>
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
-          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="/applyinsurance">
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal" routerLink="/applyinsurance">
             Apply
           </button>
-          
+
         </div>
       </div>
       <div class="col-sm-4">
@@ -192,7 +194,7 @@
           <!-- <a routerLink="FarmerTransactionHistoryComponent" class="btn btn-primary" id="button">Go</a> -->
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
             routerLink="/farmertransactionhistory">
-           View
+            View
           </button>
         </div>
       </div>
@@ -220,7 +222,7 @@
                   <form style="width: 100%;" [formGroup]="contactForm1" (ngSubmit)="onSubmit1()" novalidate>
 
 
-                    <div  class="container">
+                    <div class="container">
                       <h2 align="center">Particulars of Insuree</h2><br>
                       <table>
                         <tr>
@@ -229,7 +231,7 @@
 
 
                             <label id="labels" for="policyno"><b>Policy Number</b></label>
-                          <!--<input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno">
+                            <!--<input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno">
                        <div *ngIf="!policyno?.valid && (policyno?.dirty ||policyno?.touched)">
                         <div [hidden]="!policyno.errors.pattern" style="color: crimson; font-size:12px;">
                           Only numbers are allowed
@@ -290,7 +292,7 @@
                         <label id="labels" for="suminsured"><b>Sum Insured</b></label>
                           <input type="text" placeholder="Enter Sum Insured" name="suminsured"
                           formControlName="suminsured"> -->
-                        <!-- <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
+                            <!-- <div *ngIf="!suminsured?.valid && (suminsured?.dirty ||suminsured?.touched)">
                           <div [hidden]="!suminsured.errors.pattern" style="color: crimson; font-size:12px;">
                             Only numbers are allowed
                           </div>
@@ -304,8 +306,8 @@
                             <label>{{insurancedata[0].sum_insured}}</label>
                           </td>
                         </tr>
-<hr>
-                        <h2 align="center">Details of Cause for Loss</h2><br>
+                        <hr style="width:100%;">
+                        <h2 align="center" style="width:100%; margin-left: 50px;">Details of Cause for Loss</h2><br>
 
                         <label id="labels" for="cause_of_loss"><b>Cause of Loss</b></label>
                         <!-- <input type="text" placeholder="Enter the cause of loss" name="cause_of_loss"
@@ -324,11 +326,9 @@
                           <div [hidden]="!cause_of_loss.errors.required" style="color: crimson; font-size:12px;">
                             Cause of Loss is required
                           </div>
-
                         </div>
-
                         <label id="labels" for="date_of_loss"><b>Date of Loss </b></label>
-                        <input type="date" name="date_of_loss" formControlName="date_of_loss">
+                        <input type="date" name="date_of_loss" id="date_of_loss" formControlName="date_of_loss">
                         <div *ngIf="!date_of_loss?.valid && (date_of_loss?.dirty ||date_of_loss?.touched)">
 
                           <div [hidden]="!date_of_loss.errors.required" style="color: crimson; font-size:12px;">
@@ -337,7 +337,7 @@
 
                         </div>
 
-                        <button type="submit" [disabled]="!contactForm1.valid">Claim</button>
+                        <button id = "claimbutton" type="submit" [disabled]="!contactForm1.valid">Claim</button>
                       </table>
                     </div>
 
@@ -350,16 +350,15 @@
       </div>
       <div class="col-sm-4">
         <div class="card-body" id="news-container">
-           
-          <h5 class="card-title" >
+
+          <h5 class="card-title">
             <img style="height:100px; width: 100px;" src="/assets/images/profile_icon1.png" />
           </h5>
           <p class="card-text" id="fact-number">My Profile</p>
           <p> View your profile.</p>
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
-          <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
-            routerLink="/profile">
+          <button type="button" id="button" class="btn btn-primary" data-toggle="modal" routerLink="/profile">
             View
           </button>
 
