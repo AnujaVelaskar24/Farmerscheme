@@ -1,107 +1,106 @@
-
 #page-container {
-    position: relative;
-    min-height: 100vh;
-  }
+  position: relative;
+  min-height: 100vh;
+}
 #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
-  }
+  padding-bottom: 2.5rem;    /* Footer height */
+}
 #small_images{
-    /* position: absolute;
-    left: 10px; */
-    color: white;
-    
+  /* position: absolute;
+  left: 10px; */
+  color: white;
+  
 }
 #small-text{
-  color: green;
-  text-align: center;
-  font-size: 30px;
-  letter-spacing: 5px;
-  margin-top: 40px;
+color: green;
+text-align: center;
+font-size: 30px;
+letter-spacing: 5px;
+margin-top: 40px;
 }
 #big-text{
-  color: rgb(2, 82, 2);
-  text-align: center;
-  font-size: 35px;
-  font-weight: bold;
+color: rgb(2, 82, 2);
+text-align: center;
+font-size: 35px;
+font-weight: bold;
 }
 h1{
-      color: white;
-      letter-spacing: 30px;
-      text-align: center;
-      font-size: 60px;
-      text-shadow: 2px 2px 8px green;
-      margin-top: 20px;
-      margin-bottom: 20px;
-  }
-#project-name{
     color: white;
-    margin-right: 50px;
-    margin-left: 20px;
-    letter-spacing: 0.5px;
-    font-weight: bold;
-    font-size: 22px;
-    /* position: absolute;
-    left: 40px; */
+    letter-spacing: 30px;
+    text-align: center;
+    font-size: 60px;
+    text-shadow: 2px 2px 8px green;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#project-name{
+  color: white;
+  margin-right: 50px;
+  margin-left: 20px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  font-size: 22px;
+  /* position: absolute;
+  left: 40px; */
 }
 .nav-button{
-    height:35px;
-    background-color: white;
-    border-radius: 5px;
-    border-color: white;
-    border-width: 1px;
-    width: 80px;
-    position: absolute;
-    right: 170px;
-    
+  height:35px;
+  background-color: white;
+  border-radius: 5px;
+  border-color: white;
+  border-width: 1px;
+  width: 80px;
+  position: absolute;
+  right: 170px;
+  
 }
 .modal-lg {
-    max-width: 40%;
+  max-width: 40%;
 }
 
 .main-container{
-    background-color: white;
-    height: "100%";
-    padding: 30px;
-    
+  background-color: white;
+  height: "100%";
+  padding: 30px;
+  
 }
 h2{
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .nav-bar{
-    background-color: green;
-    /* display: flex;
-    justify-content:center;  */
-    padding: 10px;
-    align-items: center;
-    height: 80px;
-    padding-top: 20px;
-    margin-bottom: 20px;
+  background-color: green;
+  /* display: flex;
+  justify-content:center;  */
+  padding: 10px;
+  align-items: center;
+  height: 80px;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 #header_nav{
-    color: rgb(219, 219, 219);
-    margin-inline:50px ;
+  color: rgb(219, 219, 219);
+  margin-inline:50px ;
 }
 #footericon-style{
-    margin-right: 20px;
-    color: white;
-    margin-top:5px;
+  margin-right: 20px;
+  color: white;
+  margin-top:5px;
 }
 #footer{
-    background-color: rgb(1, 43, 1);
-    color: white;
-    padding-top: 30px;
-    width: 100%;
-    padding-left: 50px;
+  background-color: rgb(1, 43, 1);
+  color: white;
+  padding-top: 30px;
+  width: 100%;
+  padding-left: 50px;
 }
 #button{
-    background-color:green;
-    /* display: flex;
-    justify-content: center;
-    align-self: center; */
-    width: 30%;
-    margin-top: 20px;
+  background-color:green;
+  /* display: flex;
+  justify-content: center;
+  align-self: center; */
+  width: 30%;
+  margin-top: 20px;
 }
 /* .link
 {
@@ -109,179 +108,179 @@ background-image:none !important;
 background-color:#ff00ff !important;
 } */
 #footer-contactus{
-    letter-spacing: 3px;
-    font-size: 20px;
-    font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 20px;
+  font-weight: bold;
 }
 #news-container{
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 #fact-icons{
-    height:80px;
-    width: 80px;
-    border-radius: 40px;
-    margin-bottom: 20px;
+  height:80px;
+  width: 80px;
+  border-radius: 40px;
+  margin-bottom: 20px;
 }
 #fact-number{
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #welcome-paragraph{
-    padding-top: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-    display: flex;
-    justify-content: space-between;
-    
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  
 }
 .paragraph-text{
-    margin-top: 20px;
-    background-color: rgb(231, 245, 231);
-    border-radius: 10px;
-  padding: 2%;
-    width: 100%;
-    /* padding-left: 30px; */
+  margin-top: 20px;
+  background-color: rgb(231, 245, 231);
+  border-radius: 10px;
+padding: 2%;
+  width: 100%;
+  /* padding-left: 30px; */
 }
 
 /* ------------------------------apply bid----------------------------------*/
 
 #page-container {
+  position: relative;
+  min-height: 100vh;
+}
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+.row{
+    /* background-image: url("../../assets/images/background.jpg"); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* position:fixed; */
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0%;
+}
+
+.main {  
+    width: 25%;
+    margin-top: 80px;
+    margin: auto;
+    /* padding-top: 30px; */
     position: relative;
-    min-height: 100vh;
   }
-  #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
-  }
-  .row{
-      /* background-image: url("../../assets/images/background.jpg"); */
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      /* position:fixed; */
-      width:100%;
-      height:100%;
-      top:0px;
-      left:0px;
-      margin-left: 0px;
-      margin-bottom: 0px;
-      margin-top: 0%;
-  }
-  
-  .main {  
-      width: 25%;
-      margin-top: 80px;
-      margin: auto;
-      /* padding-top: 30px; */
-      position: relative;
-    }
-   
-    /* Add a card effect for articles */
-    .card {
-      margin-top: 15%; 
-      background-color: white;
-      padding: 20px;
-      border-radius: 25px;
-      width: max-content;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      
-    }
-   
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-  
-  
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-   
-    .container {
-      padding: 16px;
-      width: 350px;
-      margin: auto;
-    }
-  
-    /* Full-width inputs */
-    input[type=text], input[type=password], input[type=email], input[type=tel] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      margin-bottom: 0px;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-  
-    /* Set a style for all buttons */
-    button {
-      background-color: rgb(17, 139, 1);
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      margin-top: 30px;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      font-size: 15px;
-    }
-    button:disabled {
-      background-color:#8bc995;
-  }
-    button:hover {
-      opacity: 0.8;
-    }
-
-    #labels{
-        align-self: left;
-        display: flex;
-        justify-content: left;
-    }
-      
-  /* #footericon-style{
-    margin-right: 20px;
-    color: white;
-    margin-top:5px;
-  } */
-  /* #footer{
-    background-color: rgb(1, 43, 1);
-    color: white;
-    margin-top: 10%;
-    padding-top: 2%;
-    width: 100%;
-  
-    padding-bottom: 1%;
+ 
+  /* Add a card effect for articles */
+  .card {
+    margin-top: 15%; 
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    width: max-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
-    
-  } */
-  input[type=date]{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-   
-  
-    font-size: 15px;
-
-  } input[type=text], input[type=password], input[type=email], input[type=tel] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+  }
+ 
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+ 
   .container {
-    padding: 10px;
+    padding: 16px;
     width: 350px;
-    /* margin: auto; */
+    margin: auto;
   }
+
+  /* Full-width inputs */
+  input[type=text], input[type=password], input[type=email], input[type=tel] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-bottom: 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  /* Set a style for all buttons */
+  button {
+    background-color: rgb(17, 139, 1);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+  }
+  button:disabled {
+    background-color:#8bc995;
+}
+  button:hover {
+    opacity: 0.8;
+  }
+
+  #labels{
+      align-self: left;
+      display: flex;
+      justify-content: left;
+  }
+    
+/* #footericon-style{
+  margin-right: 20px;
+  color: white;
+  margin-top:5px;
+} */
+/* #footer{
+  background-color: rgb(1, 43, 1);
+  color: white;
+  margin-top: 10%;
+  padding-top: 2%;
+  width: 100%;
+
+  padding-bottom: 1%;
+  
+  
+} */
+input[type=date]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+ 
+
+  font-size: 15px;
+
+} input[type=text], input[type=password], input[type=email], input[type=tel] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 10px;
+  width: 350px;
+  /* margin: auto; */
+}
