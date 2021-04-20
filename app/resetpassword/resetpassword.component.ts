@@ -27,9 +27,18 @@ export class ResetpasswordComponent implements OnInit {
     let resetpasswordobject = new resetpasswordclass;
     resetpasswordobject.email_id = this.email_id;
     resetpasswordobject.password = this.resetpasswordForm.value.newpassword;
-    this.resetpasswordservice.resetpassword(resetpasswordobject).subscribe(res => {
-      console.log(res,"RESPONSE")
-    });
+    if(resetpasswordobject.password == this.resetpasswordForm.value.confirmpassword )
+    {
+      this.resetpasswordservice.resetpassword(resetpasswordobject).subscribe(res => {
+        console.log(res,"RESPONSE");
+        alert("Password Changed Successfully!");
+        this.router.navigateByUrl("/home");
+      });
+    }
+    else{
+      alert("Please Enter Same Passwords!");
+    }
+    
   }
   
   ngOnInit(): void {
