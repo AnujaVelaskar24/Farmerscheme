@@ -19,10 +19,10 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('',[Validators.required,Validators.minLength(3)]),
     password1: new FormControl('',[Validators.required,Validators.minLength(3)]),
     email_id: new FormControl('',[Validators.required,Validators.minLength(9),Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-    home_address: new FormControl('',[Validators.required,Validators.minLength(3), Validators.pattern("^[a-zA-Z]+$")]),
+    home_address: new FormControl('',[Validators.required,Validators.minLength(3)]),
     phone_no: new FormControl('',[Validators.required,Validators.maxLength(10), Validators.pattern("^[0-9]+$")]),
     account_no: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.pattern("^[0-9]+$")]),
-    ifsc_code: new FormControl('',[Validators.required,Validators.maxLength(4),]),
+    ifsc_code: new FormControl('',[Validators.required,Validators.maxLength(10),]),
     pan: new FormControl('',[Validators.required,Validators.maxLength(10)]),
     Aadhar: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.pattern("^[0-9]+$")]),
     certificate:new FormControl('',[Validators.required])

@@ -80,9 +80,7 @@
                                         <input type="text" placeholder="Enter home_address" id="home_address" name="home_address"
                                             formControlName="home_address">
                                         <div *ngIf="!home_address?.valid && (home_address?.dirty ||home_address?.touched)">
-                                            <div [hidden]="!home_address.errors.pattern" style="color: crimson;">
-                                                Only characters are allowed
-                                            </div>
+                                            
                                             <div [hidden]="!home_address.errors.required" style="color: crimson;">
                                                 home address is required
                                             </div>
@@ -146,7 +144,7 @@
                                                         </div>
                                                        
                                                         <div [hidden]="!ifsc_code.errors.maxlength" style="color: crimson;">
-                                                            Max Length is 4
+                                                            Max Length is 10
                                                         </div>
                                                     </div>
                                                 </td>
