@@ -1,10 +1,25 @@
+h2{
+    text-align: center;
+    padding-top: 15px;
+}
+#k
+{
+    background-color:rgb(216, 247, 216);
+}
+
+#l
+{
+    background-color:#8cd9ae;
+}
+
 body{
     
     /* margin-top:20px; */
     color: #1a202c;
     text-align: left;
     /* background-color: #e2e8f0;   */
-    background-color: rgb(216, 247, 216);
+    /* background-color: rgb(216, 247, 216); */
+   
 }
 .container{
     /* height:  700px; */
@@ -13,6 +28,8 @@ body{
 .main-body {
     padding: 15px;
     width: 100%;
+    margin-bottom: 5%;
+    font-size: larger;
     
 }
 .card {
