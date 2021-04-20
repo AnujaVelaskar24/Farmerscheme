@@ -1,4 +1,3 @@
-
 <div id="page-container">
   <div id="content-wrap">
     <div class="main">
@@ -21,7 +20,7 @@
             <th scope="col" colspan="2">Action</th>
           </tr>
         </thead>
-      
+
         <tbody *ngFor="let item of users;index as i ">
           <tr id="i" *ngIf="i%2==0">
             <td> {{item.userid}}</td>
@@ -36,34 +35,71 @@
             <td> {{item.pan}}</td>
             <td> {{item.aadhar}}</td>
             <td> {{item.certificate}}</td> -->
-            
-            <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.userid)">View</button></td>
-        </tr>
 
-          
-        <!-- </tbody>
-        <tbody  *ngFor="let item of users;;index as i "> -->
-          <tr id="j" *ngIf="i%2!=0">
-            <td> {{item.userid}}</td>
-            <td>{{item.user_type}}</td>
-            <td> {{item.username}}</td>
-            <td> {{item.phone_no}}</td>
-            <td> {{item.email_id}}</td>
-            <!-- <td> {{item.password}}</td>
-            <td> {{item.home_address}}</td>
-            <td> {{item.account_no}}</td>
-            <td> {{item.ifsc_code}}</td>
-            <td> {{item.pan}}</td>
-            <td> {{item.aadhar}}</td>
-            <td> {{item.certificate}}</td> -->
-            
-            <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.userid)">View</button></td>
-        </tr>
-          
+            <!-- <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.userid)">View</button></td> -->
+            <td><button type="button" id="btn1" class="btn btn-primary" data-toggle="modal"
+                data-target="#accountapprovalmodal">View</button></td>
+
+            <div class="modal fade" id="accountapprovalmodal" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+
+                  <div class="modal-body">
+                    <h3 style="margin: 30px;">User Information</h3>
+                    <table *ngFor="let item of users">
+                      <tr>
+                        <th>Name</th>
+                        <td>{{item.username}}</td>
+                      </tr>
+                      <tr id="">
+                        <th>Email Id</th>
+                        <td>{{item.email_id}}</td>
+                      </tr>
+                      <tr id="">
+                        <th>Phone</th>
+                        <td>{{item.phone_no}}</td>
+                      </tr>
+                      <tr id="">
+                        <th>Aadhar Number</th>
+                        <td>{{item.aadhar}}</td>
+                      </tr>
+                      <tr id="">
+                        <th>Pan Number</th>
+                        <td>{{item.pan}}</td>
+                      </tr>
+                      <tr id="">
+                        <th>Home Address</th>
+                        <td> {{item.home_address}}</td>
+                      </tr>
+                      <tr id="">
+                        <th>IFSC Code</th>
+                        <td> {{item.ifsc_code}}</td>
+                      </tr>
+                      <tr id="">
+                        <th>Account Number</th>
+                        <td>{{item.account_no}}</td>
+                      </tr>
+                      <tr id="">
+                        <th>Certificate</th>
+                        <td> {{item.certificate}}</td>
+                      </tr>
+                    </table>
+                    <button type="button" class="btn btn-outline-success" id="btn2"
+                      (click)="onapprove(item.policy_no)">Approve</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </tr>
+
+
         </tbody>
-    
+
       </table>
 
-        </div>
-        </div>
-        </div>
+    </div>
+  </div>
+</div>

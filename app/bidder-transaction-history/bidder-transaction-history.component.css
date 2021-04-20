@@ -1,10 +1,31 @@
 #page-container {
+    background-image: url("/assets/images/plantbg.jpg");
+    background-attachment: fixed;
     position: relative;
     min-height: 100vh;
   }
 #content-wrap {
     padding-bottom: 2.5rem;    /* Footer height */
   }
+  h1{
+    color: white;
+    letter-spacing: 30px;
+    text-align: center;
+    font-size: 60px;
+    text-shadow: 2px 5px 8px rgb(28, 44, 30);
+}
+#heading_style{
+    background-color: rgb(48, 100, 24);
+     color:white;
+     height:60px;
+     text-align: center;
+     margin-top: 20px;
+  }
+  tr
+{
+    height: 70px;
+    background-color: white;
+}
 .table
 {
     margin-top: 2%;
@@ -29,10 +50,160 @@
     padding-top: 2px;
     padding-bottom: 2px;
 }
+#heading_style{
+    background-color: rgb(48, 100, 24);
+     color:white;
+     height:60px;
+     text-align: center;
+     margin-top: 20px;
+  }
 .main
 {
     width:80%;
     margin: auto;
 }
 
+#btn1
+{
+    height: 40px;
+    color: white;
+    background-color: #28a745;
+    border-color: white;
+    /* padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 5%; */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+#btn1:hover
+{
+    color: #28a745;
+    background-color: white;
+    border-color:#28a745;
+}
+.main
+{
+    width:80%;
+    margin: auto;
+}
+ 
+#btn2
+{
+    height: 40px;
+    color: white;
+    background-color: #507f5b;
+    border-color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+#btn2:hover
+{
+    color: #507f5b;
+    background-color: white;
+    border-color:#507f5b;
+}
+ 
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+         /* body{
+            background-image: url("C:/Users/Sneha/Downloads/bg1.jpg");
+            height: 100%;
+            background-repeat: no-repeat;
+           
+            background-size: cover;
+        } */
+        /* .main
+        {
+            
+        } */
+        .navbar
+        {
+            background-color:#37a468;
+            padding: 10px;
+            box-shadow: grey;
+            -webkit-box-shadow: 0 0 10px grey;
+        }
+        #i10
+        {
+            color: white;
+            margin-left: 50px;
+            font-size:16px;
+        }
+        #i1
+        {
+            color: white;
+            margin-left: 10px;
+            font-size: 20px;
+            /* letter-spacing: 0.5px; */
+        }
+        .btn-outline-success 
+        {
+            color: #28a745;
+            background-color: white;
+            border-color: white;
+        }
+        #i:hover 
+        { 
+           color:#124319;
+        }
+        #small_images{
+    /* left: 60px; */
+    margin-left: 40px;
+     /* height: 75%; */
+  /*width: 50%; */
+}
+#btn1
+{
+  margin-left:20px;
+}
+#btn2
+{
+  margin-left:20px;
+}
+
+#footer{
+    background-color: #a7a7a7;
+    color: white;
+    padding-top: 30px;
+    width: 100%;
+    padding-left: 50px;
+    position: absolute;
+}
+        .container
+        {
+            margin-top: 7%;
+            box-shadow: gainsboro;
+            -webkit-box-shadow: 0 0 3px rgb(0,0,0);
+            -moz-box-shadow: 0 0 0px rgb(0,0,0);
+        }
+        #img
+        {
+            box-shadow: gainsboro;
+            -webkit-box-shadow: 0 0 3px rgb(0,0,0);
+            -moz-box-shadow: 0 0 0px rgb(0,0,0);
+            float: initial;
+        }
+        .card1
+        {
+             background-color: #37a468; 
+            /* background-image: linear-gradient(to right, #2b9f3b,#279035); */
+            margin: auto;
+            margin-top:2%;
+            box-shadow: #d0ead6;
+            -webkit-box-shadow: 0 0 5px grey;
+            width:60%;
+            height: 20%;
+            position: relative;
+            /* border:2px solid lightgreen; */
+        }
   
