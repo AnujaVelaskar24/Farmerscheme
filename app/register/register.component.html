@@ -92,9 +92,9 @@
                                             <textarea  placeholder="Enter Home Address" id="home_address" name="home_address"
                                             formControlName="home_address"style="width: 100%; padding-left: 20px;padding-top: 15px;"></textarea>
                                         <div *ngIf="!home_address?.valid && (home_address?.dirty ||home_address?.touched)">
-                                         <div [hidden]="!home_address.errors.pattern" style="color: crimson;">
+                                         <!-- <div [hidden]="!home_address.errors.pattern" style="color: crimson;">
                                                 Only characters are allowed
-                                            </div>
+                                            </div> -->
                                              <div [hidden]="!home_address.errors.required" style="color: crimson;">
                                                 home address is required
                                             </div>
@@ -102,6 +102,8 @@
                                                 Min Length is 3
                                             </div>  -->
                                         </div>
+
+                                       
 
                                        
 
@@ -140,10 +142,10 @@
                                                             style="color: crimson;">
                                                             Max Length is 10
                                                         </div>
-                                                        <!-- <div [hidden]="!phone_no.errors.minlength"
+                                                         <div [hidden]="!phone_no.errors.minlength"
                                                         style="color: crimson;">
                                                         Min Length is 10
-                                                        </div>  -->
+                                                        </div>  
                                              
                                            </div>
                                            </td>
@@ -163,11 +165,11 @@
                                                         </div>
                                                        
                                                           <div [hidden]="!ifsc_code.errors.maxlength" style="color: crimson;">
-                                                            Max Length is 4
+                                                            Max Length is 11
                                                         </div>
-                                                        <!-- <div [hidden]="!ifsc_code.errors.minlength" style="color: crimson;">
-                                                            Min Length is 4
-                                                        </div>   -->
+                                                         <div [hidden]="!ifsc_code.errors.minlength" style="color: crimson;">
+                                                            Min Length is 11
+                                                        </div>  
                                                     </div>
                                                 </td>
 
@@ -186,9 +188,9 @@
                                                           <div [hidden]="!account_no.errors.maxlength" style="color: crimson;">
                                                             Max Length is 10
                                                         </div>
-                                                        <!-- <div [hidden]="!account_no.errors.minlength" style="color: crimson;">
+                                                        <div [hidden]="!account_no.errors.minlength" style="color: crimson;">
                                                             Min Length is 10
-                                                        </div>  -->
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -209,9 +211,9 @@
                                                           <div [hidden]="!pan.errors.maxlength" style="color: crimson;">
                                                             Max Length is 10
                                                         </div>
-                                                        <!-- <div [hidden]="!pan.errors.minlength" style="color: crimson;">
+                                                        <div [hidden]="!pan.errors.minlength" style="color: crimson;">
                                                             Min Length is 10
-                                                        </div>  -->
+                                                        </div> 
                                                     </div>
                                                 </td>
                                                 <td style="width: 30%;padding-left: 20px;">
@@ -228,9 +230,9 @@
                                                          <div [hidden]="!Aadhar.errors.maxlength" style="color: crimson;">
                                                             Max Length is 12
                                                         </div>
-                                                        <!-- <div [hidden]="!Aadhar.errors.minlength" style="color: crimson;">
+                                                        <div [hidden]="!Aadhar.errors.minlength" style="color: crimson;">
                                                             Min Length is 12
-                                                        </div>  -->
+                                                        </div> 
                                                         
                                                     </div>
                                                 </td>
@@ -245,20 +247,20 @@
                                                     <input type="text" placeholder="Enter soil ph number" id="certificate"
                                                         formControlName="certificate">
                                                     <div *ngIf="!certificate?.valid && (certificate?.dirty ||certificate?.touched)">
-                                                        <!-- <div [hidden]="!certificate.errors.pattern" style="color: crimson;">
+                                                         <div [hidden]="!certificate.errors.pattern" style="color: crimson;">
                                                             Only number are allowed
-                                                        </div> -->
+                                                        </div>
                                                         <div [hidden]="!certificate.errors.required" style="color: crimson;">
                                                             certificate number is required
                                                         </div>
-                                                        <!-- <div [hidden]="!certificate.errors.minlength"
+                                                         <div [hidden]="!certificate.errors.minlength"
                                                             style="color: crimson;">
-                                                            Min Length is 10
+                                                            Min Length is 4
                                                         </div>
                                                         <div [hidden]="!certificate.errors.maxlength"
                                                             style="color: crimson;">
-                                                            Max Length is 10
-                                                        </div> -->
+                                                            Max Length is 4
+                                                        </div>
                                                     </div>
                                                 </td>
                                                 <td style="width: 30%;padding-left: 20px; " *ngIf="isSelected('Female')">
@@ -272,19 +274,19 @@
                                                     <input type="text" placeholder="Select Radio button" id="certificate"
                                                         formControlName="certificate">
                                                     <div *ngIf="!certificate?.valid && (certificate?.dirty ||certificate?.touched)">
-                                                        <!-- <div [hidden]="!certificate.errors.pattern" style="color: crimson;">
+                                                         <div [hidden]="!certificate.errors.pattern" style="color: crimson;">
                                                             Only number are allowed
                                                         </div> -->
                                                         <div [hidden]="!certificate.errors.required" style="color: crimson;">
                                                             certificate number is required
                                                         </div>
-                                                        <!-- <div [hidden]="!certificate.errors.minlength"
+                                                         <div [hidden]="!certificate.errors.minlength"
                                                             style="color: crimson;">
-                                                            Min Length is 10
+                                                            Min Length is 4
                                                         </div>
                                                         <div [hidden]="!certificate.errors.maxlength"
                                                             style="color: crimson;">
-                                                            Max Length is 10
+                                                            Max Length is 4
                                                         </div> -->
                                                     </div>
                                                 </td>

@@ -4,19 +4,22 @@ import { Router, RouterLink } from '@angular/router';
 import {LoginService} from '../login.service';
 import {GetlandService} from '../getland.service';
 import { Getlandclass } from '../model/getlandclass';
+import {AdminlogService} from '../adminlog.service'
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  public status:boolean=false;
   public uid:number=Number(sessionStorage.getItem('userid'));
   land1:Getlandclass[]=[];
   LoginForm : FormGroup;
   constructor(public fb: FormBuilder,
     private router: Router,
     public loginService: LoginService,
-    public landservice:GetlandService) { }
+    public landservice:GetlandService,
+    public AdminlogService: AdminlogService) { }
 
 
   ngOnInit(){
@@ -25,6 +28,11 @@ export class NavbarComponent implements OnInit {
     username: ['',Validators.required],
     password: ['',Validators.required]
   })
+
+  // this.AdminLoginForm = this.fb.group({
+  //   email_id: ['',Validators.required],
+  //   password: ['',Validators.required]
+  // })
   
 }
 get username() {
@@ -83,5 +91,37 @@ onSubmitLoginForm() {
 get loginFormControl(){
   return this.LoginForm.controls;
 }
+
+
+// -----------------------ADMIN PART------------------------------
+
+// AdminLoginForm : FormGroup;
+// get admin_email_id() {
+//   return this.AdminLoginForm.get('admin_email_id');
+// } 
+// get admin_password() {
+//   return this.AdminLoginForm.get('admin_password');
+// }
+
+// changeStatus(){
+// console.log("Here!!!!!!!!!@@@@@@@@@@@")
+// }
+
+// onSubmit() {
+//   console.log(this.AdminLoginForm.value);
+//   this.AdminlogService.login(this.AdminLoginForm.value).subscribe(res => {
+//     console.log(res,"res.user");
+//     if(res === "Unsuccessful")
+//     {
+//       console.log("invalid");
+//     }
+//     else
+//     {
+//       console.log("valid");
+//       sessionStorage.setItem("userid",res.userid)   
+//         this.router.navigateByUrl('adminhome');
+//     }
+//   });
+// }
 
 }
