@@ -40,9 +40,12 @@ export class MarketplaceComponent implements OnInit {
     this.getmarket.getmarketplace().subscribe((data:Getmarketclass[])=>{
       this.getmarkets=data;
       console.log(this.getmarkets, "MARKETPLACE DATA");
+    
+
     })
   }
   onPlacebid(){
+    
     
     let bidobj = new bid_history();
     bidobj.request_id= this.reqid;
@@ -50,7 +53,7 @@ export class MarketplaceComponent implements OnInit {
     bidobj.amount=this.BidForm.value.placebid;
     bidobj.bidding_time = new Date();
     this.bidrequestservice.placebid(bidobj).subscribe(res => {
-
+    
     });
   }
 
