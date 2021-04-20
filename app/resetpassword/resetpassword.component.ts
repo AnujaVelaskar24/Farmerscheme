@@ -34,6 +34,12 @@ export class ResetpasswordComponent implements OnInit {
   
   ngOnInit(): void {
   }
+  get newpassword() {
+    return this.resetpasswordForm.get('newpassword');
+  } 
+  get confirmpassword() {
+    return this.resetpasswordForm.get('confirmpassword');
+  }
 
 }
 export class resetpasswordclass
