@@ -71,6 +71,7 @@ export class FarmerhomeComponent implements OnInit {
     this.croptypefetchService.croptypefetch(this.selectedtype).subscribe(res => {
       this.crops=res;
       console.log(res)
+      console.log(this.crops[0].crop_name);
     });
   }
 
