@@ -37,7 +37,7 @@ import { ClassMethod } from '@angular/compiler';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 const routes: Routes = [
-  {path: '', component: ResetpasswordComponent},
+  {path: '', component:HomeComponent},
 
   {path: 'home', component: HomeComponent},
   {path: 'aboutus', component:AboutUsComponent},
