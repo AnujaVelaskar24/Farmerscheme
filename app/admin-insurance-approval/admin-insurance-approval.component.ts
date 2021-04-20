@@ -10,6 +10,8 @@ import {AdminInsuranceApprovalService} from '../admin-insurance-approval.service
 })
 export class AdminInsuranceApprovalComponent implements OnInit {
   public insurance_res = [];
+  public insurance_entity;
+
   InsuranceApproveForm = new FormGroup({
     policy_no: new FormControl(),
     username : new FormControl(),
@@ -85,7 +87,6 @@ export class AdminInsuranceApprovalComponent implements OnInit {
       this.ngOnInit();
     });
   }
-  public insurance_entity=[];
   getdata(item){
    
     console.log(item, "ITEM1")

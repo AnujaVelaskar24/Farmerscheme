@@ -9,6 +9,7 @@ import { AdminlogService } from '../adminlog.service';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
+  public uid:number=Number(sessionStorage.getItem('userid'));
   LoginForm : FormGroup;
   constructor(public fb: FormBuilder,
     private router: Router,
@@ -23,6 +24,10 @@ export class AdminLoginComponent implements OnInit {
   
 
 }
+logout(){
+  sessionStorage.removeItem('userid'); 
+  this.router.navigateByUrl('/home');
+ }
 get email_id() {
   return this.LoginForm.get('email_id');
 } 
@@ -44,7 +49,7 @@ onSubmit() {
     {
       console.log("valid");
       //sessionStorage.setItem("username",this.LoginForm.value.username)
-      sessionStorage.setItem("userid",res.userid)
+      sessionStorage.setItem("userid",res.email_id)
       
         this.router.navigateByUrl('adminhome');
       

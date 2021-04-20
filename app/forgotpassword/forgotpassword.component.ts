@@ -3,7 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ForgotService } from '../forgot.service';
 import { Forgot } from '../forgot';
-
+ 
 @Component({
   selector: 'app-forgotpassword',
   templateUrl: './forgotpassword.component.html',
