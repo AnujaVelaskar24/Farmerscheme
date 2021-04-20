@@ -17,7 +17,7 @@ export class FarmerhistoryService {
   constructor(private httpClient: HttpClient) { }
 
   getAll(uid): Observable<any> {
-    return this.httpClient.get<any>(this.apiServer + '/farmerhistory?uid='+uid)
+    return this.httpClient.get<any>(this.apiServer + '/farmertransactionhistory?uid='+uid)
     
   }
 }

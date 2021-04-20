@@ -19,7 +19,7 @@ export class BidderhistoryService {
   constructor(private httpClient: HttpClient) { }
 
   getAll(uid): Observable<any> {
-    return this.httpClient.get<any>(this.apiServer + '/bidderhistory?uid='+uid)
+    return this.httpClient.get<any>(this.apiServer + '/biddertransactionhistory?uid='+uid)
     
   }
 }

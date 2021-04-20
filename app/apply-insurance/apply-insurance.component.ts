@@ -88,13 +88,12 @@ public actualrate:number=0;
     private router: Router,
     public croptypefetchService: CroptypefetchService,
     public getinsurservice:GetinsuranceserviceService,
-    public insertinsurance:ApplyinsuranceinsertService) { 
-      {
-        
-        
-        this.isShow=false;
-        
-        }
+    public insertinsurance:ApplyinsuranceinsertService
+    ) { 
+      let  uid = sessionStorage.getItem("userid");
+
+    let landid= sessionStorage.getItem("land_id");
+    console.log(landid,"from apply insurance ts");
     this.isShow=false;
    
   }
