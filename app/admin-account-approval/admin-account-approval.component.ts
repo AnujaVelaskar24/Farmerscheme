@@ -10,6 +10,7 @@ import {AdminAccountApprovalService} from '../admin-account-approval.service';
 export class AdminAccountApprovalComponent implements OnInit {
   //ApproveForm : FormGroup;
 public users = [];
+public usertype:string;
 ApproveForm = new FormGroup({
   userid: new FormControl(),
   user_type : new FormControl(),
@@ -39,6 +40,16 @@ ApproveForm = new FormGroup({
   {
     this.adminaccountapprovalservice.Getuser_information().subscribe(res => {
       this.users=res;
+      if(res.user_type===true)
+    {
+      this.usertype="bidder";
+      console.log("bidder");
+    }
+    else
+    {
+      this.usertype="farmer";
+      console.log(res.user_type);
+    }
       console.log("hi");
     });
 
@@ -84,6 +95,7 @@ onapprove(userid)
   this.adminaccountapprovalservice.update(userid).subscribe(res => {
     console.log(res, "ontype console data");
     this.ngOnInit();
+    
   });
 }
 }
