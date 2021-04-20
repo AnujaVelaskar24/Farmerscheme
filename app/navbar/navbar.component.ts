@@ -10,7 +10,7 @@ import { Getlandclass } from '../model/getlandclass';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  public uid:number;
+  public uid:number=Number(sessionStorage.getItem('userid'));
   land1:Getlandclass[]=[];
   LoginForm : FormGroup;
   constructor(public fb: FormBuilder,
@@ -52,7 +52,7 @@ onSubmitLoginForm() {
     else
     {
       console.log("valid");
-      //sessionStorage.setItem("username",this.LoginForm.value.username)
+      sessionStorage.setItem("username",this.LoginForm.value.username)
       sessionStorage.setItem("userid",res.userid)
      
       if(res.user_type===false)
