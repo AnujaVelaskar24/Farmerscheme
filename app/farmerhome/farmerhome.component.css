@@ -2,6 +2,9 @@
   position: relative;
   min-height: 100vh;
 }
+#card1{
+  padding:20px;
+}
 #content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */
 }
@@ -154,6 +157,7 @@ padding: 2%;
 #content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */
 }
+
 .row{
     /* background-image: url("../../assets/images/background.jpg"); */
     background-repeat: no-repeat;
