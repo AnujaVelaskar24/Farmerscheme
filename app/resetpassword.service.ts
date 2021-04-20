@@ -13,7 +13,7 @@ export class ResetpasswordService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
-  }
+  } 
   constructor(private httpClient: HttpClient) { }
   
   // resetpassword(): Observable<Sellrequest> {
@@ -24,7 +24,8 @@ export class ResetpasswordService {
   //     console.log(data);
   //   });
   // }
-  resetpassword(userid:number, password:string): Observable<any> {
-    return this.httpClient.post<any>(this.apiServer + '/resetpassword/', JSON.stringify(userid, password), this.httpOptions)
+
+  resetpassword(resetpasswordobject): Observable<any> {
+    return this.httpClient.post<any>(this.apiServer + '/resetpassword/', JSON.stringify(resetpasswordobject), this.httpOptions)
   }
 }
