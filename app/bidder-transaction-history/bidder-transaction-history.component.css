@@ -1,6 +1,7 @@
 #page-container {
     position: relative;
     min-height: 100vh;
+    font-size: large;
   }
 #content-wrap {
     padding-bottom: 2.5rem;    /* Footer height */
@@ -11,6 +12,7 @@
     text-align: center;
     border:1px solid #28a745;
 }
+
 #j
     {
         background-color:#f5fcf6;

@@ -44,8 +44,8 @@ onSubmit() {
     {
       console.log("valid");
       //sessionStorage.setItem("username",this.LoginForm.value.username)
-      sessionStorage.setItem("userid",res.userid)
-      
+      sessionStorage.setItem("userid",res.email_id)
+      console.log(res.email_id);
         this.router.navigateByUrl('adminhome');
       
      

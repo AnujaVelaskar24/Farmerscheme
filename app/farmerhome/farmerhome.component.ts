@@ -41,6 +41,9 @@ export class FarmerhomeComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    if(!sessionStorage.getItem('userid')){
+      this.router.navigateByUrl('home');
+    }
   }
   get croptype() {
     return this.SellRequestForm.get('croptype');
@@ -69,6 +72,8 @@ export class FarmerhomeComponent implements OnInit {
 
     this.croptypefetchService.croptypefetch(this.selectedtype).subscribe(res => {
       this.crops=res;
+      console.log(res)
+      console.log(this.crops[0].crop_name);
     });
   }
 
@@ -104,9 +109,9 @@ export class FarmerhomeComponent implements OnInit {
     // userid : new FormControl(sessionStorage.getItem("userid")),
   })
 
-  get policyno(){
+  get policy_no(){
     
-    return this.contactForm1.get('policyno');
+    return this.contactForm1.get('policy_no');
   }
   get insurancecompany() {
 

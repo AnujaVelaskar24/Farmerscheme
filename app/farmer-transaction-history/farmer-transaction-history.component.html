@@ -9,6 +9,7 @@
             <tr style="background-color: rgb(48, 100, 24); color:white; height:60px; text-align: center; margin-top: 20px;">
               <th scope="col">Sr No.</th>
               <th scope="col">Transaction ID</th>
+              <th scope="col">Bidder ID</th>
               <th scope="col">Name</th>
               <th scope="col">Quantity</th>
               <th scope="col">Fertilizer</th>
@@ -22,13 +23,14 @@
             <tr id="i" *ngFor="let Farmerhistory of Farmerhistory">
               <th scope="row">1</th>
               <td>{{Farmerhistory.transaction_id}}</td>
+              <td>{{Farmerhistory.bidder_id}}</td>
               <td>{{Farmerhistory.crop_name}}</td>
               <td>{{Farmerhistory.quantity}}</td>
               <td>{{Farmerhistory.fertilizer_type}}</td>
               <td>{{Farmerhistory.msp}}</td>
               <td>{{Farmerhistory.base_price}}</td>
               <td>{{Farmerhistory.amount}}</td>
-              <td>{{Farmerhistory.bidding_time}}</td>
+              <td>{{Farmerhistory.bidding_time.substring(0,10)}}</td>
             </tr>
             
           </tbody>

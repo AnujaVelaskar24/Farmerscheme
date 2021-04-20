@@ -7,6 +7,7 @@
           <tr>
             <th scope="col">Sr No.</th>
             <th scope="col">Transaction ID</th>
+            <th scope="col">Farmer ID</th>
             <th scope="col">Name</th>
             <th scope="col">Quantity</th>
             <th scope="col">Fertilizer</th>
@@ -20,13 +21,14 @@
           <tr id="i" *ngFor="let Bidderhistory of Bidderhistory">
             <th scope="row">1</th>
             <td>{{Bidderhistory.transaction_id}}</td>
+            <td>{{Bidderhistory.farmer_id}}</td>
             <td>{{Bidderhistory.crop_name}}</td>
             <td>{{Bidderhistory.quantity}}</td>
             <td>{{Bidderhistory.fertilizer_type}}</td>
             <td>{{Bidderhistory.msp}}</td>
             <td>{{Bidderhistory.base_price}}</td>
             <td>{{Bidderhistory.amount}}</td>
-            <td>{{Bidderhistory.bidding_time}}</td>
+            <td>{{Bidderhistory.bidding_time.substring(0,10)}}</td>
           </tr>
          
         </tbody>

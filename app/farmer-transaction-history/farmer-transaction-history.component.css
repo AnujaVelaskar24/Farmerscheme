@@ -3,6 +3,7 @@
     background-attachment: fixed;
     position: relative;
     min-height: 100vh;
+    font-size: large;
   }
 #content-wrap {
     padding-bottom: 2.5rem;    /* Footer height */
