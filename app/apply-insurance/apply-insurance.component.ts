@@ -27,6 +27,9 @@ export class ApplyInsuranceComponent implements OnInit {
     // farmer_share_percent:new FormControl('',[Validators.required]),
     
   })
+
+
+
   public area1:number;
   public cropname:string;
  public premiumpaidbyfarmer:number=0;
@@ -38,6 +41,10 @@ public actualrate:number=0;
   public govtshare:number;
   public premiumpaidbygovt:number;
   isShow:boolean
+
+  public userid:number;
+  // public landid:number;
+
   public cropdata=[];
  
   displaytext(){
@@ -65,7 +72,7 @@ public actualrate:number=0;
    
       //  console.log(this.suminsuredperhectare,this.farmershare,this.actualrate, "get insurance console");
     });
-    // userid:number;
+   
     // land_id:number;
     // season:string;
     // year:number;
@@ -81,13 +88,12 @@ public actualrate:number=0;
     private router: Router,
     public croptypefetchService: CroptypefetchService,
     public getinsurservice:GetinsuranceserviceService,
-    public insertinsurance:ApplyinsuranceinsertService) { 
-      {
-        
-        
-        this.isShow=false;
-        
-        }
+    public insertinsurance:ApplyinsuranceinsertService
+    ) { 
+      let  uid = sessionStorage.getItem("userid");
+
+    let landid= sessionStorage.getItem("land_id");
+    console.log(landid,"from apply insurance ts");
     this.isShow=false;
    
   }
