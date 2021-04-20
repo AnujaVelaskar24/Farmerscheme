@@ -1,135 +1,47 @@
+<div id="page-container">
+  <div id="content-wrap">
 
-    <div id="page-container">
-      <div id="content-wrap">
-       
-      <div class="main">
-        <h1>APPROVE INSURANCE CLAIM</h1>
-        <table class="table">
-          <thead>
-            <tr id="heading_style">
-              <th scope="col">Claim ID</th>
-              <!-- <th scope="col">Policy Number</th> -->
-              <th scope="col">Crop Name</th>
-              <th scope="col">Date of loss</th>
-              <th scope="col">Cause of loss</th>
-              <th scope="col">Claim date</th>
-              
-              <!-- <th scope="col">Username</th>
-              <th scope="col">Area</th> -->
-              <th scope="col" colspan="2">Action</th>
-            </tr>
-          </thead>
-        
-          <tbody *ngFor="let item of insuranceclaim_res ">
-            <tr id="i">
-              <td> {{item.claim_id}}</td>
-              <td> {{item.crop_name}}</td>
-              <!-- <td>{{item.policy_no}}</td> -->
-              <td> {{item.date_of_loss}}</td>
-              <td> {{item.cause_of_loss}}</td>
-              <td> {{item.claim_date}}</td>
-             
-              <!-- <td> {{item.username}}</td>
-              <td> {{item.area}}</td> -->
-              
-              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insuranceclaimmodal">
-                View</button></td>
+    <div class="main">
+      <h1>APPROVE INSURANCE CLAIM</h1>
+      <table class="table">
+        <thead>
+          <tr id="heading_style">
+            <th scope="col">Claim ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Policy Number</th>
+            <th scope="col">Crop Name</th>
+            <th scope="col">Date of loss</th>
+            <th scope="col">Cause of loss</th>
+            <th scope="col">Claim date</th>
 
-            <div class="modal fade" id="insuranceclaimmodal" tabindex="-1" role="dialog"
-              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
 
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle" style="align-items: center;">User Information</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                  <div class="modal-body">
-                    
-                    <table>
-                     <tr *ngFor="let item of insuranceclaim_res">
-                       <tr>
-                        <th>Claim ID</th>
-                        <td>{{item.claim_id}}</td>
-                      </tr>
-                      <tr>
-                        <th>Policy Number</th>
-                        <td>{{item.policy_no}}</td>
-                      </tr>
-                      <tr id="">
-                        <th>Username</th>
-                        <td>{{item.username}}</td>
-                      </tr>
-                      <tr id="">
-                        <th>Area</th>
-                        <td>5</td>
-                      </tr>
-                      <tr id="">
-                        <th>CropName</th>
-                        <td>{{item.crop_name}}</td>
-                      </tr>
-                      <tr>
-                        <th scope="col">Cause of loss</th>
-                        <td>{{item.cause_of_loss}}</td>
-                      </tr>
-                      <tr>
-                        <th scope="col">Date of loss</th>
-                        <td>{{item.date_of_loss}}</td>
-                      </tr>
-                      
-                        
-                      <!-- <tr id="">
-                        <th>SumInsured</th>
-                        <td>{{item.sum_insured}}</td>
-                      </tr>
-                      <tr id="">
-                        <th>Insurance Company</th>
-                        <td> {{item.insurance_company}}</td>
-                      </tr>
-                      <tr id="">
-                        <th>Premium Amount</th>
-                        <td> {{item.premium_amount}}</td>
-                      </tr>
-                      <tr id="">
-                        <th>Start Date</th>
-                        <td>{{item.start_date}}</td>
-                      </tr>
-                      <tr id="">
-                        <th>End Date</th>
-                        <td> {{item.end_date}}</td>
-                      </tr> -->
-                    </table>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-success" id="btn1" (click)="onapprove(item.policy_no)">Approve</button>
-                    </div>
-                
-              </div>
-            </div>
-            </div>
+            <th scope="col">Area</th>
+            <th scope="col" colspan="2">Action</th>
+          </tr>
+        </thead>
 
-              <!-- <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.policy_no)">Approve</button></td>
+        <tbody *ngFor="let item of insuranceclaim_res ">
+          <tr id="i">
+            <td> {{item.claim_id}}</td>
+            <td> {{item.username}}</td>
+            <td> {{item.crop_name}}</td>
+            <td>{{item.policy_no}}</td>
+            <td> {{item.date_of_loss.substring(0,10)}}</td>
+            <td> {{item.cause_of_loss}}</td>
+            <td> {{item.claim_date.substring(0,10)}}</td>
+
+            <td> {{item.area}}</td>
+
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" id="btn1"
+                (click)="onapprove(item.claim_id)">Approve</button></td>
+            <!-- <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.policy_no)">Approve</button></td>
               <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td> -->
           </tr>
-          <!-- <tr id="j" *ngIf="i%2!=0">
-            <td> {{item.claim_id}}</td>
-            <td>{{item.policy_no}}</td>
-            <td> {{item.date_of_loss}}</td>
-            <td> {{item.cause_of_loss}}</td>
-            <td> {{item.claim_date}}</td>
-            <td> {{item.crop_name}}</td>
-            <td> {{item.username}}</td>
-            <td> {{item.area}}</td>
-            
-            <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.policy_no)">Approve</button></td>
-             <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td> -->
-        
-          </tbody>
-      
-        </table>
-  
-          </div>
-          </div>
-          </div>
+
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>

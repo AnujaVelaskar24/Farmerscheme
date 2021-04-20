@@ -78,18 +78,20 @@
                   </form>
 
 
-<!-- --------------------------------------------------------------------ADMIN LOGIN -------------------------------------------------- -->
+<!-- --------------------------------------------------------------------FORGET PASSWORD-------------------------------------------------- -->
                     
 
                   <form [formGroup]="ForgetPasswordForm" [hidden]="!status" (ngSubmit)="onForgetPasswordSubmit()">
                       
                     <div class="container">
                       <div class="form-group">
-                      <label for="email_id"><b>Email Id</b></label>
-                      <input type="email_id" placeholder="Enter Email id" name="email_id" formControlName="email_id">
+                        <hr>
+                        <h4 align="center">Forgot Password?</h4>
+                      <label for="email_id"><b>Enter Email Id</b></label>
+                      <input id="forgetinput" type="email_id" placeholder="Enter Email id" name="email_id" formControlName="email_id">
                     </div>
                   </div>
-                      <button type="submit">Send</button>
+                      <button id="sendbutton" type="submit">Send</button>
                   </form>
 
                 </div>

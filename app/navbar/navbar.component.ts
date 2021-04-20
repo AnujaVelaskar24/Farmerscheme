@@ -49,6 +49,7 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     sessionStorage.removeItem('userid');
+    localStorage.removeItem('email_id');
     this.router.navigateByUrl('/home');
   }
   onSubmitLoginForm() {
@@ -68,9 +69,7 @@ export class NavbarComponent implements OnInit {
 
         if (res.user_type === false) {
           this.router.navigateByUrl('farmerhome');
-          console.log(res.userid, "UserID");
           this.landservice.getlandid(res.userid).subscribe(res => {
-            console.log(res, "LAND ID ");
             this.land1 = res;
 
             sessionStorage.setItem("land_id", res.land_id)
