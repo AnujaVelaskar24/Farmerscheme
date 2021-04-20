@@ -42,7 +42,7 @@ ApproveForm = new FormGroup({
       this.users=res;
       if(res.user_type===true)
     {
-      this.usertype="bidder";
+      this.users[0].user_type="bidder";
       console.log("bidder");
     }
     else

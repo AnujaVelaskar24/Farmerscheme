@@ -13,6 +13,7 @@ import {AdminlogService} from '../adminlog.service'
 export class NavbarComponent implements OnInit {
   public status:boolean=false;
   public uid:number=Number(sessionStorage.getItem('userid'));
+  public usertype:string=(sessionStorage.getItem('user_type'));
   land1:Getlandclass[]=[];
   LoginForm : FormGroup;
   constructor(public fb: FormBuilder,
@@ -44,6 +45,8 @@ get password() {
 
 logout(){
  sessionStorage.removeItem('userid'); 
+ sessionStorage.removeItem('usertype');
+ sessionStorage.removeItem('username');
  this.router.navigateByUrl('/home');
 }
 onSubmitLoginForm() {
@@ -62,6 +65,8 @@ onSubmitLoginForm() {
       console.log("valid");
       sessionStorage.setItem("username",this.LoginForm.value.username)
       sessionStorage.setItem("userid",res.userid)
+      sessionStorage.setItem("user_type",res.user_type)
+      console.log(this.usertype,"usertype!!");
      
       if(res.user_type===false)
       {
