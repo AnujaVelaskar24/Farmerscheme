@@ -21,11 +21,11 @@
      text-align: center;
      margin-top: 20px;
   }
-.table
+table
 {
     /* margin-top: 2%; */
     text-align: center;
-    border:1px solid #28a745;
+    width: 100%;
 }
 tr
 {
@@ -72,11 +72,14 @@ tr
     color: white;
     background-color: #507f5b;
     border-color: white;
-    padding-left: 10%;
-    padding-right: 10%;
+    /* padding-left: 10%;
+    padding-right: 10%;*/
     padding-top: 2%;
-    padding-bottom: 5%;
-    height: 40px;
+    padding-bottom: 5%; 
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 60%;
 }
 #btn2:hover
 {
@@ -143,10 +146,10 @@ tr
 {
   margin-left:20px;
 }
-#btn2
+/* #btn2
 {
   margin-left:20px;
-}
+} */
 
 #footer{
     background-color: #a7a7a7;

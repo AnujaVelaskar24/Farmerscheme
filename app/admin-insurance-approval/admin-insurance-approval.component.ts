@@ -85,4 +85,12 @@ export class AdminInsuranceApprovalComponent implements OnInit {
       this.ngOnInit();
     });
   }
+  public insurance_entity=[];
+  getdata(item){
+   
+    console.log(item, "ITEM1")
+    this.insurance_entity=item;
+    console.log(this.insurance_entity[0].userid,"USER ID");
+    console.log(this.insurance_entity, "INSURANCE ENTITY");
+  }
 }
