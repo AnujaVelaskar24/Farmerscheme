@@ -3,6 +3,11 @@
 
     <div class="main">
       <h1>APPROVE INSURANCE</h1>
+       
+        <div>
+          <p class="ptag" *ngIf="insurance_res.length < 1 else content"> There are no records available!</p>
+        </div>
+      <ng-template #content>
       <table class="table">
         <thead>
           <tr id="heading_style">
@@ -31,7 +36,7 @@
             <td> {{item.crop_name}}</td>
             <td> {{item.premium_amount}}</td>
             <td> {{item.sum_insured}}</td>
-            <td> {{item.start_date}}</td>
+            <td> {{item.start_date.substring(0,10)}}</td>
             <!-- <td> {{item.sum_insured}}</td>
               <td> {{item.insurance_company}}</td>
               <td> {{item.premium_amount}}</td>
@@ -124,6 +129,7 @@
         </tbody>
 
       </table>
+    </ng-template>
 
     </div>
   </div>

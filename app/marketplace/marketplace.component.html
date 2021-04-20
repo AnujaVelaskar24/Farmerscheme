@@ -3,7 +3,9 @@
   <div id="content-wrap">
     <div class="main">
       <h1>MARKETPLACE</h1>
-      
+      <div><p class="ptag" *ngIf="getmarkets.length < 1 else content"> There are no records available!</p>
+      </div>
+    <ng-template #content>
       <table class="table">
         <thead>
           <tr id="heading_style">
@@ -40,7 +42,7 @@
           </tr>
         </tbody>
       </table>
-      
+    </ng-template>
     </div>
   </div>
 </div>
