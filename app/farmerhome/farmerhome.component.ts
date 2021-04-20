@@ -15,6 +15,7 @@ import { GetinsuranceserviceService } from '../getinsuranceservice.service';
 })
 export class FarmerhomeComponent implements OnInit {
   public insurancedata = [];
+  public disable_button:boolean;
   SellRequestForm = new FormGroup({
     croptype: new FormControl('',[Validators.required]),
     crop_id : new FormControl('',[Validators.required]),
@@ -44,6 +45,13 @@ export class FarmerhomeComponent implements OnInit {
     if(!sessionStorage.getItem('userid')){
       this.router.navigateByUrl('home');
     }
+    this.insuranceService.insurance(this.uid).subscribe(res => {
+      this.insurancedata=res;
+      if(this.insurancedata.length==0){
+        this.disable_button=true;
+      }
+      console.log(this.insurancedata);
+    });
   }
   get croptype() {
     return this.SellRequestForm.get('croptype');
@@ -142,20 +150,22 @@ export class FarmerhomeComponent implements OnInit {
     this.insuranceService.insurance(this.uid).subscribe(res => {
       //console.log(res, "get insurance console");
       this.insurancedata=res;
+      console.log(this.insurancedata)
       //console.log(this.insurancedata[0].season, "data console")
     });
   } 
 
   onSubmit1() {
-    
-    let insuranceclaim_obj = new insurance_claim_class();
+      let insuranceclaim_obj = new insurance_claim_class();
     insuranceclaim_obj.policy_no=this.insurancedata[0].policy_no;
     insuranceclaim_obj.cause_of_loss=this.contactForm1.value.cause_of_loss;
     insuranceclaim_obj.date_of_loss=this.contactForm1.value.date_of_loss;
     insuranceclaim_obj.claim_date = new Date();
+    console.log(insuranceclaim_obj, "OBJ");
     this.insuranceclaimService.insuranceclaim(insuranceclaim_obj).subscribe(res => {
-
+      alert("Insurance claim applied successfully");
     });
+    
   } 
 
 

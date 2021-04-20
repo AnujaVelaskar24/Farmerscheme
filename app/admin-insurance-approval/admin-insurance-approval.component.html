@@ -6,13 +6,14 @@
       <table class="table">
         <thead>
           <tr id="heading_style">
-            <th scope="col">Sr No.</th>
             <th scope="col">Policy Number</th>
             <th scope="col">Username</th>
             <th scope="col">Land Area</th>
-            <th scope="col">Season</th>
-            <th scope="col">Year</th>
             <th scope="col">Crop Name</th>
+            <th scope="col">Premium Amount</th>
+            <th scope="col">Sum Insured</th>
+            <th scope="col">Start Date</th>
+
             <!-- <th scope="col">Sum Insured</th>
               <th scope="col">Insurance Company</th>
               <th scope="col">Premium Amount</th>
@@ -23,88 +24,84 @@
         </thead>
 
         <tbody *ngFor="let item of insurance_res; index as i ">
-          <tr id="i" *ngIf="i%2==0">
-            <th scope="row">{{i+1}}</th>
-            <td> {{item.policy_no}}</td>
+          <tr id="i">
+            <th scope="row">{{item.policy_no}}</th>
             <td>{{item.username}}</td>
             <td> {{item.area}}</td>
-            <td> {{item.season}}</td>
-            <td> {{item.year}}</td>
             <td> {{item.crop_name}}</td>
+            <td> {{item.premium_amount}}</td>
+            <td> {{item.sum_insured}}</td>
+            <td> {{item.start_date}}</td>
             <!-- <td> {{item.sum_insured}}</td>
               <td> {{item.insurance_company}}</td>
               <td> {{item.premium_amount}}</td>
               <td> {{item.start_date}}</td>
               <td> {{item.end_date}}</td> -->
 
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insurancemodal">
-                View</button></td>
-
-            <div class="modal fade" id="insurancemodal" tabindex="-1" role="dialog"
+            <td><button type="button" id="btn1" class="btn btn-primary" data-toggle="modal"
+                data-target="#insurancemodal" (click)="onapprove(item.policy_no)">Approve</button></td>
+          </tr>
+          <!-- <div class="modal fade" id="insurancemodal" tabindex="-1" role="dialog"
               aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle" style="align-items: center;">User Information</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
+  
                   <div class="modal-body">
-                    
+                    <h3 style="margin: 30px;">User Information</h3>
                     <table>
-                     <tr *ngFor="let item of insurance_res">
+                      <tr>
                         <th>Policy No.</th>
-                        <td>{{item.policy_no}}</td>
+                        <td>{{insurance_entity.policy_no}}</td>
                       </tr>
                       <tr id="">
                         <th>Name</th>
-                        <td>{{item.username}}</td>
+                        <td>{{insurance_entity.username}}</td>
                       </tr>
                       <tr id="">
                         <th>Area</th>
-                        <td>5</td>
+                        <td>{{insurance_entity.area}}</td>
                       </tr>
                       <tr id="">
                         <th>CropName</th>
-                        <td>{{item.crop_name}}</td>
+                        <td>{{insurance_entity.crop_name}}</td>
                       </tr>
                       <tr id="">
                         <th>SumInsured</th>
-                        <td>{{item.sum_insured}}</td>
+                        <td>{{insurance_entity.sum_insured}}</td>
                       </tr>
                       <tr id="">
                         <th>Insurance Company</th>
-                        <td> {{item.insurance_company}}</td>
+                        <td> {{insurance_entity.insurance_company}}</td>
                       </tr>
                       <tr id="">
                         <th>Premium Amount</th>
-                        <td> {{item.premium_amount}}</td>
+                        <td> {{insurance_entity.premium_amount}}</td>
                       </tr>
                       <tr id="">
                         <th>Start Date</th>
-                        <td>{{item.start_date}}</td>
+                        <td>{{insurance_entity.start_date}}</td>
                       </tr>
                       <tr id="">
                         <th>End Date</th>
-                        <td> {{item.end_date}}</td>
+                        <td> {{insurance_entity.end_date}}</td>
                       </tr>
+                      
                     </table>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-success" id="btn1" (click)="onapprove(item.policy_no)">Approve</button>
+                    <div style="justify-content: center; display: flex;">
+                      <button type="button" class="btn btn-outline-success" id="btn2"
+                      (click)="onapprove(item.policy_no)">Approve</button>
                     </div>
-                
+                    
+                  </div>
+
+                </div>
               </div>
-            </div>
-            </div>
+            </div> -->
 
-            <!-- <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.policy_no)">Approve</button></td>
+          <!-- <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.policy_no)">Approve</button></td>
               <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td> -->
-          </tr>
 
-          <tr id="j" *ngIf="i%2!=0">
+
+          <!-- <tr id="j" *ngIf="i%2!=0">
             <th scope="row">{{i+1}}</th>
             <td> {{item.policy_no}}</td>
             <td>{{item.username}}</td>
@@ -112,17 +109,17 @@
             <td> {{item.season}}</td>
             <td> {{item.year}}</td>
             <td> {{item.crop_name}}</td>
-            <!-- <td> {{item.sum_insured}}</td>
+            <td> {{item.sum_insured}}</td>
             <td> {{item.insurance_company}}</td>
             <td> {{item.premium_amount}}</td>
             <td> {{item.start_date}}</td>
-            <td> {{item.end_date}}</td> -->
+            <td> {{item.end_date}}</td>
 
             <td><button class="btn btn-outline-success" id="btn1" value="Approve"
                 (click)="onapprove(item.policy_no)">Approve</button></td>
-            <!-- <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove"
-                (click)="disapprove()">Disapprove</button></td> -->
-          </tr>
+             <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove"
+                (click)="disapprove()">Disapprove</button></td> 
+          </tr> -->
 
         </tbody>
 

@@ -26,7 +26,7 @@
             <td>{{getmarket.crop_name}}</td>
             <td>{{getmarket.quantity}}</td>
             <td>{{getmarket.base_price}}</td>
-            <td>{{getmarket.amount}}</td>
+            <td>{{getmarket.amount==0?getmarket.base_price:getmarket.amount}}</td>
             <!-- <td>2500</td> -->
             <td>
               <input type="button" class="btn btn-outline-success" id="btn1" value="Bid"

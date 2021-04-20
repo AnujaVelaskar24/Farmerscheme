@@ -2,6 +2,9 @@
   position: relative;
   min-height: 100vh;
 }
+#card1{
+  padding:20px;
+}
 #content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */
 }
@@ -154,6 +157,7 @@ padding: 2%;
 #content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */
 }
+
 .row{
     /* background-image: url("../../assets/images/background.jpg"); */
     background-repeat: no-repeat;
@@ -286,6 +290,9 @@ padding: 2%;
       padding: 16px;
       width: 400px;
       margin: auto;
+    }
+    #cause_of_loss{
+      width:100%;
     }
     input[type=text], input[type=password], input[type=email], input[type=tel] {
       width: 100%;

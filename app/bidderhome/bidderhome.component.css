@@ -56,6 +56,9 @@ h1{
     padding: 30px;
     
 }
+#card{
+    padding:20px;
+}
 .nav-bar{
     background-color: green;
     /* display: flex;
@@ -121,4 +124,12 @@ h1{
     padding: 2%;
     width: 100%;
     /* padding-left: 30px; */
+}
+#button{
+    background-color:green;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 30%;
+
 }

@@ -25,6 +25,7 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="card-body" id="news-container">
+          <!-- <div class="card" id="card"> -->
           <h5 class="card-title">
             <img id="fact-icons" src="/assets/images/sell_request.jpg" />
           </h5>
@@ -40,7 +41,7 @@
 
           <!-- Button trigger modal -->
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#sellrequestmodal">
-            Go
+            Sell
           </button>
 
           <!-- Modal -->
@@ -147,6 +148,7 @@
             </div>
           </div>
 
+        <!-- </div> -->
         </div>
       </div>
       <div class="col-sm-4">
@@ -159,7 +161,7 @@
           <!-- <a routerLink="MarketplaceComponent" class="btn btn-primary" id="button">Go</a> -->
 
           <button type="button" id="button" class="btn btn-primary" routerLink="/commonmarketplace">
-            Go
+            View
           </button>
         </div>
       </div>
@@ -174,7 +176,7 @@
 
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
             routerLink="/applyinsurance">
-            Go
+            Apply
           </button>
           
         </div>
@@ -190,7 +192,7 @@
           <!-- <a routerLink="FarmerTransactionHistoryComponent" class="btn btn-primary" id="button">Go</a> -->
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
             routerLink="/farmertransactionhistory">
-            Go
+           View
           </button>
         </div>
       </div>
@@ -204,14 +206,14 @@
           <p>You can claim the insurance for your crop loss.</p>
           <!-- <a routerLink="ClaimInsuranceeComponent" class="btn btn-primary" id="button" >Go</a> -->
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal" routerLink="/claiminsurance"
-            data-target="#claiminsurance" (click)="onGetInsurance()">
-            Go
+            data-target="#claiminsurance" [disabled]="disable_button" (click)="onGetInsurance()">
+            Claim
           </button>
 
           <!-- Modal -->
           <div class="modal fade" id="claiminsurance" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-dialog modal-dialog-centered " role="document">
               <div class="modal-content">
 
                 <div class="modal-body">
@@ -347,7 +349,8 @@
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="card-body" id="news-container"> 
+        <div class="card-body" id="news-container">
+           
           <h5 class="card-title" >
             <img style="height:100px; width: 100px;" src="/assets/images/profile_icon1.png" />
           </h5>
@@ -357,8 +360,9 @@
 
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal"
             routerLink="/profile">
-            Go
+            View
           </button>
+
         </div>
       </div>
     </div>
