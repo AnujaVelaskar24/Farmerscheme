@@ -80,26 +80,33 @@ export class RegisterComponent implements OnInit {
   
   onSubmit() {
     
-    
-    this.RegisterService.register(this.contactForm.value).subscribe(res => {
+    if(this.contactForm.value.password == this.contactForm.value.password1 )
+    {
+      this.RegisterService.register(this.contactForm.value).subscribe(res => {
       
      
-     sessionStorage.setItem("userid",res);
-      var uid=sessionStorage.getItem("userid");
-      
+        sessionStorage.setItem("userid",res);
+         var uid=sessionStorage.getItem("userid");
+         
+       
+         if(this.user_type.value==='false')
+         {
+           console.log("farmer");
+           this.router.navigateByUrl('landdetailsregister');
+         }
+         else
+         {
+           this.router.navigateByUrl('bidderhome');
+         }
+       
+       
+       });
+    }
+    else
+    {
+      alert("Password and Confirm Password does not match!");
+    }
     
-      if(this.user_type.value==='false')
-      {
-        console.log("farmer");
-        this.router.navigateByUrl('landdetailsregister');
-      }
-      else
-      {
-        this.router.navigateByUrl('bidderhome');
-      }
-    
-    
-    });
     
   } 
 

@@ -2,6 +2,10 @@
   <div id="content-wrap">
     <div class="main">
       <h1>ACCOUNT APPROVAL</h1>
+      <div>
+        <p class="ptag" *ngIf="users.length < 1 else content"> There are no records available!</p>
+      </div>
+    <ng-template #content>
       <table class="table">
         <thead>
           <tr id="heading_style">
@@ -91,7 +95,7 @@
         </tbody>
 
       </table>
-
+    </ng-template>
     </div>
   </div>
 </div>

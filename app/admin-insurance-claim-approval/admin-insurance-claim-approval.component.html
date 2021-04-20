@@ -3,6 +3,9 @@
 
     <div class="main">
       <h1>APPROVE INSURANCE CLAIM</h1>
+      <div><p class="ptag" *ngIf="insuranceclaim_res.length < 1 else content"> There are no records available!</p>
+      </div>
+    <ng-template #content>
       <table class="table">
         <thead>
           <tr id="heading_style">
@@ -41,7 +44,7 @@
         </tbody>
 
       </table>
-
+    </ng-template>
     </div>
   </div>
 </div>

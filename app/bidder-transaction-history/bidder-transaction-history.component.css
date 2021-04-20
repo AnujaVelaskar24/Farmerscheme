@@ -27,6 +27,13 @@
     height: 70px;
     background-color: white;
 }
+.ptag
+  {
+      text-align: center;
+      margin-top:15%;
+      font-size: 30px;
+      color: green;
+  }
 .table
 {
     margin-top: 2%;

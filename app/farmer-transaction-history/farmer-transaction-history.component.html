@@ -4,6 +4,9 @@
     <div id="content-wrap">
     <div class="main">
       <h1>HISTORY</h1>
+      <div><p class="ptag" *ngIf="Farmerhistory.length < 1 else content"> There are no records available!</p>
+      </div>
+    <ng-template #content>
       <table class="table">
           <thead>
             <tr style="background-color: rgb(48, 100, 24); color:white; height:60px; text-align: center; margin-top: 20px;">
@@ -35,6 +38,7 @@
             
           </tbody>
         </table>
+      </ng-template>
       </div>
       </div>
       </div>
