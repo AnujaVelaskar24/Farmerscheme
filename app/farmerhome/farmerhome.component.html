@@ -206,14 +206,14 @@
           <p>You can claim the insurance for your crop loss.</p>
           <!-- <a routerLink="ClaimInsuranceeComponent" class="btn btn-primary" id="button" >Go</a> -->
           <button type="button" id="button" class="btn btn-primary" data-toggle="modal" routerLink="/claiminsurance"
-            data-target="#claiminsurance" (click)="onGetInsurance()">
+            data-target="#claiminsurance" [disabled]="disable_button" (click)="onGetInsurance()">
             Claim
           </button>
 
           <!-- Modal -->
           <div class="modal fade" id="claiminsurance" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-dialog modal-dialog-centered " role="document">
               <div class="modal-content">
 
                 <div class="modal-body">

@@ -2,45 +2,41 @@
   <div id="content-wrap">
     <div class="main">
       <h1>ACCOUNT APPROVAL</h1>
+      <div>
+        <p class="ptag" *ngIf="users.length < 1 else content"> There are no records available!</p>
+      </div>
+    <ng-template #content>
       <table class="table">
         <thead>
           <tr id="heading_style">
-            <th scope="col">User ID</th>
+            <th scope="col">User Id</th>
             <th scope="col">User Type</th>
             <th scope="col">Username</th>
             <th scope="col">Phone No.</th>
-            <th scope="col">Email ID</th>
-            <!-- <th scope="col">Password</th>
-            <th scope="col">Home Address</th>
             <th scope="col">Account No.</th>
-            <th scope="col">IFSC Code</th>
             <th scope="col">PAN</th>
             <th scope="col">Aadhar</th>
-            <th scope="col">Certificate</th> -->
+            <th scope="col">Certificate</th>
             <th scope="col" colspan="2">Action</th>
           </tr>
         </thead>
 
         <tbody *ngFor="let item of users;index as i ">
-          <tr id="i" *ngIf="i%2==0">
+          <tr id="i">
             <td> {{item.userid}}</td>
-            <td>{{usertype}}</td>
+            <td>{{item.user_type==0?"farmer":"bidder"}}</td>
             <td> {{item.username}}</td>
             <td> {{item.phone_no}}</td>
-            <td> {{item.email_id}}</td>
-            <!-- <td> {{item.password}}</td>
-            <td> {{item.home_address}}</td>
             <td> {{item.account_no}}</td>
-            <td> {{item.ifsc_code}}</td>
             <td> {{item.pan}}</td>
             <td> {{item.aadhar}}</td>
-            <td> {{item.certificate}}</td> -->
+            <td> {{item.certificate}}</td>
 
             <!-- <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.userid)">View</button></td> -->
             <td><button type="button" id="btn1" class="btn btn-primary" data-toggle="modal"
-                data-target="#accountapprovalmodal">View</button></td>
+              (click)="onapprove(item.policy_no)">Approve</button></td>
 
-            <div class="modal fade" id="accountapprovalmodal" tabindex="-1" role="dialog"
+            <!-- <div class="modal fade" id="accountapprovalmodal" tabindex="-1" role="dialog"
               aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -91,7 +87,7 @@
 
                 </div>
               </div>
-            </div>
+            </div> -->
 
           </tr>
 
@@ -99,7 +95,7 @@
         </tbody>
 
       </table>
-
+    </ng-template>
     </div>
   </div>
 </div>

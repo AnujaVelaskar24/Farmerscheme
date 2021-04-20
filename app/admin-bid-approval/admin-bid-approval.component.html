@@ -4,6 +4,10 @@
        
       <div class="main">
         <h1>APPROVE BIDDINGS</h1>
+        <div>
+          <p class="ptag" *ngIf="bid_res.length < 1 else content"> There are no records available!</p>
+        </div>
+      <ng-template #content>
 
         <table class="table">
           <thead>
@@ -54,7 +58,7 @@
           </tbody>
       
         </table>
-  
+      </ng-template>
           </div>
           </div>
           </div>
