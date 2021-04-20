@@ -3,6 +3,7 @@
     background-attachment: fixed;
     position: relative;
     min-height: 100vh;
+    font-size: large;
     /* padding-top: 200px; */
   }
   #content-wrap {

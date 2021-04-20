@@ -2,6 +2,7 @@
     background-image: url("/assets/images/plantbg.jpg");
     background-attachment: fixed;
     position: relative;
+    font-size: larger;
     min-height: 100vh;
     /* padding-top: 200px; */
   }
@@ -23,7 +24,7 @@
 }
 tr
 {
-    height: 30px;
+    height: 70px;
     background-color: white;
 }
 #j

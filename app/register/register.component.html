@@ -69,18 +69,19 @@
                                                     <label for="password1"><b> Confirm Password</b></label>
                                                     <input type="password" placeholder="Enter Password" id="password1"
                                                         name="password1" formControlName="password1">
+                                                        <span style="line-height: 3px;" style="color: crimson;" *ngIf="contactForm.value.password !== contactForm.value.password1">
+                                                            Password doesn't match
+                                                        </span>
                                                     <div *ngIf="!password1?.valid && (password1?.dirty ||password1?.touched)">
                                                         <div [hidden]="!password1.errors.required" style="color: crimson;">
                                                             password is required
                                                         </div>
                                                        <div [hidden]="!password1.errors.minlength" style="color: crimson;">
-                                                Min Length is 3
-                                            </div> 
+                                                          Min Length is 3
+                                                        </div> 
 
                                                         
-                                                        <span style="line-height: 3px;" *ngIf="contactForm.value.password !== contactForm.value.password1">
-                                                            Password doesn't match
-                                                        </span>
+                                                        
                                                     </div>
                                                 </td>
                                             </tr>
