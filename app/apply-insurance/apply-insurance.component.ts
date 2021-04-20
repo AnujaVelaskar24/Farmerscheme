@@ -43,7 +43,7 @@ public actualrate:number=0;
   isShow:boolean
 
   public userid:number;
-  public landid:number;
+  // public landid:number;
 
   public cropdata=[];
  
@@ -88,14 +88,6 @@ public actualrate:number=0;
     private router: Router,
     public croptypefetchService: CroptypefetchService,
     public getinsurservice:GetinsuranceserviceService,
-<<<<<<< HEAD
-    public insertinsurance:ApplyinsuranceinsertService
-    ) { 
-      let  uid = sessionStorage.getItem("userid");
-
-    let landid= sessionStorage.getItem("land_id");
-    console.log(landid,"from apply insurance ts");
-=======
     public insertinsurance:ApplyinsuranceinsertService) { 
       {
         
@@ -103,27 +95,11 @@ public actualrate:number=0;
         this.isShow=false;
         
         }
->>>>>>> f6cd7602ef67c58ee41e2478f54a1b4acaf7d051
     this.isShow=false;
    
   }
   
   displayalert(){
-<<<<<<< HEAD
-  
-    console.log(this.userid,"from insuarnce");
-    console.log(this.land2,"LAND 2 DATA");
-   
-    let applyinsurance_obj = new Applyinsuranceclass();
-    applyinsurance_obj.userid=this.userid;
-    applyinsurance_obj.land_id=this.landid;
-    applyinsurance_obj.season=this.applyinsuranceForm.value.season;
-    applyinsurance_obj.year=this.applyinsuranceForm.value.year;
-    applyinsurance_obj.crop_id=this.applyinsuranceForm.value.crop_id;
-    applyinsurance_obj.sum_insured=this.applyinsuranceForm.value.sum_insured;
-    applyinsurance_obj.insurance_company=this.applyinsuranceForm.value.insurance_company;
-    applyinsurance_obj.premium_amount=this.applyinsuranceForm.value.premium_amount;
-=======
     console.log(this.landid,"from apply insurance ts");
     let applyinsurance_obj = new Applyinsuranceclass();
     applyinsurance_obj.userid=this.uid;
@@ -134,7 +110,6 @@ public actualrate:number=0;
     applyinsurance_obj.sum_insured=this.suminsured;
     applyinsurance_obj.insurance_company="Yojna Insurance";
     applyinsurance_obj.premium_amount=this.premiumpaidbyfarmer;
->>>>>>> f6cd7602ef67c58ee41e2478f54a1b4acaf7d051
     applyinsurance_obj.start_date = new Date();
     applyinsurance_obj.end_date=new Date();
     console.log(applyinsurance_obj,"DISPLAY ALERT CONSOLE")
