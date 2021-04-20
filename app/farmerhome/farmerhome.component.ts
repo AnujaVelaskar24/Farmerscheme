@@ -42,6 +42,9 @@ export class FarmerhomeComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    if(!sessionStorage.getItem('userid')){
+      this.router.navigateByUrl('home');
+    }
     this.insuranceService.insurance(this.uid).subscribe(res => {
       this.insurancedata=res;
       if(this.insurancedata.length==0){

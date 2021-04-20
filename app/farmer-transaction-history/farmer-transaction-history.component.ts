@@ -10,6 +10,7 @@ import { FarmerhistoryService } from '../farmerhistory.service';
 export class FarmerTransactionHistoryComponent implements OnInit {
   
   Farmerhistory: Farmerhistory[] = [];
+  
   constructor(public FarmerhistoryService: FarmerhistoryService) { }
 
   ngOnInit(): void {
@@ -22,7 +23,9 @@ console.log(uid,"userid");
   this.FarmerhistoryService.getAll(uid).subscribe(res => {
     
     console.log(res, "ontype console data");
+    //res.bidding_time=res.bidding_time.Date;
     this.Farmerhistory=res;
+    // this.Farmerhistory.Farmerhistory.bidding_time=Farmerhistory.bidding_time.ToShortDateString();
     console.log(Farmerhistory,"farmerhistory");
   });
   }
