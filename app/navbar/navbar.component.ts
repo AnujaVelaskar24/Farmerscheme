@@ -13,6 +13,7 @@ import {AdminlogService} from '../adminlog.service'
 export class NavbarComponent implements OnInit {
   public status:boolean=false;
   public uid:number=Number(sessionStorage.getItem('userid'));
+  public email_id:number=Number(sessionStorage.getItem('email_id'));
   public usertype:string=(sessionStorage.getItem('user_type'));
   land1:Getlandclass[]=[];
   LoginForm : FormGroup;
@@ -29,13 +30,14 @@ export class NavbarComponent implements OnInit {
     username: ['',Validators.required],
     password: ['',Validators.required]
   })
-
+  
   // this.AdminLoginForm = this.fb.group({
   //   email_id: ['',Validators.required],
   //   password: ['',Validators.required]
   // })
   
 }
+
 get username() {
   return this.LoginForm.get('username');
 } 
@@ -49,6 +51,7 @@ logout(){
  sessionStorage.removeItem('username');
  this.router.navigateByUrl('/home');
 }
+
 onSubmitLoginForm() {
   
   this.loginService.login(this.LoginForm.value).subscribe(res => {
@@ -67,6 +70,7 @@ onSubmitLoginForm() {
       sessionStorage.setItem("userid",res.userid)
       sessionStorage.setItem("user_type",res.user_type)
       console.log(this.usertype,"usertype!!");
+      console.log(this.email_id,"eMAILLL")
      
       if(res.user_type===false)
       {
@@ -93,6 +97,7 @@ onSubmitLoginForm() {
    //this.router.navigateByUrl('/home/')
   });
 }
+
 get loginFormControl(){
   return this.LoginForm.controls;
 }

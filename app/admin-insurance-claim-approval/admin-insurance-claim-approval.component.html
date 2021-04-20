@@ -25,9 +25,9 @@
               <td> {{item.claim_id}}</td>
               <td> {{item.crop_name}}</td>
               <!-- <td>{{item.policy_no}}</td> -->
-              <td> {{item.date_of_loss}}</td>
+              <td> {{item.date_of_loss.substring(0,10)}}</td>
               <td> {{item.cause_of_loss}}</td>
-              <td> {{item.claim_date}}</td>
+              <td> {{item.claim_date.substring(0,10)}}</td>
              
               <!-- <td> {{item.username}}</td>
               <td> {{item.area}}</td> -->
@@ -64,7 +64,7 @@
                       </tr>
                       <tr id="">
                         <th>Area</th>
-                        <td>5</td>
+                        <td>{{item.area}}</td>
                       </tr>
                       <tr id="">
                         <th>CropName</th>
@@ -76,7 +76,7 @@
                       </tr>
                       <tr>
                         <th scope="col">Date of loss</th>
-                        <td>{{item.date_of_loss}}</td>
+                        <td>{{item.date_of_loss.substring(0,10)}}</td>
                       </tr>
                       
                         
