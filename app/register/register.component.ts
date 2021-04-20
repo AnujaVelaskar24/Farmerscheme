@@ -18,16 +18,15 @@ export class RegisterComponent implements OnInit {
     username: new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required,Validators.minLength(3)]),
     password1: new FormControl('',[Validators.required,Validators.minLength(3)]),
-    email_id: new FormControl('',[Validators.required,Validators.maxLength(30),Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+    email_id: new FormControl('',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     home_address: new FormControl('',[Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
-    phone_no: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10), Validators.pattern("^[0-9]+$")]),
-    account_no: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern("^[0-9]+$")]),
-    ifsc_code: new FormControl('',[Validators.required,Validators.maxLength(4),Validators.minLength(4)]),
-    pan: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10)]),
-    Aadhar: new FormControl('',[Validators.required,Validators.maxLength(12),Validators.minLength(12),Validators.pattern("^[0-9]+$")]),
+    phone_no: new FormControl('',[Validators.required,Validators.maxLength(10), Validators.pattern("^[0-9]+$")]),
+    account_no: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.pattern("^[0-9]+$")]),
+    ifsc_code: new FormControl('',[Validators.required,Validators.maxLength(4)]),
+    pan: new FormControl('',[Validators.required,Validators.maxLength(10)]),
+    Aadhar: new FormControl('',[Validators.required,Validators.maxLength(12),Validators.pattern("^[0-9]+$")]),
     certificate:new FormControl('',[Validators.required])
   });
-
   constructor( public RegisterService: RegisterService,private router: Router) { }
   
 
