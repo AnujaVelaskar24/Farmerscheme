@@ -11,8 +11,8 @@
          
             <div class="container">
                 <h2 align="center">Particulars of Insuree</h2>
-                <label for="policyno"><b>Policy Number</b></label>
-                <input type="text" placeholder="Enter policy number" name="policyno" formControlName="policyno">
+                <label for="policy_no"><b>Policy Number</b></label>
+                <input type="text" placeholder="Enter policy number" name="policy_no" formControlName="policy_no">
                 <div *ngIf="!policyno?.valid && (policyno?.dirty ||policyno?.touched)">
                     <div [hidden]="!policyno.errors.pattern" style="color: crimson;">
                         Only numbers are allowed
