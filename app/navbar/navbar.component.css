@@ -7,8 +7,10 @@ html{
   }
   /*Normalize html and body elements,this style is just good to have*/
   html,body{
+    font-size: large;
     margin:0;
     padding:0;
+    
   }
         .navbar
         {

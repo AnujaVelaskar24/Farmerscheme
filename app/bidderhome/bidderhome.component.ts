@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bidderhome',
@@ -7,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BidderhomeComponent implements OnInit {
 
-  constructor() 
+  constructor(private router: Router) 
   {
     let  userid = sessionStorage.getItem("userid");
     console.log(userid);
   }
 
   ngOnInit(): void {
+    if(!sessionStorage.getItem('userid')){
+      this.router.navigateByUrl('home');
+    }
   }
 
 }
