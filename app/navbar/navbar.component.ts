@@ -123,7 +123,7 @@ export class NavbarComponent implements OnInit {
     return this.ForgetPasswordForm.get('email_id');
   }
   Onpasswordclick() {
-    this.status = !status;
+    this.status = !this.status;
     console.log(this.status);
   }
   onForgetPasswordSubmit() {

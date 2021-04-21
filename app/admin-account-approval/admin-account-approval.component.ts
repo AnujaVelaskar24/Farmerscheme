@@ -40,6 +40,7 @@ ApproveForm = new FormGroup({
   {
     this.adminaccountapprovalservice.Getuser_information().subscribe(res => {
       this.users=res;
+      console.log(this.users, "USERS DATA")
       if(res.user_type===true)
     {
       this.users[0].user_type="bidder";
@@ -92,6 +93,7 @@ ApproveForm = new FormGroup({
   }
 onapprove(userid)
 {
+  console.log(userid, "UserId");
   this.adminaccountapprovalservice.update(userid).subscribe(res => {
     console.log(res, "ontype console data");
     this.ngOnInit();
