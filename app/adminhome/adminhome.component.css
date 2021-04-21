@@ -4,6 +4,15 @@
     color: white;
     
 }
+h1{
+    color: white;
+    letter-spacing: 30px;
+    text-align: center;
+    font-size: 60px;
+    text-shadow: 2px 2px 8px green;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 #project-name{
     color: white;
     margin-right: 50px;

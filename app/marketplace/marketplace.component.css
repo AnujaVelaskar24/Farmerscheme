@@ -16,6 +16,13 @@
      text-align: center;
      margin-top: 20px;
   }
+  .ptag
+  {
+      text-align: center;
+      margin-top:15%;
+      font-size: 30px;
+      color: green;
+  }
   h1{
       color: white;
       letter-spacing: 30px;

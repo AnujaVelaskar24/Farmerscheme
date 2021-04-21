@@ -58,35 +58,32 @@ export class NavbarComponent implements OnInit {
   onSubmitLoginForm() {
 
     this.loginService.login(this.LoginForm.value).subscribe(res => {
-      console.log(res, "res value");
+      //console.log(res, "res value");
       if (res === "Unsuccessful") {
-        console.log("invalid");
-        alert("Invalid Credentials");
+        alert("Either your credentials are invalid or your account has not been approved yet");
         // sessionStorage.setItem("username",this.LoginForm.value.username)
         // this.router.navigateByUrl('Farmerhome');
       }
       else {
-        console.log("valid");
+        //console.log("valid");
         sessionStorage.setItem("username", this.LoginForm.value.username)
         sessionStorage.setItem("userid", res.userid)
         sessionStorage.setItem("user_type", res.user_type)
-        console.log(this.usertype, "usertype!!");
+        //console.log(this.usertype, "usertype!!");
 
         if (res.user_type === false) {
           this.router.navigateByUrl('farmerhome');
-          console.log(res.userid, "UserID");
+          //console.log(res.userid, "UserID");
           this.landservice.getlandid(res.userid).subscribe(res => {
             console.log(res, "LAND ID ");
             this.land1 = res;
-
+            console.log(res.land_id, "LANDID2");
             sessionStorage.setItem("land_id", res.land_id)
-            // console.log(this.land1[0].land_id,"SESION SE LAND ID")
-            // console.log(res.land_id, "SESSION")
           })
 
         }
         else {
-          console.log("valid");
+          //console.log("valid");
           sessionStorage.setItem("username", this.LoginForm.value.username)
           sessionStorage.setItem("userid", res.userid)
 
@@ -94,18 +91,12 @@ export class NavbarComponent implements OnInit {
             this.router.navigateByUrl('farmerhome');
             this.landservice.getlandid(res.userid).subscribe(res => {
               this.land1 = res;
-
               sessionStorage.setItem("land_id", res.land_id)
-              // console.log(this.land1[0].land_id,"SESION SE LAND ID")
-              // console.log(res.land_id, "SESSION")
             })
-
           }
           else {
             this.router.navigateByUrl('bidderhome');
           }
-
-
         }
         //console.log('User Logged In!')
         //this.router.navigateByUrl('/home/')
@@ -124,12 +115,12 @@ export class NavbarComponent implements OnInit {
   }
   Onpasswordclick() {
     this.status = !this.status;
-    console.log(this.status);
+    //console.log(this.status);
   }
   onForgetPasswordSubmit() {
-    console.log(this.ForgetPasswordForm.value, "EMAIL")
+    //console.log(this.ForgetPasswordForm.value, "EMAIL")
     this.ForgotService.getAll(this.ForgetPasswordForm.value).subscribe(res => {
-      console.log(res, "RESPONSSE");
+      //console.log(res, "RESPONSSE");
       if (res == "Successfull") {
         alert("Mail submitted sucessfully!! Please Login..");
         localStorage.setItem('email_id', this.ForgetPasswordForm.value.email_id);

@@ -46,7 +46,7 @@ export class LandDetailsRegisterComponent implements OnInit {
     // console.log(landobj,"land detail")
     this.LandDetailsRegisterService.landdetailsregister(this.LandDetailsRegisterForm.value).subscribe(res => {
       console.log(res)
-      alert("Congratulations! You are successfully registered! Please Login To Continue.. ");
+      alert("Congratulations your account has been successfully registered. You can login once your account is approved. ");
       sessionStorage.removeItem("userid");
       this.router.navigateByUrl('home');
       //this.router.navigateByUrl('/home/')
