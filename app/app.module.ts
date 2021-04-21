@@ -34,6 +34,7 @@ import { AdminInsuranceApprovalComponent } from './admin-insurance-approval/admi
 import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-approval/admin-insurance-claim-approval.component';
 import { CommonmarketplaceComponent } from './commonmarketplace/commonmarketplace.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     ProfileComponent,
     CommonmarketplaceComponent,
     ResetpasswordComponent,
+    ErrorPageComponent,
  
   ],
   imports: [

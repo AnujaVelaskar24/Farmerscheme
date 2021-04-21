@@ -94,15 +94,7 @@ export class FarmerhomeComponent implements OnInit {
     //console.log(this.SellRequestForm.value, "Input data");
     
     this.sellrequestService.sellrequest(this.SellRequestForm.value).subscribe(res => {
-      //console.log(res, "sell request console");
-      // if(res === "Unsuccessful")
-      // {
-      //   console.log("invalid");
-      // }
-      // else
-      // {
-      //   console.log("valid");
-      // }
+  
     });
   } 
 

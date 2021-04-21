@@ -35,6 +35,7 @@ import { AdminInsuranceClaimApprovalComponent } from './admin-insurance-claim-ap
 import { ClassMethod } from '@angular/compiler';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
+import {ErrorPageComponent} from './error-page/error-page.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
 
@@ -69,8 +70,9 @@ const routes: Routes = [
   {path: 'adminbidapproval', component: AdminBidApprovalComponent},
   {path: 'admininsuranceapproval', component: AdminInsuranceApprovalComponent},
   {path: 'admininsuranceclaimapproval', component: AdminInsuranceClaimApprovalComponent},
-  // {path: '**', component: ErrorComponent},
-  {path:'resetpassword',component:ResetpasswordComponent}
+  {path:'resetpassword',component:ResetpasswordComponent},
+  {path: '**', component: ErrorPageComponent},
+  
 ];
 
 @NgModule({

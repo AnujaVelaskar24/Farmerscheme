@@ -11,7 +11,7 @@
           <tr id="heading_style">
             <th scope="col">Sr No.</th>
             <th scope="col">Transaction ID</th>
-            <th scope="col">Farmer ID</th>
+            <th scope="col">Farmer Name</th>
             <th scope="col">Name</th>
             <th scope="col">Quantity</th>
             <th scope="col">Fertilizer</th>
@@ -23,9 +23,9 @@
         </thead>
         <tbody *ngFor="let Bidderhistory of Bidderhistory;index as i ">
           <tr id="i"  id="i" *ngIf="i%2==0">
-            <th scope="row">1</th>
+            <th scope="row">{{i+1}}</th>
             <td>{{Bidderhistory.transaction_id}}</td>
-            <td>{{Bidderhistory.farmer_id}}</td>
+            <td>{{Bidderhistory.farmer_name}}</td>
             <td>{{Bidderhistory.crop_name}}</td>
             <td>{{Bidderhistory.quantity}}</td>
             <td>{{Bidderhistory.fertilizer_type}}</td>
@@ -35,9 +35,9 @@
             <td>{{Bidderhistory.bidding_time.substring(0,10)}}</td>
           </tr>
           <tr id="j" *ngIf="i%2!=0">
-            <th scope="row">1</th>
+            <th scope="row">{{i+1}}</th>
             <td>{{Bidderhistory.transaction_id}}</td>
-            <td>{{Bidderhistory.farmer_id}}</td>
+            <td>{{Bidderhistory.farmer_name}}</td>
             <td>{{Bidderhistory.crop_name}}</td>
             <td>{{Bidderhistory.quantity}}</td>
             <td>{{Bidderhistory.fertilizer_type}}</td>

@@ -104,7 +104,7 @@ export class RegisterComponent implements OnInit {
          }
          else
          {
-           alert("Congratulations! You are successfully registered! Please Login To Continue.. ");
+           alert("Congratulations your account has been successfully registered. You can login once your account is approved. ");
            this.router.navigateByUrl('home');
          }
        
