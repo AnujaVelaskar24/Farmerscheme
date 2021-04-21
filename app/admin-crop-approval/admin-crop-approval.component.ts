@@ -27,12 +27,14 @@ this.crop_approval_data = res;
 // console.log(res, "sell request console");
 // });
 }
-uid:number = Number(sessionStorage.getItem("userid"));
+uid = sessionStorage.getItem("userid");
 onapprove(request_id)
-{ let biddataobj=new bidinsert
+{
+ 
+let biddataobj=new bidinsert
 biddataobj.request_id=request_id;
 biddataobj.userid;
-biddataobj.amount=0
+biddataobj.amount=0;
 biddataobj.bidding_time=new Date();
 console.log(biddataobj, "bid obj")
 this.admincropapprovalservice.update(request_id,biddataobj).subscribe(res => {

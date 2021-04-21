@@ -16,8 +16,14 @@ body{
     left: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    
 }
+#td_data{
+  font-size: larger;
+}
+label{
+  font-size: larger;
+}
+
 .main {  
     width: 25%;
     margin-top: 80px;
