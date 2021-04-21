@@ -119,7 +119,7 @@
                         </div>
 
                         <label id="labels" for="quantity"><b>Quantity</b></label>
-                        <input type="text" placeholder="Enter quantity" name="quantity" formControlName="quantity">
+                        <input type="text" placeholder="Enter quantity (in quintal)" name="quantity" formControlName="quantity">
                         <div *ngIf="!quantity?.valid && (quantity?.dirty ||quantity?.touched)">
                           <div [hidden]="!quantity.errors.pattern" style="color: crimson;  font-size:12px;">
                             Only numbers are allowed
@@ -131,7 +131,7 @@
                         </div>
 
                         <label id="labels" for="base_price"><b>Base Price</b></label>
-                        <input type="text" placeholder="Enter crop type" name="base_price" formControlName="base_price">
+                        <input type="text" placeholder="Enter base price" name="base_price" formControlName="base_price">
                         <div *ngIf="!base_price?.valid && (base_price?.dirty ||base_price?.touched)">
                           <div [hidden]="!base_price.errors.required" style="color: crimson; font-size:12px;">
                             Base price is required
