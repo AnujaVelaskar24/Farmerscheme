@@ -16,8 +16,8 @@ export class RegisterComponent implements OnInit {
     land_address:new FormControl(''),
     area:new FormControl(''),
     username: new FormControl('',[Validators.required]),
-    password: new FormControl('',[Validators.required,Validators.minLength(3)]),
-    password1: new FormControl('',[Validators.required,Validators.minLength(3)]),
+    password: new FormControl('',[Validators.required,Validators.minLength(5)]),
+    password1: new FormControl('',[Validators.required,Validators.minLength(5)]),
     email_id: new FormControl('',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     home_address: new FormControl('',[Validators.required]),
    
@@ -95,20 +95,17 @@ export class RegisterComponent implements OnInit {
     {
       console.log(this.contactForm.value, "Data incomming");
       this.RegisterService.register(this.contactForm.value).subscribe(res => {
-      
-     
-        sessionStorage.setItem("userid",res);
-         var uid=sessionStorage.getItem("userid");
-         
-       
+        
          if(this.user_type.value==='false')
          {
+          sessionStorage.setItem("userid",res);
            console.log("farmer");
            this.router.navigateByUrl('landdetailsregister');
          }
          else
          {
-           this.router.navigateByUrl('bidderhome');
+           alert("Congratulations! You are successfully registered! Please Login To Continue.. ");
+           this.router.navigateByUrl('home');
          }
        
        

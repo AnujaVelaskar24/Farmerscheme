@@ -14,7 +14,6 @@ import {AdminLoginComponent} from './admin-login/admin-login.component';
 import { RegisterComponent } from './register/register.component';
 import {LandDetailsRegisterComponent } from './land-details-register/land-details-register.component';
 import {ForgotpasswordComponent} from './forgotpassword/forgotpassword.component';
-
 import { FarmerhomeComponent} from './farmerhome/farmerhome.component';
 import {MarketplaceComponent} from './marketplace/marketplace.component';
 import {ApplyBidComponent} from './apply-bid/apply-bid.component';

@@ -24,10 +24,7 @@ export class LandDetailsRegisterComponent implements OnInit {
   
   ngOnInit(): void {
     var uid:number = Number(sessionStorage.getItem("userid"));
-    console.log(uid,"construct");
-  
-    
-    
+    console.log(sessionStorage.getItem("userid"),"construct");
   }
   
   get land_address(){
@@ -49,7 +46,9 @@ export class LandDetailsRegisterComponent implements OnInit {
     // console.log(landobj,"land detail")
     this.LandDetailsRegisterService.landdetailsregister(this.LandDetailsRegisterForm.value).subscribe(res => {
       console.log(res)
-      this.router.navigateByUrl('farmerhome')
+      alert("Congratulations! You are successfully registered! Please Login To Continue.. ");
+      sessionStorage.removeItem("userid");
+      this.router.navigateByUrl('home');
       //this.router.navigateByUrl('/home/')
     });
 
