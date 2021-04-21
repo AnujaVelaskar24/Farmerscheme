@@ -29,7 +29,24 @@
         </thead>
 
         <tbody *ngFor="let item of insurance_res; index as i ">
-          <tr id="i">
+          <tr id="i" *ngIf="i%2==0">
+            <th scope="row">{{item.policy_no}}</th>
+            <td>{{item.username}}</td>
+            <td> {{item.area}}</td>
+            <td> {{item.crop_name}}</td>
+            <td> {{item.premium_amount}}</td>
+            <td> {{item.sum_insured}}</td>
+            <td> {{item.start_date.substring(0,10)}}</td>
+            <!-- <td> {{item.sum_insured}}</td>
+              <td> {{item.insurance_company}}</td>
+              <td> {{item.premium_amount}}</td>
+              <td> {{item.start_date}}</td>
+              <td> {{item.end_date}}</td> -->
+
+            <td><button type="button" id="btn1" class="btn btn-primary" data-toggle="modal"
+                data-target="#insurancemodal" (click)="onapprove(item.policy_no)">Approve</button></td>
+          </tr>
+          <tr id="j" *ngIf="i%2!=0">
             <th scope="row">{{item.policy_no}}</th>
             <td>{{item.username}}</td>
             <td> {{item.area}}</td>
