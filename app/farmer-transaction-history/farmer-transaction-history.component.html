@@ -23,8 +23,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr id="i" *ngFor="let Farmerhistory of Farmerhistory">
-              <th scope="row">1</th>
+            <tr id="i" *ngFor="let Farmerhistory of Farmerhistory, index as i">
+              <th scope="row">{{i+1}}</th>
               <td>{{Farmerhistory.transaction_id}}</td>
               <td>{{Farmerhistory.bidder_id}}</td>
               <td>{{Farmerhistory.crop_name}}</td>

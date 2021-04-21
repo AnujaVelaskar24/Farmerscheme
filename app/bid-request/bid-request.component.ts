@@ -81,6 +81,9 @@ crop_id:number;
       // this.router.navigateByUrl('/marketplace');
       alert("Applied Successfully!");
     });
+
+
+    console.log(bidobj,"bid object from bid requets");
     }
     
   }
