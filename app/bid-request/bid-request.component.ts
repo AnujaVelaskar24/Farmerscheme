@@ -78,7 +78,8 @@ crop_id:number;
     bidobj.amount=this.BidForm.value.placebid;
     bidobj.bidding_time = new Date();
     this.bidrequestservice.placebid(bidobj).subscribe(res => {
-      this.router.navigateByUrl('/marketplace');
+      // this.router.navigateByUrl('/marketplace');
+      alert("Applied Successfully!");
     });
     }
     

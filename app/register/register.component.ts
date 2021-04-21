@@ -87,6 +87,7 @@ export class RegisterComponent implements OnInit {
     }
     console.log(this.ph_certificate, "Ph certificate");
   }
+
   
   onSubmit() {
     this.contactForm.value.certificate=this.ph_certificate;
