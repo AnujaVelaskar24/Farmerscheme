@@ -21,8 +21,20 @@
             <th scope="col">Date</th>
           </tr>
         </thead>
-        <tbody>
-          <tr id="i" *ngFor="let Bidderhistory of Bidderhistory">
+        <tbody *ngFor="let Bidderhistory of Bidderhistory;index as i ">
+          <tr id="i"  id="i" *ngIf="i%2==0">
+            <th scope="row">1</th>
+            <td>{{Bidderhistory.transaction_id}}</td>
+            <td>{{Bidderhistory.farmer_id}}</td>
+            <td>{{Bidderhistory.crop_name}}</td>
+            <td>{{Bidderhistory.quantity}}</td>
+            <td>{{Bidderhistory.fertilizer_type}}</td>
+            <td>{{Bidderhistory.msp}}</td>
+            <td>{{Bidderhistory.base_price}}</td>
+            <td>{{Bidderhistory.amount}}</td>
+            <td>{{Bidderhistory.bidding_time.substring(0,10)}}</td>
+          </tr>
+          <tr id="j" *ngIf="i%2!=0">
             <th scope="row">1</th>
             <td>{{Bidderhistory.transaction_id}}</td>
             <td>{{Bidderhistory.farmer_id}}</td>

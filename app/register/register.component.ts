@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
     ifsc_code: new FormControl('',[Validators.required,Validators.maxLength(11),Validators.minLength(11)]),
     pan: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10)]),
     Aadhar: new FormControl('',[Validators.required,Validators.maxLength(12),Validators.minLength(12),Validators.pattern("^[0-9]+$")]),
-    certificate:new FormControl('',[Validators.required,Validators.minLength(4),Validators.maxLength(4),Validators.pattern("^[0-9]+$")])
+    certificate:new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(4),Validators.pattern("^[0-9]+$")])
   });
   constructor( public RegisterService: RegisterService,private router: Router) { }
   

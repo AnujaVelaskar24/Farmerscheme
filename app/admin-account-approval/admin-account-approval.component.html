@@ -22,7 +22,7 @@
         </thead>
 
         <tbody *ngFor="let item of users;index as i ">
-          <tr id="i">
+          <tr id="i" *ngIf="i%2==0">
             <td> {{item.userid}}</td>
             <td>{{item.user_type==0?"farmer":"bidder"}}</td>
             <td> {{item.username}}</td>
@@ -34,7 +34,7 @@
 
             <!-- <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.userid)">View</button></td> -->
             <td><button type="button" id="btn1" class="btn btn-primary" data-toggle="modal"
-              (click)="onapprove(item.policy_no)">Approve</button></td>
+              (click)="onapprove(item.userid)">Approve</button></td>
 
             <!-- <div class="modal fade" id="accountapprovalmodal" tabindex="-1" role="dialog"
               aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -90,6 +90,20 @@
             </div> -->
 
           </tr>
+          <tr id="j" *ngIf="i%2!=0">
+            <td> {{item.userid}}</td>
+            <td>{{item.user_type==0?"farmer":"bidder"}}</td>
+            <td> {{item.username}}</td>
+            <td> {{item.phone_no}}</td>
+            <td> {{item.account_no}}</td>
+            <td> {{item.pan}}</td>
+            <td> {{item.aadhar}}</td>
+            <td> {{item.certificate}}</td>
+
+            <!-- <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.userid)">View</button></td> -->
+            <td><button type="button" id="btn1" class="btn btn-primary" data-toggle="modal"
+              (click)="onapprove(item.userid)">Approve</button></td>
+              </tr>
 
 
         </tbody>
