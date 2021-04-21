@@ -28,14 +28,12 @@ tr
     background-color: white;
 }
 #j
-    {
-        background-color: white;
-        /* background-color:#f5fcf6; */
-    }
+  {
+      background-color:#f5fcf6;
+  }
 #i
 {
-    background-color: white;
-    /* background-color:#d0ead6; */
+  background-color:#d0ead6;
 }
 #btn1
 {
@@ -239,15 +237,14 @@ tr
             font-weight: bold;
             color: #009879;
         }
-        #i
-    {
-        background-color:#e4f6ec;
-    }
-    
-    #j
-    {
-        background-color:#8cd9ae;
-    }
+        #j
+        {
+            background-color:#f5fcf6;
+        }
+      #i
+      {
+        background-color:#d0ead6;
+      }
     #form
     {   
         margin-right: 10%;

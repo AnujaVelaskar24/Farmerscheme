@@ -24,7 +24,23 @@
         </thead>
 
         <tbody *ngFor="let item of insuranceclaim_res ">
-          <tr id="i">
+          <tr  id="i" *ngIf="i%2==0">
+            <td> {{item.claim_id}}</td>
+            <td> {{item.username}}</td>
+            <td> {{item.crop_name}}</td>
+            <td>{{item.policy_no}}</td>
+            <td> {{item.date_of_loss.substring(0,10)}}</td>
+            <td> {{item.cause_of_loss}}</td>
+            <td> {{item.claim_date.substring(0,10)}}</td>
+
+            <td> {{item.area}}</td>
+
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" id="btn1"
+                (click)="onapprove(item.claim_id)">Approve</button></td>
+            <!-- <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.policy_no)">Approve</button></td>
+              <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td> -->
+          </tr>
+          <tr id="j" *ngIf="i%2!=0">
             <td> {{item.claim_id}}</td>
             <td> {{item.username}}</td>
             <td> {{item.crop_name}}</td>
