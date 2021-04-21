@@ -10,7 +10,7 @@ import { RouterModule, Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  
+  public ph_certificate: boolean=false;
   contactForm = new FormGroup({
     user_type:new FormControl(''),
     land_address:new FormControl(''),
@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
     ifsc_code: new FormControl('',[Validators.required,Validators.maxLength(11),Validators.minLength(11)]),
     pan: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10)]),
     Aadhar: new FormControl('',[Validators.required,Validators.maxLength(12),Validators.minLength(12),Validators.pattern("^[0-9]+$")]),
-    certificate:new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(4),Validators.pattern("^[0-9]+$")])
+    certificate:new FormControl('')
   });
   constructor( public RegisterService: RegisterService,private router: Router) { }
   
@@ -77,11 +77,23 @@ export class RegisterComponent implements OnInit {
     return this.contactForm.get('certificate');
   }
  
+  changeSelection()
+  {
+    if(this.ph_certificate==false){
+      this.ph_certificate=true;
+    }
+    else{
+      this.ph_certificate=false;
+    }
+    console.log(this.ph_certificate, "Ph certificate");
+  }
+
   
   onSubmit() {
-    
+    this.contactForm.value.certificate=this.ph_certificate;
     if(this.contactForm.value.password == this.contactForm.value.password1 )
     {
+      console.log(this.contactForm.value, "Data incomming");
       this.RegisterService.register(this.contactForm.value).subscribe(res => {
       
      
@@ -109,7 +121,6 @@ export class RegisterComponent implements OnInit {
     
     
   } 
-
 
   private selectedLink: string="Male";        
   

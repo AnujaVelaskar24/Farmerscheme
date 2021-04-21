@@ -12,21 +12,26 @@
                         </td>
                         <td style="width:60%">
                             <div class="card">
-                                <form [formGroup]="contactForm"  (ngSubmit)="onSubmit()" novalidate>
+                                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
                                     <div class="container">
                                         <h3 style="margin-bottom: 30px; text-align: center;">Register Here</h3>
                                         <table style="display: flex; justify-content: center;">
                                             <tr>
-                                                <td >
-                                                    <label style="margin-right: 40px; font-size: 19px;"> <b>I am a </b> </label>
+                                                <td>
+                                                    <label style="margin-right: 40px; font-size: 19px;"> <b>I am a </b>
+                                                    </label>
                                                 </td>
                                                 <td>
-                                                    <input type="radio" name="user_type" value="false" (click)="setradio('Male')" formControlName="user_type" >&nbsp;&nbsp;
+                                                    <input type="radio" name="user_type" value="false"
+                                                        (click)="setradio('Male')"
+                                                        formControlName="user_type">&nbsp;&nbsp;
                                                     <label for="male" style="margin-right: 40px;">Farmer</label><br>
 
                                                 </td>
                                                 <td>
-                                                    <input type="radio" name="user_type" value="true" (click)="setradio('Female')" formControlName="user_type"  >&nbsp;&nbsp;
+                                                    <input type="radio" name="user_type" value="true"
+                                                        (click)="setradio('Female')"
+                                                        formControlName="user_type">&nbsp;&nbsp;
                                                     <label for="female">Bidder</label><br>
                                                 </td>
                                             </tr>
@@ -39,28 +44,33 @@
                                                     <label for="username"><b>Name</b></label>
                                                     <input type="text" placeholder="Enter Username" id=username
                                                         name="username" formControlName="username">
-                                                    <div *ngIf="!username?.valid && (username?.dirty ||username?.touched)">
-                                                        <div style="color: crimson;" [hidden]="!username.errors.required">
+                                                    <div
+                                                        *ngIf="!username?.valid && (username?.dirty ||username?.touched)">
+                                                        <div style="color: crimson;"
+                                                            [hidden]="!username.errors.required">
                                                             Name is required
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </td>
                                                 <td style="width: 30%;padding-left: 20px;">
                                                     <label for="password"><b>Password</b></label>
                                                     <input type="password" placeholder="Enter Password" id="password"
                                                         name="password" formControlName="password">
-                                                    <div *ngIf="!password?.valid && (password?.dirty ||password?.touched)">
-                                                        <div [hidden]="!password.errors.required" style="color: crimson;">
+                                                    <div
+                                                        *ngIf="!password?.valid && (password?.dirty ||password?.touched)">
+                                                        <div [hidden]="!password.errors.required"
+                                                            style="color: crimson;">
                                                             password is required
                                                         </div>
                                                         <!-- <div [hidden]="!password.errors.pattern" style="color: crimson;">
                                                             Minimum eight characters, at least one uppercase letter, one lowercase letter and one number and one special character 
                                                         </div> -->
-                                                         <div [hidden]="!password.errors.minlength" style="color: crimson;">
-                                                Min Length is 3
-                                            </div> 
-                                                        
+                                                        <div [hidden]="!password.errors.minlength"
+                                                            style="color: crimson;">
+                                                            Min Length is 3
+                                                        </div>
+
                                                     </div>
 
                                                 </td>
@@ -69,19 +79,23 @@
                                                     <label for="password1"><b> Confirm Password</b></label>
                                                     <input type="password" placeholder="Enter Password" id="password1"
                                                         name="password1" formControlName="password1">
-                                                        <span style="line-height: 3px;" style="color: crimson;" *ngIf="contactForm.value.password !== contactForm.value.password1">
-                                                            Password doesn't match
-                                                        </span>
-                                                    <div *ngIf="!password1?.valid && (password1?.dirty ||password1?.touched)">
-                                                        <div [hidden]="!password1.errors.required" style="color: crimson;">
+                                                    <span style="line-height: 3px;" style="color: crimson;"
+                                                        *ngIf="contactForm.value.password !== contactForm.value.password1">
+                                                        Password doesn't match
+                                                    </span>
+                                                    <div
+                                                        *ngIf="!password1?.valid && (password1?.dirty ||password1?.touched)">
+                                                        <div [hidden]="!password1.errors.required"
+                                                            style="color: crimson;">
                                                             password is required
                                                         </div>
-                                                       <div [hidden]="!password1.errors.minlength" style="color: crimson;">
-                                                          Min Length is 3
-                                                        </div> 
+                                                        <div [hidden]="!password1.errors.minlength"
+                                                            style="color: crimson;">
+                                                            Min Length is 3
+                                                        </div>
 
-                                                        
-                                                        
+
+
                                                     </div>
                                                 </td>
                                             </tr>
@@ -90,13 +104,15 @@
                                         <label for="home_address"><b>Home Address</b></label><br>
                                         <!-- <input type="text" placeholder="Enter home_address" id="home_address" name="home_address"
                                             formControlName="home_address"> -->
-                                            <textarea  placeholder="Enter Home Address" id="home_address" name="home_address"
-                                            formControlName="home_address"style="width: 100%; padding-left: 20px;padding-top: 15px;"></textarea>
-                                        <div *ngIf="!home_address?.valid && (home_address?.dirty ||home_address?.touched)">
-                                         <!-- <div [hidden]="!home_address.errors.pattern" style="color: crimson;">
+                                        <textarea placeholder="Enter Home Address" id="home_address" name="home_address"
+                                            formControlName="home_address"
+                                            style="width: 100%; padding-left: 20px;padding-top: 15px;"></textarea>
+                                        <div
+                                            *ngIf="!home_address?.valid && (home_address?.dirty ||home_address?.touched)">
+                                            <!-- <div [hidden]="!home_address.errors.pattern" style="color: crimson;">
                                                 Only characters are allowed
                                             </div> -->
-                                             <div [hidden]="!home_address.errors.required" style="color: crimson;">
+                                            <div [hidden]="!home_address.errors.required" style="color: crimson;">
                                                 home address is required
                                             </div>
                                             <!-- <div [hidden]="!home_address.errors.minlength" style="color: crimson;">
@@ -104,9 +120,9 @@
                                             </div>  -->
                                         </div>
 
-                                       
 
-                                       
+
+
 
 
                                         <table style="width: 100%">
@@ -115,11 +131,14 @@
                                                     <label for="email_id"><b>Email Address</b></label>
                                                     <input type="text" placeholder="Enter Email Address" id="email_id"
                                                         name="email_id" formControlName="email_id">
-                                                    <div *ngIf="!email_id?.valid && (email_id?.dirty ||email_id?.touched)">
-                                                         <div [hidden]="!email_id.errors.pattern" style="color: crimson;">
+                                                    <div
+                                                        *ngIf="!email_id?.valid && (email_id?.dirty ||email_id?.touched)">
+                                                        <div [hidden]="!email_id.errors.pattern"
+                                                            style="color: crimson;">
                                                             enter correct format of email_id
                                                         </div>
-                                                        <div [hidden]="!email_id.errors.required" style="color: crimson;">
+                                                        <div [hidden]="!email_id.errors.required"
+                                                            style="color: crimson;">
                                                             email_id is required
                                                         </div>
                                                         <!-- <div [hidden]="!email_id.errors.minlength" style="color: crimson;">
@@ -131,25 +150,28 @@
                                                     <label for="phone_no"><b>Phone Number</b></label>
                                                     <input type="tel" placeholder="Enter Phone Number" id="phone_no"
                                                         name="phone_no" formControlName="phone_no">
-                                                    <div *ngIf="!phone_no?.valid && (phone_no?.dirty ||phone_no?.touched)">
-                                                        <div [hidden]="!phone_no.errors.pattern" style="color: crimson;">
+                                                    <div
+                                                        *ngIf="!phone_no?.valid && (phone_no?.dirty ||phone_no?.touched)">
+                                                        <div [hidden]="!phone_no.errors.pattern"
+                                                            style="color: crimson;">
                                                             Only number are allowed
                                                         </div>
-                                                        <div [hidden]="!phone_no.errors.required" style="color: crimson;">
+                                                        <div [hidden]="!phone_no.errors.required"
+                                                            style="color: crimson;">
                                                             Phone number is required
                                                         </div>
-                                                        
-                                                         <div [hidden]="!phone_no.errors.maxlength"
+
+                                                        <div [hidden]="!phone_no.errors.maxlength"
                                                             style="color: crimson;">
                                                             Max Length is 10
                                                         </div>
-                                                         <div [hidden]="!phone_no.errors.minlength"
-                                                        style="color: crimson;">
-                                                        Min Length is 10
-                                                        </div>  
-                                             
-                                           </div>
-                                           </td>
+                                                        <div [hidden]="!phone_no.errors.minlength"
+                                                            style="color: crimson;">
+                                                            Min Length is 10
+                                                        </div>
+
+                                                    </div>
+                                                </td>
                                             </tr>
                                         </table>
 
@@ -157,39 +179,48 @@
                                             <tr>
                                                 <td style="width: 45%">
                                                     <label for="ifsc_code"><b>IFSC Code Number</b></label>
-                                                    <input type="text" placeholder="Enter IFSC code Number" id="ifsc_code"
-                                                        formControlName="ifsc_code">
-                                                    <div *ngIf="!ifsc_code?.valid && (ifsc_code?.dirty ||ifsc_code?.touched)">
+                                                    <input type="text" placeholder="Enter IFSC code Number"
+                                                        id="ifsc_code" formControlName="ifsc_code">
+                                                    <div
+                                                        *ngIf="!ifsc_code?.valid && (ifsc_code?.dirty ||ifsc_code?.touched)">
 
-                                                        <div [hidden]="!ifsc_code.errors.required" style="color: crimson;">
+                                                        <div [hidden]="!ifsc_code.errors.required"
+                                                            style="color: crimson;">
                                                             ifsc_code number is required
                                                         </div>
-                                                       
-                                                          <div [hidden]="!ifsc_code.errors.maxlength" style="color: crimson;">
+
+                                                        <div [hidden]="!ifsc_code.errors.maxlength"
+                                                            style="color: crimson;">
                                                             Max Length is 11
                                                         </div>
-                                                         <div [hidden]="!ifsc_code.errors.minlength" style="color: crimson;">
+                                                        <div [hidden]="!ifsc_code.errors.minlength"
+                                                            style="color: crimson;">
                                                             Min Length is 11
-                                                        </div>  
+                                                        </div>
                                                     </div>
                                                 </td>
 
                                                 <td style="position: relative; padding-left: 30px;">
                                                     <label for="account_no"><b>Account No.</b></label>
-                                                    <input type="text" placeholder="Enter Account Number" id="account_no"
-                                                        formControlName="account_no">
-                                                    <div *ngIf="!account_no?.valid && (account_no?.dirty ||account_no?.touched)">
-                                                        <div [hidden]="!account_no.errors.pattern" style="color: crimson;">
+                                                    <input type="text" placeholder="Enter Account Number"
+                                                        id="account_no" formControlName="account_no">
+                                                    <div
+                                                        *ngIf="!account_no?.valid && (account_no?.dirty ||account_no?.touched)">
+                                                        <div [hidden]="!account_no.errors.pattern"
+                                                            style="color: crimson;">
                                                             Only number are allowed
                                                         </div>
-                                                        <div [hidden]="!account_no.errors.required" style="color: crimson;">
+                                                        <div [hidden]="!account_no.errors.required"
+                                                            style="color: crimson;">
                                                             Account number is required
                                                         </div>
-                                                        
-                                                          <div [hidden]="!account_no.errors.maxlength" style="color: crimson;">
+
+                                                        <div [hidden]="!account_no.errors.maxlength"
+                                                            style="color: crimson;">
                                                             Max Length is 10
                                                         </div>
-                                                        <div [hidden]="!account_no.errors.minlength" style="color: crimson;">
+                                                        <div [hidden]="!account_no.errors.minlength"
+                                                            style="color: crimson;">
                                                             Min Length is 10
                                                         </div>
                                                     </div>
@@ -199,7 +230,7 @@
 
                                         <table style="width: 100%">
                                             <tr>
-                                                <td style="width: 30%">
+                                                <td style="width: 25%">
                                                     <label for="pan"><b>PAN card No.</b></label>
                                                     <input type="text" placeholder="Enter PAN Number" id="pan"
                                                         formControlName="pan">
@@ -208,16 +239,16 @@
                                                         <div [hidden]="!pan.errors.required" style="color: crimson;">
                                                             PAN number is required
                                                         </div>
-                                                        
-                                                          <div [hidden]="!pan.errors.maxlength" style="color: crimson;">
+
+                                                        <div [hidden]="!pan.errors.maxlength" style="color: crimson;">
                                                             Max Length is 10
                                                         </div>
                                                         <div [hidden]="!pan.errors.minlength" style="color: crimson;">
                                                             Min Length is 10
-                                                        </div> 
+                                                        </div>
                                                     </div>
                                                 </td>
-                                                <td style="width: 30%;padding-left: 20px;">
+                                                <td style="width: 30%;padding-left: 31px;">
                                                     <label for="Aadhar"><b>Aadhar No.</b></label>
                                                     <input type="text" placeholder="Enter Aadhar Number" id="Aadhar"
                                                         formControlName="Aadhar">
@@ -228,78 +259,92 @@
                                                         <div [hidden]="!Aadhar.errors.required" style="color: crimson;">
                                                             Aadhar number is required
                                                         </div>
-                                                         <div [hidden]="!Aadhar.errors.maxlength" style="color: crimson;">
+                                                        <div [hidden]="!Aadhar.errors.maxlength"
+                                                            style="color: crimson;">
                                                             Max Length is 12
                                                         </div>
-                                                        <div [hidden]="!Aadhar.errors.minlength" style="color: crimson;">
+                                                        <div [hidden]="!Aadhar.errors.minlength"
+                                                            style="color: crimson;">
                                                             Min Length is 12
-                                                        </div> 
-                                                        
+                                                        </div>
+
                                                     </div>
                                                 </td>
-                                                <td style="width: 30%;padding-left: 20px; " *ngIf="isSelected('Male')">
-                                                    
-                                                   
-                                                       <label style="font-weight: bolder;">Soil pH Certificate</label>  
-                                                      
-                                                     
-                                                      
-                                                    <!-- <label for="Aadhar"><b>{{certificate_label}}</b></label> -->
-                                                    <input type="text" placeholder="Enter soil ph number" id="certificate"
-                                                        formControlName="certificate">
-                                                    <div *ngIf="!certificate?.valid && (certificate?.dirty ||certificate?.touched)">
-                                                         <div [hidden]="!certificate.errors.pattern" style="color: crimson;">
-                                                            Only number are allowed
-                                                        </div>
-                                                        <div [hidden]="!certificate.errors.required" style="color: crimson;">
-                                                            certificate number is required
-                                                        </div>
-                                                         <div [hidden]="!certificate.errors.minlength"
-                                                            style="color: crimson;">
-                                                            Min Length is 4
-                                                        </div>
-                                                        <div [hidden]="!certificate.errors.maxlength"
-                                                            style="color: crimson;">
-                                                            Max Length is 4
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td style="width: 30%;padding-left: 20px; " *ngIf="isSelected('Female')">
-                                                    
-                                                    
-                                                     
-                                                     
-                                                        <label style="font-weight: bolder;">Trader License</label>  
-                                                      
-                                                    <!-- <label for="certificate"><b>{{certificate_label}}</b></label> -->
-                                                    <input type="text" placeholder="Select Radio button" id="certificate"
-                                                        formControlName="certificate">
-                                                    <div *ngIf="!certificate?.valid && (certificate?.dirty ||certificate?.touched)">
-                                                         <div [hidden]="!certificate.errors.pattern" style="color: crimson;">
-                                                            Only number are allowed
-                                                        </div> -->
-                                                        <div [hidden]="!certificate.errors.required" style="color: crimson;">
-                                                            certificate number is required
-                                                        </div>
-                                                         <div [hidden]="!certificate.errors.minlength"
-                                                            style="color: crimson;">
-                                                            Min Length is 4
-                                                        </div>
-                                                        <div [hidden]="!certificate.errors.maxlength"
-                                                            style="color: crimson;">
-                                                            Max Length is 4
-                                                        </div> -->
-                                                    </div>
-                                                </td>
+                                                
+                                                
                                             </tr>
                                         </table>
 
+                                        <td style="width: 30%;padding-left: 20px; " *ngIf="isSelected('Male')">
 
-                                        <div id="buttoncontainer"  *ngIf="isSelected('Female')">
-                                            <button type="submit" style="margin-top: 50px;" [disabled]="!contactForm.valid">Register</button>
+
+                                                    
+                                            <input type="checkbox" id="ph_certificate"  ng-checked="ph_certificate" (change)="changeSelection()" name="ph_certificate" value="ph_certificate">
+                                            <label style="font-weight: bolder;">Soil pH Certificate</label><br>
+
+                                            <!-- <label style="font-weight: bolder;">Soil pH Certificate</label> -->
+                                            <!-- <label for="Aadhar"><b>{{certificate_label}}</b></label> -->
+                                            <!-- <input type="text" placeholder="Enter soil ph number"
+                                                id="certificate" formControlName="certificate">
+                                            <div
+                                                *ngIf="!certificate?.valid && (certificate?.dirty ||certificate?.touched)">
+                                                <div [hidden]="!certificate.errors.pattern"
+                                                    style="color: crimson;">
+                                                    Only number are allowed
+                                                </div>
+                                                <div [hidden]="!certificate.errors.required"
+                                                    style="color: crimson;">
+                                                    certificate number is required
+                                                </div>
+                                                <div [hidden]="!certificate.errors.minlength"
+                                                    style="color: crimson;">
+                                                    Min Length is 4
+                                                </div>
+                                                <div [hidden]="!certificate.errors.maxlength"
+                                                    style="color: crimson;">
+                                                    Max Length is 4
+                                                </div>
+                                            </div> -->
+                                        </td>
+                                        <td style="width: 30%;padding-left: 20px; "
+                                            *ngIf="isSelected('Female')">
+
+
+
+                                            <input type="checkbox" id="trader_license" name="trader_license" (change)="changeSelection()" value="trader_license">
+                                            <label style="font-weight: bolder;">Trader License</label><br>
+                                            <!-- <label style="font-weight: bolder;">Trader License</label> -->
+
+                                            <!-- <label for="certificate"><b>{{certificate_label}}</b></label> -->
+                                            <!-- <input type="text" placeholder="Select Radio button"
+                                                id="certificate" formControlName="certificate">
+                                            <div
+                                                *ngIf="!certificate?.valid && (certificate?.dirty ||certificate?.touched)">
+                                                <div [hidden]="!certificate.errors.pattern"
+                                                    style="color: crimson;">
+                                                    Only number are allowed
+                                                </div>
+                                                <div [hidden]="!certificate.errors.required"
+                                                    style="color: crimson;">
+                                                    certificate number is required
+                                                </div>
+                                                <div [hidden]="!certificate.errors.minlength"
+                                                    style="color: crimson;">
+                                                    Min Length is 4
+                                                </div>
+                                                <div [hidden]="!certificate.errors.maxlength"
+                                                    style="color: crimson;">
+                                                    Max Length is 4
+                                                </div>
+                                            </div> -->
+                                        </td>
+                                        <div id="buttoncontainer" *ngIf="isSelected('Female')">
+                                            <button type="submit" style="margin-top: 50px;"
+                                                [disabled]="!contactForm.valid">Register</button>
                                         </div>
-                                        <div id="buttoncontainer"  *ngIf="isSelected('Male')">
-                                            <button type="submit" style="margin-top: 50px;"[disabled]="!contactForm.valid">Proceed</button>
+                                        <div id="buttoncontainer" *ngIf="isSelected('Male')">
+                                            <button type="submit" style="margin-top: 50px;"
+                                                [disabled]="!contactForm.valid">Proceed</button>
                                         </div>
                                     </div>
                                 </form>
