@@ -35,7 +35,7 @@
               <td> {{item.fertilizer_type}}</td>
               <td> {{item.msp}}</td>
               <td> {{item.base_price}}</td>
-              <td> {{item.amount}}</td>
+              <td> {{item.amount==0?item.base_price:item.amount}}</td>
               
               <td><button class="btn btn-outline-success" id="btn1" value="Approve" (click)="onapprove(item.request_id)">Approve</button></td>
               <!-- <td><button class="btn btn-outline-danger" id="btn2" value="Disapprove" (click)="disapprove()">Disapprove</button></td> -->
